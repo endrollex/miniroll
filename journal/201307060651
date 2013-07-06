@@ -1,2 +1,6 @@
-This blog does not use SQL database.<br />
-All data from filesystem.
+<pre class="prettyprint linenums">
+/**
+ * This blog does not use database.
+ * All data from filesystem.
+*/
+</pre><div class="m1"></div>

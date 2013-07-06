@@ -5,4 +5,4 @@ Full Text Search: <span class="m6" style="color: #FFFFFF" dir="ltr">Test version
 <input type="text" class="input_com1" style="width: 300px;" name="search_tit" />
 <input type="hidden" name="search_type" value="all" />
 <input type="submit" class="input_com1" value="Search" />
-</form><!--m5b-->
+</form><!--m5b--><br />

@@ -84,14 +84,14 @@ if ($show_left_menu === 0) {
 	$vpass_menu_style = 2;
 	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style);
 	//hidden last label
-	for ($ix = 0; $ix !== count($label_text)-1; ++$ix) {
+	for ($ix_index = 0; $ix_index !== count($label_text)-1; ++$ix_index) {
 		$menu_light = false;
-		if ($_SESSION['l'] !== 'nul' && $_SESSION['l'] !== 'all') if ($_SESSION['l'] === $label_code[$ix]) {
+		if ($_SESSION['l'] !== 'nul' && $_SESSION['l'] !== 'all') if ($_SESSION['l'] === $label_code[$ix_index]) {
 			$menu_light = true;
 		}
-		$vpass_menu_link = '?l='.$label_code[$ix];
+		$vpass_menu_link = '?l='.$label_code[$ix_index];
 		$vpass_menu_style = 2;
-		menu_mark_show($vpass_menu_link, $label_text[$ix], $menu_light, $vpass_menu_style);
+		menu_mark_show($vpass_menu_link, $label_text[$ix_index], $menu_light, $vpass_menu_style);
 	}
 }
 //structure dir
@@ -135,8 +135,8 @@ if ($is_empty) $html_data_err = '<div class="div_cpp03b_pt_content"><br/>File no
 //O=('-'Q) echo
 echo '<div'.$hatt_div_c.'>';//trace.hatt_div_c
 echo $html_data_err;
-if (!$is_empty) for ($ix = 0; $ix !== count($all_file); ++$ix) {
-	$view_file = $all_file[$ix];
+if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index) {
+	$view_file = $all_file[$ix_index];
 	$view_file_c = substr($view_file, 0, 12);
 	//get post infomation
 	post_info_get($view_file, $view_file_c, $dir_comment, $dir, $label_comb,
