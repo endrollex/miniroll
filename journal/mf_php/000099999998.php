@@ -23,7 +23,7 @@ if (isset($search_tit_keyword_o)) {
 	$search_tit_keyword = preg_replace("#(k1i2n3g4s)+#", ' ', $search_tit_keyword);
 	if (strlen($search_tit_keyword) > 1 && strlen($search_tit_keyword) < 100) {
 		$search_go = true;
-		$search_msg = 'Key word：'.$search_tit_keyword;
+		$search_msg = 'Key word: '.$search_tit_keyword;
 	}
 	else {if (strlen($search_tit_keyword) > 0) $search_msg = 'Key word too short or too long';}
 	if ($search_cache) $search_go = false;
@@ -176,7 +176,7 @@ if ($search_all) {
 }
 //show result
 $_SESSION['search_cache'] = '';
-if ($count_search_res_ix98 > 0) $_SESSION['search_cache'] = ', Found '.$count_search_res_ix98.' post：<br/><br/>';
+if ($count_search_res_ix98 > 0) $_SESSION['search_cache'] = ', Found '.$count_search_res_ix98.' post: <br/><br/>';
 else $_SESSION['search_cache'] = ', not found.<br/>';
 for ($ix98 = $count_search_res_ix98; $ix98 !== 0; --$ix98) {
 	$_SESSION['search_cache'] .= '<a href="index.php?p='.$search_index_o[$search_res_ix98[$ix98-1]].'">';
