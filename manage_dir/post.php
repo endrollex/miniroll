@@ -1,7 +1,7 @@
 <?php
 /**
  * Post function
- * All management function can not be direct visit, the entrance is ../manage.php
+ * All management functions can not be direct visited, the entrance is ../manage.php
  * So the working directory is the root of website
  * 
  * External files:

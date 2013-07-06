@@ -1,7 +1,7 @@
 <?php
 /**
  * Top part of all management
- * All management function can not be direct visit, the entrance is ../manage.php
+ * All management functions can not be direct visited, the entrance is ../manage.php
  * So the working directory is the root of website
  * 
 */
@@ -19,6 +19,7 @@ if (!isset($manage_php)) exit();
 document.write("<meta name=\"viewport\" content=\"width="+i_dev_width+", initial-scale=1\" />");
 //]]>
 </script>
+<link rel="SHORTCUT ICON" href="../images/icon_4.ico"/>
 <title>miniroll management system</title>
 <link href="../htmindex.css" rel="stylesheet" type="text/css" />
 <link href="../f_assistant/prettify/prettify.css" rel="stylesheet" type="text/css" />

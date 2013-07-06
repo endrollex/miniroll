@@ -1,7 +1,7 @@
 <?php
 /**
  * Upload function
- * All management function can not be direct visit, the entrance is ../manage.php
+ * All management functions can not be direct visited, the entrance is ../manage.php
  * So the working directory is the root of website
  *
  * Use fwrite() to upload for server's flexible permissions, if want upload big files, please use FTP and so on
