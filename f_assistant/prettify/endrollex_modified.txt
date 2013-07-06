@@ -1,0 +1,3 @@
+prettify.css
+changes some colors, add comments
+the original file is reserved: prettify.css_original

@@ -1,0 +1,8 @@
+Title Search: <span class="m6" style="color: #FFFFFF" dir="ltr">Test version</span><!--m6--><br />
+<br />
+<!--m5-->
+<form action="index.php?p=000099999997_mi_mf_" method="post">
+<input type="text" class="input_com1" style="width: 300px;" name="search_tit" />
+<input type="hidden" name="search_type" value="tit" />
+<input type="submit" class="input_com1" value="Search" />
+</form><!--m5b-->
