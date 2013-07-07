@@ -64,8 +64,7 @@ pre {
 	bottom: 0px;
 	width: 100%;
 }
-.div_cpp02 {
-}
+.div_cpp02 {}
 .div_cpp03a {
 	overflow: hidden;
 }
@@ -162,12 +161,6 @@ pre {
 	height: 80px;
 	text-align: center;
 	line-height: 80px;
-}
-.img_top01 {
-	border-width: 0px;
-	position: relative;
-	left: 100px;
-	top: 60px;
 }
 .ul_top01 {
 	overflow: hidden;
