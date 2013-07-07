@@ -257,6 +257,8 @@ a.m4_style:active {color: #00AEEF;}
 	margin-right: auto;
 	margin-left: auto;
 	min-height: 100%;
+	max-width: 810px;
+	min-width: 750px;
 }
 .post_input_text {
 	width: 95%;
