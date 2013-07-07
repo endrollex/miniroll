@@ -46,10 +46,12 @@ pre {
 }
 .div_no_class {}
 .div_home_set {
-	width: 810px;
+	width: 90%;
 	margin-right: auto;
 	margin-left: auto;
 	min-height: 100%;
+	max-width: 810px;
+	min-width: 750px;
 }
 .div_cpp01 {
 	background-position: left;
