@@ -1,6 +1,7 @@
 <?php
 /**
- * Top bar style 1 for index.php
+ * Service for index.php
+ * Top part style 1 for index.php
  * This file have some CSS class or JS, please modify them for wanted style.
 */
 ?>
@@ -25,7 +26,7 @@ if (isset($echo_title)) $echo_tit_top = $echo_title;
 echo '<meta name="keywords" content="'.$hatt_meta_k.'" />';
 echo '<meta name="description" content="'.$hatt_meta_d.'" />';
 echo '<title>'.$echo_tit_top.'</title>';
-//copy above to index.top2.php
+//
 ?>
 <link href="htmindex.css" rel="stylesheet" type="text/css" />
 <link href="f_assistant/prettify/prettify.css" rel="stylesheet" type="text/css" />
@@ -33,7 +34,7 @@ echo '<title>'.$echo_tit_top.'</title>';
 <script type="text/javascript" src="f_assistant/jwplayer/jwplayer.js"></script>
 </head>
 <body onload="prettyPrint();" class="body_index">
-<div class="div_home_set""><!--trace.div_home_set-->
+<div class="div_home_set"><!--trace.div_home_set-->
 <div class="div_cpp01">
 <div class="div_cpp01_home">
 <ul class="ul_top01">

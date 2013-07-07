@@ -2,18 +2,22 @@
 /**
  * Post edit function
  * All management functions can not be direct visited, the entrance is ../manage.php
- * So the working directory is the root of website
- * 
+ * Notice: the working directory is the root of website
+ *
+ * Require files:
+ *     post_top.php: Top part of post_view.php
+ *     post_bottom.php: Bottom of post_view.php
+ *     post.php: Send the post to post.php for edit
+ *
  * External files:
  *     checkreload: Prevent reload
  *     post.php: Send the post to post.php for edit
- *
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();
 session_start();
 $echo_log_state = '#Welcome#';
-if (isset($_SESSION['v_user'])) $echo_log_state = '<a href="manage.php?m=3&l=1">#Logout#</a>';
+if (isset($_SESSION['v_user'])) $echo_log_state = '<a href="manage.php?m=3&amp;l=1">#Logout#</a>';
 //O=('-'Q) echo
 echo $echo_log_state.'<br/><br/>';
 //var ini
@@ -191,7 +195,7 @@ if (isset($_POST['s_match1'])) echo '<input type="hidden" name="s_match2" value=
 <input type="submit" value="Select"/>
 </form>
 <br/>
-<!--#-------------------------------here read post-->
+<!--#..............................................................here read post-->
 <div class="div_no_class">
 <br/>
 <?php
@@ -201,7 +205,7 @@ if ($noempty) readfile($dir.$view_file_c);
 echo '<div></div><br/>';
 ?>
 </div>
-<!--#-------------------------------change tags-->
+<!--#..............................................................change tags-->
 <div class="post_explain">
 <?php
 //change tags
@@ -210,7 +214,7 @@ else echo 'Please select a file.<br/>';
 echo 'Change tags. Changing tags is Not Recommended because of Static URL.<br/>';
 ?>
 <form action="manage.php?m=1" method="post">
-<!--#-------------------------------if need rename function, make type="text"-->
+<!--#..............................................................if need rename function, make type="text"-->
 <input type="hidden" name="f_rename" value = "<?php echo $view_file; ?>"<?php disa(); ?>/>
 <input type="submit" value="Change Tags"<?php disa(); ?>/>
 <?php
@@ -239,7 +243,7 @@ for ($ix = 0; $ix != count($label_code); ++$ix) {
 ?>
 </form>
 </div><br/>
-<!--#-------------------------------edit-->
+<!--#..............................................................edit-->
 <div class="post_explain">
 Edit the journal. Send the title and content to post.php.
 <form action="post.php" method="post">
@@ -247,7 +251,7 @@ Edit the journal. Send the title and content to post.php.
 <input type="submit" value="Edit"<?php disa(); ?>/>
 </form>
 </div><br/>
-<!--#-------------------------------delete-->
+<!--#..............................................................delete-->
 <div class="post_explain">
 <form action="manage.php?m=1" method="post">
 If you want to delete the post, please enter the filename and fill "DELETE".<br/>

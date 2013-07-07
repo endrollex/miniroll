@@ -2,7 +2,11 @@
 /**
  * Login function
  * All management functions can not be direct visited, the entrance is ../manage.php
- * So the working directory is the root of website
+ * Notice: the working directory is the root of website
+ * 
+ * Require files:
+ *     post_top.php: Top part of login.php
+ *     post_bottom2.php: Bottom of login.php
  * 
  * External files:
  *     login_data.php: Where store admin data, delete it can reset admin account
@@ -11,7 +15,6 @@
  *
  *     log/login_log.php: Records success login action
  *     log/login_log_err.php: Records failed login action
- *
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();
@@ -135,7 +138,7 @@ if (!$change_pass && $login_data && isset($_POST['user']) && isset($_POST['pass'
 $echo_log_state = '#Welcome#';
 //########Authenticate################################################################
 if (isset($_SESSION['v_user'])) {
-	$echo_log_state = '<a href="manage.php?m=3&l=1">#Logout#</a>';
+	$echo_log_state = '<a href="manage.php?m=3&amp;l=1">#Logout#</a>';
 	if (!$change_pass) $echo_lo_msg = 'You are logged as '.$auth['user'].'.';
 }
 if (isset($_GET['l'])) {
@@ -159,7 +162,7 @@ echo 'Login or logout:<br/>--------<br/><br/>';
 echo $echo_lo_msg.'<br/><br/>';
 //do not include or require special file for security
 ?>
-<!--#-------------------------------user and passwd-->
+<!--#..............................................................user and passwd-->
 <form action="manage.php?m=3" method="post">
 Username:<br/>
 <input type="text" name="user"<?php disa(); ?>/><br/>

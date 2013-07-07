@@ -10,10 +10,10 @@
  *     index_top.php: Top part of index.php
  *     index_top2.php: Top part of index.php
  *     comment.php: Comment module
- *     comment_w.php: Comment form
- *     journal/left_menu/register_menu.php: Where left menu create rule
- *     global_var.php: Some global variable
- *     index_func.php: Function for index.php
+ *     comment_w.php: Echo guest comment form
+ *     journal_menu/register_menu.php: Where left menu's protocol
+ *     global_var.php: Global variable
+ *     index_func.php: Functions for index.php
  *     journal/mf_php: The dir which label load PHP files, see line190 and global_var.php
  *
  * Third party codes:
@@ -45,36 +45,40 @@ if (isset($_GET['p'])) if (!strstr($_GET['p'], '0000999999')) $show_top2 = true;
 //top or top2
 if ($show_top2) require('index_top2.php');
 else require('index_top.php');
-//need session_start
 //variable initialize
 $view_file = '';
 $view_file_c = '';
-//browse control for individual pages: $_GET['l'], $_GET['p'], $_SESSION['l']
+//browse control's parameters for individual pages:
+//$_GET['l']: post's label
+//$_GET['p']: post's filename
+//$_SESSION['l']: post's label session store
 if (!isset($_SESSION['l'])) $_SESSION['l'] = 'nul';
 if (isset($_GET['p'])) {if(strstr($_GET['p'], $_SESSION['l']) === false) $_SESSION['l'] = 'nul';}
 else $_SESSION['l'] = 'nul';
 if (isset($_GET['l'])) $_SESSION['l'] = $_GET['l'];
 if (!isset($_SESSION['next_sav'])) $_SESSION['next_sav'] = 0;
+//
 ?>
 <div class="div_cpp02"><!--trace.div_cpp02-->
-<!--#-------------------------------table-->
+<!--#..............................................................table-->
 <table class="table_cpp02"><tr><td class="td_cpp03a">
-<!--#-------------------------------left area show menu-->
+<!--#..............................................................left area show menu-->
 <div class="div_cpp03a"><!--trace.div_cpp03a-->
 <br/>
 <?php
-//browse control back here
+//browse control back button
 if (isset($_SESSION['back_here'])) unset($_SESSION['back_here']);
 //label ini
 $label_comb = array_combine($label_code, $label_text);
-//show catagories
-$show_left_menu = 0;//value: 0(home), 1(temp value), 2(sub page), 3(show nothing)
+//menu code
+//$show_left_menu, value: 0(home menu), 1(temp value), other(other menu or show nothing)
+$show_left_menu = 0;
 if (isset($_GET['l'])) if ($_GET['l'] === 'do') $show_left_menu = 1;
 if (isset($_GET['p']) || $show_left_menu === 1) {
-	//extrenal left menu file
+	//other menu
 	if (file_exists($dir_leftmenu.'register_menu.php')) require($dir_leftmenu.'register_menu.php');
 }
-//show left menu
+//menu code, show home menu
 if ($show_left_menu === 0) {
 	//O=('-'Q) echo
 	echo '<div class="div_cpp03a_ct"><img alt="categories" height="17" src="images/categ14px2.gif" width="108" /></div>';
@@ -108,14 +112,14 @@ if (isset($_GET['next'])) {
 }
 if (isset($_SESSION['next_sav'])) $_SESSION['next_sav'] = $now_page;
 if ($f_sum !== 0) $all_file = $all_file_o[$now_page];
-//ready view
+//ready for view
 $is_empty = true;
 if (isset($all_file[0])) $is_empty = false;
 ?>
 </div><!--/trace.div_cpp03a-->
-<!--#-------------------------------table-->
+<!--#..............................................................table-->
 </td><td class="td_cpp03b">
-<!--#-------------------------------right area show detail-->
+<!--#..............................................................right area show detail-->
 <?php
 $hatt_div_c = ' class="div_cpp03b"';
 if (!isset($_GET['p'])) $hatt_div_c = '';
@@ -138,7 +142,7 @@ echo $html_data_err;
 if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index) {
 	$view_file = $all_file[$ix_index];
 	$view_file_c = substr($view_file, 0, 12);
-	//get post infomation
+	//get post infomations
 	post_info_get($view_file, $view_file_c, $dir_comment, $dir, $label_comb,
 		$is_preload_number_to_cn, $para_get_p, $echo_file_date, $html_view_tag, $echo_comm_size_a,
 		$echo_comm_size_cn, $echo_title, $a_link1, $a_link2, $a_link1v, $a_link1v_comm);
@@ -153,7 +157,7 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 	echo $echo_file_date;
 	echo '<span class="span_l2"> | Lable: </span>';
 	echo $html_view_tag;
-	//for public view
+	//for public view, if want private, modify if statement
 	if (isset($_SESSION['v_user']) || !isset($_SESSION['v_user'])) {
 		echo "\r\n".'<span class="span_l2"> | </span><form class="form_cpp03b_pd_edit" action="manage.php?m=0" method="post">';
 		echo "\r\n".'<input type="hidden" name="edit_d1" value="'.$view_file.'"/>';
@@ -202,7 +206,7 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 }
 //page array
 $b_cate = '';
-if ($_SESSION['l'] !== 'nul') $b_cate = '&l='.$_SESSION['l'];
+if ($_SESSION['l'] !== 'nul') $b_cate = '&amp;l='.$_SESSION['l'];
 $html_span_page1 = '';
 $html_span_page2 = '';
 page_array($now_page, $pag_sum, $b_cate, $html_span_page1, $html_span_page2);
@@ -216,9 +220,9 @@ echo '</div>';///trace.hatt_div_c
 //google analytics
 if (file_exists('font/analyticstracking.php')) include_once('font/analyticstracking.php');
 ?>
-<!--#-------------------------------table-->
+<!--#..............................................................table-->
 </td></tr></table>
-<!--#-------------------------------right area end-->
+<!--#..............................................................right area end-->
 <div class="div_cpp_bottom">
 <a class="tit" href="index.php?p=000099999999_mi_">Sample Blog</a> | 
 <a class="tit" href="manage.php?m=3">management</a> | 
@@ -227,7 +231,7 @@ Hello
 //########Authenticate################################################################
 $html_li_user = '';
 if (isset($_SESSION['v_user'])) {
-	$html_li_user = '<a class="tit" href="manage.php?m=3&l=1" target="_blank"> | Logout</a>';
+	$html_li_user = '<a class="tit" href="manage.php?m=3&amp;l=1" target="_blank"> | Logout</a>';
 }
 //O=('-'Q) echo
 echo $html_li_user;

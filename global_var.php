@@ -1,7 +1,7 @@
 <?php
 /**
- * Global variable here
- * For labels, SEO, dir, post load PHP
+ * Global variable, Service for all PHP
+ * Define labels, SEO, dir, post load PHP
  * $label_code, $label_text, $label_keywords, all array length require equal
 */
 //Encoding Type: UTF-8(w/o BOM)
@@ -22,6 +22,6 @@ $global_var_top_post = 'if_need_top_enter_filename';
 $dir = 'journal/';
 $dir_mf = 'journal/mf_php/';
 $dir_comment = 'az_comment/';
-$dir_leftmenu = 'journal/left_menu/';
+$dir_leftmenu = 'journal_menu/';
 $dir_manage = 'manage_dir/';
 ?>

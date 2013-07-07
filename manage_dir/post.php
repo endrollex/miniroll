@@ -2,18 +2,21 @@
 /**
  * Post function
  * All management functions can not be direct visited, the entrance is ../manage.php
- * So the working directory is the root of website
+ * Notice: the working directory is the root of website
  * 
+ * Require files:
+ *     post_top.php: Top part of post.php
+ *     post_bottom.php: Bottom of post.php
+ *
  * External files:
  *     checkreload: Prevent reload
- *
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();
 session_start();
 $isedit = (isset($_POST['edit_d1']));
 $echo_log_state = '#Welcome#';
-if (isset($_SESSION['v_user'])) $echo_log_state = '<a href="manage.php?m=3&l=1">#Logout#</a>';
+if (isset($_SESSION['v_user'])) $echo_log_state = '<a href="manage.php?m=3&amp;l=1">#Logout#</a>';
 //O=('-'Q) echo
 echo $echo_log_state.'<br/><br/>';
 //if time year > 9999, modify the miniroll
@@ -346,7 +349,7 @@ if (file_exists('font/minicode_manual.php'))
 	echo '<br/>Manual: <a target="_blank" href="font/minicode_manual.php">minicode_manual.php</a>';
 ?>
 </div >
-<!--#-------------------------------post input-->
+<!--#..............................................................post input-->
 <div class="div_no_class">
 <form action="manage.php?m=0" method="post">
 <?php

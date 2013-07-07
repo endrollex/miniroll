@@ -1,6 +1,6 @@
 <?php
 /**
- * Link relative posts
+ * Link relative posts, Service for index.php
  * Please edit $menu_file_list array
  * This file have some CSS class or JS, please modify them for wanted style.
 */
@@ -22,7 +22,7 @@ if (isset($_GET['p']) && isset($view_file_c)) {
 	for ($ix_menu = 0; $ix_menu !== count($menu_file_list); ++$ix_menu) {
 		if (strpos($menu_file_list[$ix_menu], $view_file_c) !== false) {
 			//O=('-'Q) echo
-			echo '<br/>相关日志：';
+			echo '<br/>Relative posts: ';
 			$menu_file_list[$ix_menu] .= ',';
 			$menu_file_list[$ix_menu] = str_replace($_GET['p'].',', '', $menu_file_list[$ix_menu]);
 			$menu_file_list[$ix_menu] = substr($menu_file_list[$ix_menu], 0, strlen($menu_file_list[$ix_menu])-1);

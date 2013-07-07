@@ -1,9 +1,10 @@
 <?php
 /**
- * Get post infromation for index.php
+ * Service for index.php
+ * Get post infromations for index.php
  * This file have some CSS class or JS, please modify them for wanted style.
 */
-//meta elements for SEO
+//get meta elements for SEO
 function meta_seo_get(
 	&$para_get_p,
 	&$dir,
@@ -32,7 +33,7 @@ function meta_seo_get(
 		$meta_description = '';
 	}
 }
-//structure dir
+//structure dir, ready for reading post data
 function structure_dir(
 	&$dir,
 	&$para_get_p,
@@ -86,15 +87,16 @@ function structure_dir(
 	$all_file_o = array_chunk($all_file_o, $chunk_val);
 	$pag_sum = count($all_file_o);	
 }
-//menu mark show
+//echo menu XHTML
 function menu_mark_show(&$menu_link, &$menu_text, &$menu_light, &$menu_style) {
+	//$menu_style, value: 2(custom color) other(default color)
 	$span_l1 = '';
 	$span_l2 = '';
-	//style1: index color, style2: other color
 	if ($menu_style === 2 && !$menu_light) {
 		$span_l1 = '<span class="span_l_b">';
 		$span_l2 = '</span>';
 	}
+	//color emitting
 	if ($menu_light) {
 		$span_l1 = '<span class="span_l">';
 		$span_l2 = '</span>';
@@ -102,7 +104,13 @@ function menu_mark_show(&$menu_link, &$menu_text, &$menu_light, &$menu_style) {
 	//O=('-'Q) echo
 	echo '<div class="div_cpp03a_c"><a class="lab" href="'.$menu_link.'">'.$span_l1.$menu_text.$span_l2.'</a></div>';
 }
-//post information get
+//flag for menu_mark_show(..., &$menu_light, ...), control menu style
+function light_p($light_get_p) {
+	if (isset($_GET['p'])) if ($_GET['p'] == $light_get_p) return true;
+	if (isset($_GET['l'])) if ($_GET['l'] == $light_get_p) return true;
+	return false;
+}
+//get post informations
 function post_info_get(
 	&$view_file,
 	&$view_file_c,

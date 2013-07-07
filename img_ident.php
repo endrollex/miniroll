@@ -1,8 +1,8 @@
 <?php
 /**
- * Create a image, determine whether or not the user is human, 
- * input require $_SESSION['rand_img']
- * see comment.php
+ * Service for comment.php
+ * PHP environment require: GD library
+ * Create a image, determine whether or not the user is human
 */
 header('Content-type: image/png');
 session_start();

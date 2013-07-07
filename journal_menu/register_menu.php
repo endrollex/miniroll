@@ -1,17 +1,22 @@
 <?php
 /**
- * Generate homepage's menu
+ * Generate homepage's menu, Service for index.php
  *
+ * Require files:
+ *     index_func.php: Use function menu_mark_show()
+ * 
  * There are tow modes for menu
- *     mode 1 : for one by one posts, Please edit $menu_file_list array
- *     mode 2 : for same lable posts, Write function menu_mark_show()
+ *     step1:
+ *         mode 1: for one by one posts, Please edit $menu_file_list array
+ *         mode 2: for same lable posts, Write function menu_mark_show()
  *
- *     Finsh above then edit index_top.php href, see CSS class: ul_top01
+ *     step2: Edit index_top.php menu XHTML tags
+ *
+ *     step3: Edit index.php menu code
  *
  * This file have some CSS class or JS, please modify them for wanted style.
 */
-//mode 1
-//register one by one posts
+//mode 1: register one by one posts
 if (isset($_GET['p'])) {
 	$view_file_c = substr($_GET['p'], 0, 12);
 	//indicate menu relative files
@@ -38,8 +43,7 @@ if (isset($_GET['p'])) {
 		}
 	}
 }
-//mode 2
-//for lable
+//mode 2: for lable
 if (isset($_GET['l'])) if ($_GET['l'] === 'do') {
 	//O=('-'Q) echo
 	echo '<div class="div_cpp03a_ct"><img alt="categories" height="17" src="images/categ14px2_what.gif" width="96" /></div>';

@@ -2,15 +2,20 @@
 /**
  * Upload function
  * All management functions can not be direct visited, the entrance is ../manage.php
- * So the working directory is the root of website
+ * Notice: the working directory is the root of website
  *
- * Use fwrite() to upload for server's flexible permissions, if want upload big files, please use FTP and so on
+ * Require files:
+ *     post_top.php: Top part of post_view.php
+ *     post_bottom.php: Bottom of post_view.php
+ *     post.php: Send the post to post.php for edit
+ *
+ * Why Use fwrite() to upload: for server's flexible permission, if want to upload big files, please use FTP and so on.
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();
 session_start();
 $echo_log_state = '#Welcome#';
-if (isset($_SESSION['v_user'])) $echo_log_state = '<a href="manage.php?m=3&l=1">#Logout#</a>';
+if (isset($_SESSION['v_user'])) $echo_log_state = '<a href="manage.php?m=3&amp;l=1">#Logout#</a>';
 //O=('-'Q) echo
 echo $echo_log_state.'<br/><br/>';
 echo 'Choose a file or a directory to browse:<br/>--------<br/><br/>';
@@ -128,9 +133,9 @@ if (isset($_POST['delete_one']) && isset($_POST['confirm_del']) && isset($_SESSI
 	else $html_upload_msg = '<span class=span_blue>Deleting canceled.</span>';
 }
 //show dir
-echo 'root/<a class="tit" href="manage.php?m=2&dir_ix=-1">upload/</a>';
+echo 'root/<a class="tit" href="manage.php?m=2&amp;dir_ix=-1">upload/</a>';
 for ($ix = 0; $ix != count($upload_sub_dir_array)-1; ++$ix)
-	echo '<a class="tit" href="manage.php?m=2&dir_ix='.$ix.'">'.$upload_sub_dir_array[$ix].'/</a>';
+	echo '<a class="tit" href="manage.php?m=2&amp;dir_ix='.$ix.'">'.$upload_sub_dir_array[$ix].'/</a>';
 echo '<br/>';
 //show attachment
 $get_scandir = scandir($upload_curr_dir);
@@ -138,11 +143,11 @@ for ($ix = 0; $ix !== count($get_scandir); ++$ix) {
 	$is_file = false;
 	$is_file = !is_dir($upload_curr_dir.$get_scandir[$ix]);
 	//uploaded files
-	if ($ix === 0) echo '[<a class="m4" href="manage.php?m=2&dir_ix='.(count($upload_sub_dir_array)-2).
+	if ($ix === 0) echo '[<a class="m4" href="manage.php?m=2&amp;dir_ix='.(count($upload_sub_dir_array)-2).
 		'">'.$get_scandir[$ix].'</a>]<br/>';
-	if ($get_scandir[$ix] === '..') echo '[<a class="m4" href="manage.php?m=2&dir_up=1">'.$get_scandir[$ix].'</a>]<br/>';
+	if ($get_scandir[$ix] === '..') echo '[<a class="m4" href="manage.php?m=2&amp;dir_up=1">'.$get_scandir[$ix].'</a>]<br/>';
 	if ($ix > 1) {
-		if (!$is_file) echo '[<a class="page" href="manage.php?m=2&dir='.$get_scandir[$ix].'">'.$get_scandir[$ix].'</a>]<br/>';
+		if (!$is_file) echo '[<a class="page" href="manage.php?m=2&amp;dir='.$get_scandir[$ix].'">'.$get_scandir[$ix].'</a>]<br/>';
 		else echo '<a class="m4" href="'.$upload_curr_dir.$get_scandir[$ix].
 			'" target="_blank">'.$get_scandir[$ix].'</a><br/>';
 	}
@@ -153,7 +158,7 @@ echo $html_upload_msg.'<br/><br/>';
 //google analytics
 if (file_exists('font/analyticstracking.php')) include_once('font/analyticstracking.php');
 ?>
-<!--#-------------------------------upload-->
+<!--#..............................................................upload-->
 <div class="post_explain">
 <form action="manage.php?m=2" method="post" enctype="multipart/form-data">
 Upload file's size &lt; <?php echo $echo_upload_max_mb; ?> MB.<br/>
@@ -161,7 +166,7 @@ Upload file's size &lt; <?php echo $echo_upload_max_mb; ?> MB.<br/>
 <input type="submit" name="submit" value="Upload"<?php disa(); ?>/>
 </form>
 </div><br/>
-<!--#-------------------------------mkdir-->
+<!--#..............................................................mkdir-->
 <div class="post_explain">
 <form action="manage.php?m=2" method="post">
 Makes directory.<br/>
@@ -169,7 +174,7 @@ Makes directory.<br/>
 <input type="submit" value="Mkdir"<?php disa(); ?>/>
 </form>
 </div><br/>
-<!--#-------------------------------delete-->
+<!--#..............................................................delete-->
 <div class="post_explain">
 <form action="manage.php?m=2" method="post">
 If you want to delete the file or the dir, please enter the name and fill "DELETE".<br/>

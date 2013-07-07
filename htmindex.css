@@ -1,6 +1,8 @@
 ﻿/*----------------------------------------------------------------index.php*/
 html {
 	height: 100%;
+	/*overflow-y is trick*/
+    overflow-y: scroll;
 }
 textarea {
 	font-size: 14px;
@@ -35,12 +37,12 @@ pre {
 	border-collapse: collapse;
 }
 .td_cpp03a {
-	width: 20%;
+	width: 16%;
 	float: left;
 }
 .td_cpp03b {
 	float: left;
-	width: 80%;
+	width: 84%;
 }
 .div_no_class {}
 .div_home_set {

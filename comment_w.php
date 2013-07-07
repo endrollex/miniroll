@@ -1,7 +1,7 @@
 <?php
 /**
- * The guest comment form
- * 
+ * Service for comment.php
+ * Echo guest comment form
 */
 ?>
 <form action="<?php
