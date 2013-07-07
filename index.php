@@ -78,7 +78,7 @@ if (isset($_GET['p']) || $show_left_menu === 1) {
 	//other menu
 	if (file_exists($dir_leftmenu.'register_menu.php')) require($dir_leftmenu.'register_menu.php');
 }
-//menu code, show home menu
+//menu code, echo home menu
 if ($show_left_menu === 0) {
 	//O=('-'Q) echo
 	echo '<div class="div_cpp03a_ct"><img alt="categories" height="17" src="images/categ14px2.gif" width="108" /></div>';
