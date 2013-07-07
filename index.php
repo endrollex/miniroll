@@ -1,6 +1,6 @@
 <?php
 /**
- * index.php, main producer creates XHTML tags for view the website front.
+ * index.php, main producer creates XHTML tags, default entrance.
  * Quick-and-dirty, Feel free to modify.
  *
  * Require files (Entire website front):
@@ -14,7 +14,7 @@
  *     journal_menu/register_menu.php: Where left menu's protocol
  *     global_var.php: Global variable
  *     index_func.php: Functions for index.php
- *     journal/mf_php: The dir which label load PHP files, see line190 and global_var.php
+ *     journal/mf_php: The dir which label load PHP files, see index.php and global_var.php
  *
  * Third party codes:
  *     font/analyticstracking.php: Google Analytics auto-flush, please modify the google track code and domain name
@@ -128,7 +128,7 @@ $a_link1 = '';
 $a_link2 = '';
 $a_link1v = '';
 $a_link1v_comm = '';
-//control view var
+//control read content or not
 $show_content = false;
 if (isset($_GET['p']) || $_SESSION['l'] === 'nul') $show_content = true;
 $show_viewlink = false;
@@ -165,14 +165,14 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 	}
 	if (isset($_GET['l'])) echo '<span class="span_l2"> | '.$a_link1v_comm.'Comments: '.$echo_comm_size_a.$a_link2.'</span>';
 	echo '</div>';
-	//show title
+	//title
 	$html_view_title = '';
 	if (isset($_GET['p']) && $show_top2) $html_view_title = '<div class="div_cpp03b_pt">'.$echo_title.'<h1 class="h1_cpp03b_pt">'
 		.$echo_title.'</h1></div>';
 	else $html_view_title = '<div class="div_cpp03b_pt">'.$echo_title.'<span class="span_cpp03b_pt_shadow">'
 		.$a_link1.$echo_title.$a_link2.'</span></div>';	
 	echo $html_view_title;
-	//show content
+	//content
 	if ($show_content) {
 		//session save file name
 		$_SESSION['view_file_c'] = $view_file_c;
@@ -187,12 +187,12 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 		//O=('-'Q) echo
 		echo '</div>';
 	}
-	//show relative links, comments
+	//relative links, comments
 	if (isset($_GET['p'])) {
 		if (file_exists($dir_leftmenu.'register_link.php')) require($dir_leftmenu.'register_link.php');
 		require('comment.php');
 	}
-	//show view link
+	//link bottom
 	$html_viewlink = '';
 	$hatt_pdown_sty = ' class="div_cpp03b_pdown"';
 	if ($show_viewlink) {
