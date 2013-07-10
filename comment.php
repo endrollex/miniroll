@@ -10,7 +10,6 @@
  *     font/x.ttf: Font files
  *
  *     az_comment/lock: Prevent concurrent
- *
 */
 ?>
 <div class="div_com1">
