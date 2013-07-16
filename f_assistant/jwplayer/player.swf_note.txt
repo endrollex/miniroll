@@ -1,0 +1,23 @@
+http://www.longtailvideo.com/blog/19150/publish-your-videos-to-facebook-with-a-jw-player/
+http://www.longtailvideo.com/support/jw-player/28839/embedding-the-player
+
+Constructing the Video String
+
+Coming up with a usable og:video tag is a bit of a challenge. Since many of our plugins require similar configuration, we've got some documentation that should come in handy. However, you can also follow these steps to build the string:
+
+Start with the absolute path to your JW Player (ie, "http://www.example.com/jwplayer/player.swf").
+Next, add a "?". Everything after this will be interpreted as player configuration, and ensures that your web server will serve up your video player.
+For each configuration option you'd like to specify, add the name of the configuration option, then a "=", and finally the URL-encoded version of the value you wish to specify (ie "file=http%3A%2F%2Fwww.example.com%2Fbunny.flv&autostart=true"). Be sure to separate each configuration option with a "&".
+As always, you'll need to make sure that you're using absolute paths to reference your content and skins. Also, you'll need to make sure that you have the proper cross-domain security restrictions in place.
+
+Configuration Options
+
+There are three options for configuring which media file(s) to load in the player:
+
+file
+URL to a single MP4/FLV/WebM video, AAC/MP3/Vorbis audio, YouTube page or HLS/RTMP stream to play. See Supported Media Formats for an overview.
+image
+URL to a JPG/PNG poster image to display before playback is started. For audio-only media, the poster image stays visible during playback.
+title
+Title of the media loaded in the player. Is displayed in the middle of the display before playback is started.
+Note these options are used only for basic setups, like playing a single MP4 video or AAC song. Use the playlist option block for everything else, like an MP4+WebM source, SD+HD quality or a list with multiple clips. See Working with Playlists for more info.
