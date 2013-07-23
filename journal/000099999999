@@ -1,13 +1,13 @@
 Smaple Blog<br />
 <br />
 Please edit global_var.php to create your own labels. <br />
-<span class="m8">(Notice: all array length require equal)</span><!--m8--><br />
+(Notice: all array length require equal)<br />
 <br />
 Edit index.php, index_top.php, index_func.php, htmindex.css to change website style.<br />
-<span class="m8">(CSS, XHTML tags structure, Somewhat complex)</span><!--m8--><br />
+(CSS, XHTML tags structure, Somewhat complex)<br />
 <br />
 Eable GD library.<br />
 <br />
 Visit <a class="m4b" target="_blank" href="manage.php?m=3" style="max-height: 9003px;">management</a><!--m4--> where the bottom of page.<br />
 <br />
-<span class="m9">Last modified: 2013-07-07 11:23:12</span><!--m9-->
+<span class="m9">Last modified: 2013-07-23 20:50:57</span><!--m9-->
