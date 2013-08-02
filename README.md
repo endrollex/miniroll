@@ -9,6 +9,6 @@ Not need database
 
 How to use: Put all files in PHP server
 
-It may be very cumbersome to use.
+But it may be very cumbersome to use.
 
 For reference.
