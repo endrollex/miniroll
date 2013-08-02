@@ -5,6 +5,10 @@ PHP
 
 miniroll - small blog Quick-and-dirty
 
-Not use database, but with the filesystem.
+Not need database
 
-How to use: Put all files in PHP server.
+How to use: Put all files in PHP server
+
+It may be very cumbersome to use.
+
+For reference.
