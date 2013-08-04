@@ -52,6 +52,7 @@ $view_file_c = '';
 //$_GET['l']: post's label
 //$_GET['p']: post's filename
 //$_SESSION['l']: post's label session store
+//$_GET['view']: expose post list
 if (!isset($_SESSION['l'])) $_SESSION['l'] = 'nul';
 if (isset($_GET['p'])) {if(strstr($_GET['p'], $_SESSION['l']) === false) $_SESSION['l'] = 'nul';}
 else $_SESSION['l'] = 'nul';
@@ -133,6 +134,7 @@ $show_content = false;
 if (isset($_GET['p']) || $_SESSION['l'] === 'nul') $show_content = true;
 $show_viewlink = false;
 if ($_SESSION['l'] === 'nul' && !isset($_GET['p'])) $show_viewlink = true;
+if (isset($_GET['view']) && !isset($_GET['p'])) {$show_content = true; $show_viewlink = true;}
 //data
 $html_data_err = '';
 if ($is_empty) $html_data_err = '<div class="div_cpp03b_pt_content"><br/>File not found, maybe changed or not publish yet.<br/></div>';
