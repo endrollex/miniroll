@@ -403,4 +403,35 @@ a.user:link {color: #2E3092; text-decoration: none; font-weight: bold;}
 a.user:visited {color: #2E3092; text-decoration: none; font-weight: bold;}
 a.user:hover {color: #2E3092; font-weight: bold;}
 a.user:active {color: #2E3092; font-weight: bold;}
-/*----------------------------------------------------------------end of CSS*/
+/*----------------------------------------------------------------end of index.php CSS*/
+/*
+                    ,'|/\
+                   /  | )\
+                  /   |/  :
+                 :    ;   |
+                 :   /    ;
+                  \,'   ,'
+                   `,,-'
+                   //
+            _     // ____
+           /|`.  /;''/  ,`.
+          :.:/ \/,`-',-'. ,'
+          : `\,// `-.\_\.'
+           `._//
+             // SSt
+*/
+/*----------------------------------------------------------------Album*/
+.album_div1 {
+	margin: 20px 30px 20px 30px;
+	display: inline-block;
+	vertical-align: top;
+}
+.album_div2 {
+	text-align: center;
+	color: #555555;
+}
+.album_image {
+	margin: 2px;
+	top: 0px;
+}
+/*----------------------------------------------------------------end of Album CSS*/
