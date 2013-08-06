@@ -40,6 +40,7 @@ echo '<title>'.$echo_tit_top.'</title>';
 <ul class="ul_top01">
 <li class="li_top01"><a class="lab" href="index.php">Home</a></li>
 <li class="li_top01"><a class="lab" href="index.php?p=000099999998_mi_mf_">Search</a></li>
+<li class="li_top01"><a class="lab" href="index.php?p=000100000000_mf_sk_">Album</a></li>
 <li class="li_top01"><a class="lab" href="index.php?l=do">Download</a></li>
 <li class="li_top01"><a class="lab" href="index.php?p=000099999999_mi_">About</a></li>
 <li class="li_top01">
@@ -57,7 +58,7 @@ if (isset($_SESSION['back_here'])) {
 	unset($_SESSION['back_here']);
 }
 //O=('-'Q) echo
-echo '<a class="lab" href="index.php'.$hatt_link_back.'">Back</a>';
+//echo '<a class="lab" href="index.php'.$hatt_link_back.'">Back</a>';
 ?>
 </li>
 </ul>
