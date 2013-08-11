@@ -434,4 +434,8 @@ a.user:active {color: #2E3092; font-weight: bold;}
 	margin: 2px;
 	top: 0px;
 }
+a.album:link {color: #555555; text-decoration: none;}
+a.album:visited {color: #555555; text-decoration: none;}
+a.album:hover {color: #555555; text-decoration: none;}
+a.album:active {color: #555555; text-decoration: none;}
 /*----------------------------------------------------------------end of Album CSS*/
