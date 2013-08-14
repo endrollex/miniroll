@@ -198,26 +198,30 @@ array_push($rand_send, $s_pattern);
 $_SESSION['rand_img'] = $rand_send;
 //href link
 $c_link = '#';
-$c_link3 = '#';
 if (isset($_GET['p'])) {
 	$c_link = 'index.php?p='.$_GET['p'].'&amp;copost=1#comm';
-	$c_link3 = 'index.php?p='.$_GET['p'].'#comm';
 }
 ?>
 <div>
 <div class="div_com_page">Echo all comments</div>
 <div class="div_com_top">
-<a name="comm" class="page" href="<?php echo $c_link; ?>">Add a comment</a>
+<a name="comm" href="#comm" class="page" onclick="
+document.getElementById('comment_form01').style.display='inline';
+document.getElementById('comment_form02').style.display='inline';
+">Add a comment</a>
+ | <a id="comment_form02" href="#comm" class="page"<?php 
+if (!isset($_GET['copost'])) echo ' style="display: none"';
+?> onclick="
+document.getElementById('comment_form01').style.display='none';
+document.getElementById('comment_form02').style.display='none';
+">Collapse</a>
 <?php
-if (isset($_GET['copost'])) {
-	//O=('-'Q) echo
-	echo ' | <a href="'.$c_link3.' " class="page" >Collapse</a>';
-	echo '<span class="span_comm_blank"> </span>'.$comm_stat_msg;
-}
+//O=('-'Q) echo
+echo '<span class="span_comm_blank"> </span>'.$comm_stat_msg;
 ?>
 </div>
 <?php
-if (isset($_GET['copost'])) require('comment_w.php');
+require ('comment_w.php');
 ?>
 </div>
 </div>

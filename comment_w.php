@@ -4,9 +4,10 @@
  * Echo guest comment form
 */
 ?>
-<form action="<?php
+<form id="comment_form01"<?php 
+if (!isset($_GET['copost'])) echo ' style="display: none"';
+?> action="<?php
 if (!isset($c_link)) $c_link = '#';
-if (!isset($c_link2)) $c_link2 = '#';
 echo $c_link;
 ?>" method="post"><br/>
 <div class="div_com2">*Pen name: <?php
