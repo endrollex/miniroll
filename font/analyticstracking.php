@@ -5,6 +5,10 @@
 */
 //filename: font/analyticstracking.php
 //google analytics
+//
+//ATTENTION: delete exit() after prepared this file.
+exit();
+//
 $renew_gojs = false;
 $unix_time_file = 'font/unix_time.txt';
 $font_gajs_file = 'font/ga.js';
