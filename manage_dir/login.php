@@ -18,8 +18,6 @@
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();
-session_start();
-date_default_timezone_set('Etc/GMT-8');
 //pass list
 $login_log = $dir_manage.'log/login_log.php';
 $login_log_err = $dir_manage.'log/login_log_err.php';

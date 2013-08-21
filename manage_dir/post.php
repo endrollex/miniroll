@@ -10,17 +10,16 @@
  *
  * External files:
  *     checkreload: Prevent reload
+ * 
+ * if year > 9999, modify the miniroll
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();
-session_start();
 $isedit = (isset($_POST['edit_d1']));
 $echo_log_state = '#Welcome#';
 if (isset($_SESSION['v_user'])) $echo_log_state = '<a href="manage.php?m=3&amp;l=1">#Logout#</a>';
 //O=('-'Q) echo
 echo $echo_log_state.'<br/><br/>';
-//if time year > 9999, modify the miniroll
-date_default_timezone_set('Etc/GMT-8');
 //var ini
 $checkreload = $dir_manage.'checkreload';
 $postok = false;

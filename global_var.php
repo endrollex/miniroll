@@ -24,4 +24,9 @@ $dir_mf = 'journal/mf_php/';
 $dir_comment = 'az_comment/';
 $dir_leftmenu = 'journal_menu/';
 $dir_manage = 'manage_dir/';
+//timezone
+date_default_timezone_set('Etc/GMT-8');
+//session
+session_start();
+//addition...
 ?>

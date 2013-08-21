@@ -13,7 +13,6 @@
 <script type="text/javascript" src="htmindex.js"></script>
 <?php
 //meta and title
-session_start();
 $hatt_meta_k = 'need_index';
 if (isset($meta_keywords)) $hatt_meta_k = $meta_keywords;
 $hatt_meta_d = '';

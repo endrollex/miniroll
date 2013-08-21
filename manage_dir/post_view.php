@@ -15,7 +15,6 @@
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();
-session_start();
 $echo_log_state = '#Welcome#';
 if (isset($_SESSION['v_user'])) $echo_log_state = '<a href="manage.php?m=3&amp;l=1">#Logout#</a>';
 //O=('-'Q) echo
