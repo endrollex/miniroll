@@ -6,9 +6,8 @@
 //filename: font/analyticstracking.php
 //google analytics
 //
-//ATTENTION: delete exit() after prepared this file.
-exit();
-//
+//ATTENTION: delete "/*" and "*/" below after prepared this file.
+/*
 $renew_gojs = false;
 $unix_time_file = 'font/unix_time.txt';
 $font_gajs_file = 'font/ga.js';
@@ -56,4 +55,5 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </script>
 <?php
 if (!$run_gojs) echo '-->';
+*/
 ?>
