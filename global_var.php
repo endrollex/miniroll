@@ -1,6 +1,6 @@
 <?php
 /**
- * Global variable, Service for all PHP
+ * Global and inital variable, Service for all PHP
  * Define labels, SEO, dir, post load PHP
  * $label_code, $label_text, $label_keywords, all array length require equal
 */
