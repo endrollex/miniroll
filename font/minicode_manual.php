@@ -6,6 +6,7 @@
 <style type="text/css">
 body {font-family: "Courier New", Courier, monospace; font-size: 12px;}
 </style>
+<title>minicode manual</title>
 </head>
 <body>
 <?php
@@ -19,7 +20,7 @@ if (file_exists('minicode_manual.txt')) {
 	$style_note_arr = explode('<br />', $style_note);
 }
 for ($ix_style = 0; $ix_style != count($style_note_arr); ++$ix_style) {
-	$style_note_arr[$ix_style] = str_replace(' ', '&nbsp', $style_note_arr[$ix_style]);
+	$style_note_arr[$ix_style] = str_replace(' ', '&nbsp;', $style_note_arr[$ix_style]);
 	if (strpos($style_note_arr[$ix_style], '#') !== false)
 		$style_note_arr[$ix_style] = '<span style="color: blue;">'.$style_note_arr[$ix_style].'</span>';
 	$echo_note .= $style_note_arr[$ix_style].'<br />';
