@@ -9,7 +9,7 @@
 //if direct visit, exit
 if (!isset($manage_php)) exit();
 //google analytics
-if (file_exists('font/analyticstracking.php')) include_once('font/analyticstracking.php');
+if (file_exists('f_assistant/google_analytics/analyticstracking.php')) include_once('f_assistant/google_analytics/analyticstracking.php');
 ?>
 </div><!--/trace.div_normal-->
 </body>

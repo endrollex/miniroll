@@ -9,9 +9,9 @@
 //ATTENTION: delete "/*" and "*/" below after prepared this file.
 /*
 $renew_gojs = false;
-$unix_time_file = 'font/unix_time.txt';
-$font_gajs_file = 'font/ga.js';
-$font_gajs_file_tmp = 'font/ga.js.tmp';
+$unix_time_file = 'f_assistant/google_analytics/unix_time.txt';
+$font_gajs_file = 'f_assistant/google_analytics/ga.js';
+$font_gajs_file_tmp = 'f_assistant/google_analytics/ga.js.tmp';
 if (file_exists($unix_time_file)) {
 	$last_unix_time = file_get_contents($unix_time_file);
 	if (time()-$last_unix_time > 82800) $renew_gojs = true;
@@ -49,7 +49,7 @@ _gaq.push(['_setDomainName', 'endrollex.com']);
 _gaq.push(['_trackPageview']);
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.endrollex.com/font/ga.js';
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.endrollex.com/f_assistant/google_analytics/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 </script>

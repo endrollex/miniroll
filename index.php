@@ -221,7 +221,7 @@ echo $html_span_page2;
 echo '</div>';
 echo '</div>';///trace.hatt_div_c
 //google analytics
-if (file_exists('font/analyticstracking.php')) include_once('font/analyticstracking.php');
+if (file_exists('f_assistant/google_analytics/analyticstracking.php')) include_once('f_assistant/google_analytics/analyticstracking.php');
 ?>
 <!--#..............................................................table-->
 </td></tr></table>
