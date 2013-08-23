@@ -1,0 +1,28 @@
+Fonts Licensing Info
+
+Font redistribution and license issues
+http://www.microsoft.com/typography/faq/faq11.htm
+TrueType core fonts for the Web FAQ
+http://www.microsoft.com/typography/faq/faq8.htm
+
+Arial - Version 3.00
+http://www.microsoft.com/typography/fonts/font.aspx?FMID=1120
+Courier New - Version 5.10
+http://www.microsoft.com/typography/fonts/font.aspx?FMID=1735
+Tahoma - Version 3.14
+http://www.microsoft.com/typography/fonts/font.aspx?FMID=1131
+Times New Roman - Version 5.01
+http://www.microsoft.com/typography/fonts/font.aspx?FMID=1653
+Verdana - Version 5.02
+http://www.microsoft.com/typography/fonts/font.aspx?FMID=1817
+
+---------------------------------------------------------------------------
+TrueType core fonts for the Web FAQ (Excerpt)
+
+Q What can I do with these fonts?
+A For all the rules that govern the use of these fonts please read the end user license agreement.
+
+Anyone can download and install these fonts for their own use.
+Designers can specify the fonts within their Web pages. Our guide to specifying fonts in Web pages explains how to do this.
+You may only redistribute the fonts in their original form (.exe or .sit.hqx) and with their original file name from your Web site or intranet site.
+You must not supply the fonts, or any derivative fonts based on them, in any form that adds value to commercial products, such as CD-ROM or disk based multimedia programs, application software or utilities. See Microsoft's permissions site for more details.
