@@ -24,8 +24,8 @@ for ($ix_style = 0; $ix_style != count($style_note_arr); ++$ix_style) {
 		$style_note_arr[$ix_style] = '<span style="color: blue;">'.$style_note_arr[$ix_style].'</span>';
 	$echo_note .= $style_note_arr[$ix_style].'<br />';
 }
-$echo_note = str_replace('{!', $replace_arr[0], $echo_note);
-$echo_note = str_replace('!}', $replace_arr[1], $echo_note);
+$echo_note = str_replace('{-', $replace_arr[0], $echo_note);
+$echo_note = str_replace('-}', $replace_arr[1], $echo_note);
 echo $echo_note;
 ?>
 </body>

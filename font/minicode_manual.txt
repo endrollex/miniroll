@@ -14,19 +14,19 @@
 ######## minicode: Simple
 
 # Preformatted text for code:
-    [code]{!Monospaced Text!}[/code]
+    [code]{-Monospaced Text-}[/code]
 
 # Preformatted text for output:
-    [output]{!Monospaced Text!}[/output]
+    [output]{-Monospaced Text-}[/output]
 
 # How to insert an image:
-    [img]{!Image URL!}[/img]
+    [img]{-Image URL-}[/img]
 
 # A link to one page:
-    [url]{!Page URL!}[/url], [url]{!Page URL!}[{!Text!}[/url]
+    [url]{-Page URL-}[/url], [url]{-Page URL-}[{-Text-}[/url]
 
 # Color a part of a text or change font:
-    [color]blue]{!Color Text!}[/color], [b]{!Bolded Text!}[/b], [small]{!Small Text!}[/small]
+    [color]blue]{-Color Text-}[/color], [b]{-Bolded Text-}[/b], [small]{-Small Text-}[/small]
 
 # Last modified date:
     [last][/last]
@@ -51,33 +51,31 @@ C[h]sub]hex[/h]
 ######## Typesetting: Image float left
 
 [html]
-<img style="float: left; margin-right: 10px; margin-bottom: 10px;" src="{!Image URL!}" alt="" />
+<img style="float: left; margin-right: 10px; margin-bottom: 10px;" src="{-Image URL-}" alt="" />
 [/html]
 
 ######## Typesetting: Div float left with Link
 
 [html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-[/html][img]{!Image URL!}[/img]
+[/html][img]{-Image URL-}[/img]
 [html]<a class="m4_style" style="font-size: 12px;" target="_blank"
-href="{!Page URL!}">{!Text!}</a></div>[/html]
+href="{-Page URL-}">{-Text-}</a></div>[/html]
 
 ######## Media: JW Player
 # Media file type such as mp4 depends server support.
 # Wizard:
 # http://www.longtailvideo.com/support/jw-player/28842/working-with-playlists
 
-[html]<div id="{!CSS ID!}">Loading the player...</div>
+[html]<div id="{-CSS ID-}">Loading the player...</div>
 <script type="text/javascript">
-jwplayer("{!CSS ID!}").setup({
+jwplayer("{-CSS ID-}").setup({
 playlist: [{
-image: "{!Image URL!}",
+image: "{-Image URL-}",
 sources: [{
-file: "{!Media URL!}",
+file: "{-Media URL-}",
 type: "mp4"
 }]}],
-primary: "html5",
-width: "352",
-height: "198"
+primary: "html5",width: "352",height: "198"
 });
 </script>
 [/html]
