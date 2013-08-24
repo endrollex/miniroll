@@ -3,7 +3,7 @@
  * Google Analytics auto-flush
  * please modify the google track code and domain name (three places)
 */
-//filename: font/analyticstracking.php
+//filename: f_assistant/google_analytics/analyticstracking.php
 //google analytics
 //
 //ATTENTION: delete "/*" and "*/" below after prepared this file.
