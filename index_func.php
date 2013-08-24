@@ -195,7 +195,7 @@ function page_array(
 //################################
 $is_preload_number_to_cn = false;
 if (isset($show_top2)) {if ($show_top2) $is_preload_number_to_cn = false;}
-function number_to_cn($comm_size_index, &$comm_size_cn_num) {
+function number_to_cn(&$comm_size_index, &$comm_size_cn_num) {
 	//function change number to chinese
 	$comm_size_cn_num = '零';
 	$num_ar = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
