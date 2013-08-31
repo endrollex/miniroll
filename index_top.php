@@ -24,6 +24,7 @@ if (isset($echo_title)) $echo_tit_top = $echo_title;
 //O=('-'Q) echo
 echo '<meta name="keywords" content="'.$hatt_meta_k.'" />';
 echo '<meta name="description" content="'.$hatt_meta_d.'" />';
+echo '<link rel="SHORTCUT ICON" href="images/icon_4.ico"/>';
 echo '<title>'.$echo_tit_top.'</title>';
 //
 ?>
