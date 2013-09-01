@@ -17,10 +17,12 @@ In this situation, you can use XHTML directly.</li></ol>[/html][color]green]Keyw
 [html]<ol><li>
 <pre style="background-color: #C0C0C0;">[code]echo ipconfig[/code]</pre>
 [/html]# Preformatted text for code:
-[code]echo ipconfig[/code][html]</li><li>
+[code]echo ipconfig[/code]
+[html]</li><li>
 <pre style="background-color: #C0C0C0;">[output]ipconfig[/output]</pre>
 [/html]# Preformatted text for code with output style:
-[output]ipconfig[/output][html]</li><li>
+[output]ipconfig[/output]
+[html]</li><li>
 <pre style="background-color: #C0C0C0;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
 [img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
 [/html]# To insert an image:

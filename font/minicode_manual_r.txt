@@ -17,10 +17,12 @@ In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m
 <!--m5--><ol><li>
 <pre style="background-color: #C0C0C0;">[code]echo ipconfig[/code]</pre>
 <!--m5b--># Preformatted text for code:<br />
-<pre class="prettyprint linenums">echo ipconfig</pre><div class="m1"></div><!--m5--></li><li>
+<pre class="prettyprint linenums">echo ipconfig</pre><div class="m1"></div><br />
+<!--m5--></li><li>
 <pre style="background-color: #C0C0C0;">[output]ipconfig[/output]</pre>
 <!--m5b--># Preformatted text for code with output style:<br />
-<pre class="pre_output">ipconfig</pre><div class="m2"></div><!--m5--></li><li>
+<pre class="pre_output">ipconfig</pre><div class="m2"></div><br />
+<!--m5--></li><li>
 <pre style="background-color: #C0C0C0;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
 [img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
 <!--m5b--># To insert an image:<br />
@@ -56,7 +58,7 @@ In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m
 <pre style="background-color: #C0C0C0;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-01 22:11:12</span><!--m9--><br />
+<span class="m9">Last modified: 2013-09-01 22:16:22</span><!--m9--><br />
 <br />
 <!--m5--></li><li>
 <pre style="background-color: #C0C0C0;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;script type=&quot;text/javascript&quot;&gt;<!--m5--><br/><!--m5b-->document.write(&quot;Test!&quot;);<!--m5--><br/><!--m5b-->&lt;/script&gt;&lt;br/&gt;Newline here!<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5--></pre>
