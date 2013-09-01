@@ -24,6 +24,8 @@ td {
 pre {
 	font-size: 14px;
 	clear: both;
+	padding: 5px;
+	margin: 5px;
 }
 .body_index {
 	margin: 0px;

@@ -10,18 +10,18 @@ The result is a HyperText of XHTML tags, some with a little comment markup (&lt;
 <br />
 <span class="m6" style="color: green" dir="ltr">Syntax:</span><!--m6--><br />
 <!--m5--><ol><li>The minicode cannot nest:
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[url]http://goo.gl/[/url] OK
+<pre style="background-color: #C0C0C0;">[url]http://goo.gl/[/url] OK
 [b][url]http://goo.gl/[/url][/b] This expression is ERROR!!!
 </pre>Because nest will be complex and bloated.
 In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Keywords and Usage:</span><!--m6--><br />
 <!--m5--><ol><li>
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[code]echo ipconfig[/code]</pre>
+<pre style="background-color: #C0C0C0;">[code]echo ipconfig[/code]</pre>
 <!--m5b--># Preformatted text for code:<br />
 <pre class="prettyprint linenums">echo ipconfig</pre><div class="m1"></div><!--m5--></li><li>
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[output]ipconfig[/output]</pre>
+<pre style="background-color: #C0C0C0;">[output]ipconfig[/output]</pre>
 <!--m5b--># Preformatted text for code with output style:<br />
 <pre class="pre_output">ipconfig</pre><div class="m2"></div><!--m5--></li><li>
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
+<pre style="background-color: #C0C0C0;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
 [img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
 <!--m5b--># To insert an image:<br />
 <img class="m3" alt="wikimedia-button" style="overflow: auto;" src="http://bits.wikimedia.org/images/wikimedia-button.png" /><!--m3--><br />
@@ -31,7 +31,7 @@ In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m
 # It will be automatically converted to second expression with filename, or you can manually add.<br />
 <br />
 <!--m5--></li><li>
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+<pre style="background-color: #C0C0C0;">
 [url]http://www.w3school.com.cn/[/url]
 [url]http://www.w3school.com.cn/[W3School[/url]</pre>
 <!--m5b--># A link to one page:<br />
@@ -41,7 +41,7 @@ In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m
 # The second expression assigned a description text.<br />
 <br />
 <!--m5--></li><li>
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+<pre style="background-color: #C0C0C0;">
 [color]orange]Its name from the orange fruit.[/color]
 [color]#6495ED]Cornflower blue, a shade of azure[/color]
 [b]Bolded Text[/b]
@@ -53,13 +53,13 @@ In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m
 <span class="m8">Small Text</span><!--m8--><br />
 <br />
 <!--m5--></li><li>
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+<pre style="background-color: #C0C0C0;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-01 21:28:20</span><!--m9--><br />
+<span class="m9">Last modified: 2013-09-01 22:11:12</span><!--m9--><br />
 <br />
 <!--m5--></li><li>
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;script type=&quot;text/javascript&quot;&gt;<!--m5--><br/><!--m5b-->document.write(&quot;Test!&quot;);<!--m5--><br/><!--m5b-->&lt;/script&gt;&lt;br/&gt;Newline here!<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5--></pre>
+<pre style="background-color: #C0C0C0;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;script type=&quot;text/javascript&quot;&gt;<!--m5--><br/><!--m5b-->document.write(&quot;Test!&quot;);<!--m5--><br/><!--m5b-->&lt;/script&gt;&lt;br/&gt;Newline here!<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5--></pre>
 <!--m5b--># HTML retain:<br />
 <!--m5-->
 <script type="text/javascript">
@@ -72,7 +72,7 @@ document.write("Test!");
 # To retain newline tag, use &lt;br/&gt; instead.<br />
 <br />
 <!--m5--></li><li>
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+<pre style="background-color: #C0C0C0;">
 y[h]sup]4[/h]
 C[h]sub]hex[/h]
 [h]h4]This is heading 4[/h]
@@ -82,7 +82,7 @@ y<!--m10--><sup class="m10">4</sup><!--m10b--><br />
 C<!--m10--><sub class="m10">hex</sub><!--m10b--><br />
 <!--m10--><h4 class="m10">This is heading 4</h4><!--m10b--><!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Typesetting Guild:</span><!--m6--><br />
 <!--m5--><ol><li>
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;img style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;<!--m5--><br/><!--m5b-->src=&quot;http://www.ietf.org/images/isoc_logo.gif&quot; alt=&quot;&quot; /&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->The quick brown fox jumps over the lazy dog.
+<pre style="background-color: #C0C0C0;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;img style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;<!--m5--><br/><!--m5b-->src=&quot;http://www.ietf.org/images/isoc_logo.gif&quot; alt=&quot;&quot; /&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->The quick brown fox jumps over the lazy dog.
 ...</pre>
 <!--m5b--># Image float left:<br />
 <!--m5-->
@@ -93,7 +93,7 @@ The quick brown fox jumps over the lazy dog.<br />
 <br />
 <br />
 <!--m5--></li><li>
-<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;div style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m10--><span class="m10">[</span><!--m10b-->img]http://tools.ietf.org/images/ietflogo3h.png<!--m10--><span class="m10">[</span><!--m10b-->/img]<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;a class=&quot;m4_style&quot; style=&quot;font-size: 12px;&quot; target=&quot;_blank&quot;<!--m5--><br/><!--m5b-->href=&quot;http://tools.ietf.org/tools/rfcmarkup/&quot;&gt;Rfcmarkup Tool&lt;/a&gt;&lt;/div&gt;<!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->...</pre>
+<pre style="background-color: #C0C0C0;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;div style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m10--><span class="m10">[</span><!--m10b-->img]http://tools.ietf.org/images/ietflogo3h.png<!--m10--><span class="m10">[</span><!--m10b-->/img]<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;a class=&quot;m4_style&quot; style=&quot;font-size: 12px;&quot; target=&quot;_blank&quot;<!--m5--><br/><!--m5b-->href=&quot;http://tools.ietf.org/tools/rfcmarkup/&quot;&gt;Rfcmarkup Tool&lt;/a&gt;&lt;/div&gt;<!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->...</pre>
 <!--m5b--># Div float left with Link:<br />
 <!--m5--><div style="float: left; margin-right: 10px; margin-bottom: 10px;">
 <!--m5b--><img class="m3" alt="ietflogo3h" style="overflow: auto;" src="http://tools.ietf.org/images/ietflogo3h.png" /><!--m3--><br />
