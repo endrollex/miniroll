@@ -29,7 +29,7 @@ You can see the detail in every files.
 * index_top2.php: Top part of index.php
 * manage.php: Management entrance
 
-Folder Explanation:
+Folders Explanation:
 -------------------
 * az_comment: Guest comment store
 * font: Font files and misc
