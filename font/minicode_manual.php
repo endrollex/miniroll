@@ -3,31 +3,16 @@
 <head>
 <meta content="zh-cn" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<style type="text/css">
-body {font-family: "Courier New", Courier, monospace; font-size: 12px;}
-</style>
+<link rel="SHORTCUT ICON" href="../images/icon_4.ico"/>
+<link href="../htmindex.css" rel="stylesheet" type="text/css" />
+<link href="../f_assistant/prettify/prettify.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../f_assistant/prettify/prettify.js"></script>
+<script type="text/javascript" src="../f_assistant/jwplayer/jwplayer.js"></script>
 <title>minicode manual</title>
 </head>
-<body>
+<body><div style="padding-top: 20px; padding-bottom: 60px; margin-right: auto; margin-left: auto; width: 80%; min-width: 750px; max-width: 1000px; font-size: 14px; font-family: Tahoma, Verdana, Geneva, sans-serif;">
 <?php
-$style_note_arr = array('Can not find the file.');
-$replace_arr = array('<span style="color: white; background-color: #3297FD;">{', '}</span>');
-$echo_note = '';
-if (file_exists('minicode_manual.txt')) {
-	$style_note = file_get_contents('minicode_manual.txt');
-	if (substr($style_note, 0, 3) == "\xEF\xBB\xBF") $style_note = substr($style_note, 3);	
-	$style_note = nl2br(htmlspecialchars($style_note));
-	$style_note_arr = explode('<br />', $style_note);
-}
-for ($ix_style = 0; $ix_style != count($style_note_arr); ++$ix_style) {
-	$style_note_arr[$ix_style] = str_replace(' ', '&nbsp;', $style_note_arr[$ix_style]);
-	if (strpos($style_note_arr[$ix_style], '#') !== false)
-		$style_note_arr[$ix_style] = '<span style="color: blue;">'.$style_note_arr[$ix_style].'</span>';
-	$echo_note .= $style_note_arr[$ix_style].'<br />';
-}
-$echo_note = str_replace('{-', $replace_arr[0], $echo_note);
-$echo_note = str_replace('-}', $replace_arr[1], $echo_note);
-echo $echo_note;
+readfile('minicode_manual_r.txt');
 ?>
-</body>
+</div></body>
 </html>

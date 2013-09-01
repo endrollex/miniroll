@@ -1,0 +1,118 @@
+[b]minicode - easy editing XHTML[/b]
+
+[color]green]Introduction:[/color]
+
+minicode is a lightweight markup language for [url]https://github.com/endrollex/miniroll[miniroll[/url] easy editing, like BBCode.
+The available tags are usually indicated by square brackets ([ ]) surrounding a keyword.
+Mechanism of minicode is base on "Search and Replace", the process is reversible and very simply.
+It abbreviated commonly-used XHTML to short code, or mixes others XHTML.
+The result is a HyperText of XHTML tags, some with a little comment markup (<!--...-->) to reversion.
+
+[color]green]Syntax:[/color]
+[html]<ol><li>The minicode cannot nest:
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[url]http://goo.gl/[/url] OK
+[b][url]http://goo.gl/[/url][/b] This expression is ERROR!!!
+</pre>Because nest will be complex and bloated.
+In this situation, you can use XHTML directly.</li></ol>[/html][color]green]Keywords and Usage:[/color]
+[html]<ol><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[code]echo ipconfig[/code]</pre>
+[/html]# Preformatted text for code:
+[code]echo ipconfig[/code][html]</li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[output]ipconfig[/output]</pre>
+[/html]# Preformatted text for code with output style:
+[output]ipconfig[/output][html]</li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
+[img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
+[/html]# To insert an image:
+[img]wikimedia-button]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
+[img]]http://www.w3.org/2008/site/images/twitter-bird[/img]
+
+# The first expression omited the parameter for alt attribute.
+# It will be automatically converted to second expression with filename, or you can manually add.
+
+[html]</li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+[url]http://www.w3school.com.cn/[/url]
+[url]http://www.w3school.com.cn/[W3School[/url]</pre>
+[/html]# A link to one page:
+[url]http://www.w3school.com.cn/[/url]
+[url]http://www.w3school.com.cn/[W3School[/url]
+
+# The second expression assigned a description text.
+
+[html]</li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+[color]orange]Its name from the orange fruit.[/color]
+[color]#6495ED]Cornflower blue, a shade of azure[/color]
+[b]Bolded Text[/b]
+[small]Small Text[/small]</pre>
+[/html]# Color a part of a text or change font:
+[color]orange]Its name from the orange fruit.[/color]
+[color]#6495ED]Cornflower blue, a shade of azure[/color]
+[b]Bolded Text[/b]
+[small]Small Text[/small]
+
+[html]</li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+[last][/last]</pre>
+[/html]# Last modified date:
+[last][/last]
+
+[html]</li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[/html][h]span][[/h]html][html]<br/>[/html]<script type="text/javascript">[html]<br/>[/html]document.write("Test!");[html]<br/>[/html]</script><br/>Newline here![html]<br/>[/html][h]span][[/h]/html][html]</pre>
+[/html]# HTML retain:
+[html]
+<script type="text/javascript">
+document.write("Test!");
+</script><br/>Newline here!
+[/html]
+
+# This expression will retain all html tags and javascript.
+# But one except: <br />, <br /> will be losted by second edit because of PHP function nl2br().
+# To retain newline tag, use <br/> instead.
+
+[html]</li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+y[h]sup]4[/h]
+C[h]sub]hex[/h]
+[h]h4]This is heading 4[/h]
+...</pre>
+[/html]# For some plain symmetrical html tags:
+y[h]sup]4[/h]
+C[h]sub]hex[/h]
+[h]h4]This is heading 4[/h][html]</li></ol>[/html][color]green]Typesetting Guild:[/color]
+[html]<ol><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[/html][h]span][[/h]html][html]<br/>[/html]<img style="float: left; margin-right: 10px; margin-bottom: 10px;"[html]<br/>[/html]src="http://www.ietf.org/images/isoc_logo.gif" alt="" />[html]<br/>[/html][h]span][[/h]/html][html]The quick brown fox jumps over the lazy dog.
+...</pre>
+[/html]# Image float left:
+[html]
+<img style="float: left; margin-right: 10px; margin-bottom: 10px;"
+src="http://www.ietf.org/images/isoc_logo.gif" alt="" />
+[/html]The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+
+
+[html]</li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[/html][h]span][[/h]html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">[html]<br/>[/html][h]span][[/h]/html][h]span][[/h]img]http://tools.ietf.org/images/ietflogo3h.png[h]span][[/h]/img][html]<br/>[/html][h]span][[/h]html]<a class="m4_style" style="font-size: 12px;" target="_blank"[html]<br/>[/html]href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[h]span][[/h]/html][html]...</pre>
+[/html]# Div float left with Link:
+[html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
+[/html][img]http://tools.ietf.org/images/ietflogo3h.png[/img]
+[html]<a class="m4_style" style="font-size: 12px;" target="_blank"
+href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[/html]The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+
+[html]</li></ol>[/html][color]green]Note:[/color]
+[html]<ol><li>[/html]If the sentences are too complex, check them by [url]http://validator.w3.org/[W3C Markup Validator[/url] is a good idea.
+[html]</li><li>[/html]Block elements or margin will case line spacing too large, delete the newline according to the situation.
+[html]</li></ol>[/html][color]green]License:[/color]
+
+Philosophy is Free.
+minicode is too simple to become a copyright material.
+Welcome to use minicode source or modify it.
+
+[color]green]Construct:[/color]
+
+You can modify all rules from [url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url], according to personal taste.
+Some keywords of minicode depends CSS, the [url]https://github.com/endrollex/miniroll/blob/master/htmindex.css[default CSS[/url] provided to show the predefined style.
+For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[minicode[/url] -> [url]http://endrollex.com/font/minicode_manual_r.txt[XHTML[/url] -> this page(Encapsulated)

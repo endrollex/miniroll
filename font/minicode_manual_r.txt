@@ -1,0 +1,118 @@
+﻿<span class="m7">minicode - easy editing XHTML</span><!--m7--><br />
+<br />
+<span class="m6" style="color: green" dir="ltr">Introduction:</span><!--m6--><br />
+<br />
+minicode is a lightweight markup language for <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll" style="max-height: 9003px;">miniroll</a><!--m4--> easy editing, like BBCode.<br />
+The available tags are usually indicated by square brackets ([ ]) surrounding a keyword.<br />
+Mechanism of minicode is base on &quot;Search and Replace&quot;, the process is reversible and very simply.<br />
+It abbreviated commonly-used XHTML to short code, or mixes others XHTML.<br />
+The result is a HyperText of XHTML tags, some with a little comment markup (&lt;!--...--&gt;) to reversion.<br />
+<br />
+<span class="m6" style="color: green" dir="ltr">Syntax:</span><!--m6--><br />
+<!--m5--><ol><li>The minicode cannot nest:
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[url]http://goo.gl/[/url] OK
+[b][url]http://goo.gl/[/url][/b] This expression is ERROR!!!
+</pre>Because nest will be complex and bloated.
+In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Keywords and Usage:</span><!--m6--><br />
+<!--m5--><ol><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[code]echo ipconfig[/code]</pre>
+<!--m5b--># Preformatted text for code:<br />
+<pre class="prettyprint linenums">echo ipconfig</pre><div class="m1"></div><!--m5--></li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[output]ipconfig[/output]</pre>
+<!--m5b--># Preformatted text for code with output style:<br />
+<pre class="pre_output">ipconfig</pre><div class="m2"></div><!--m5--></li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
+[img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
+<!--m5b--># To insert an image:<br />
+<img class="m3" alt="wikimedia-button" style="overflow: auto;" src="http://bits.wikimedia.org/images/wikimedia-button.png" /><!--m3--><br />
+<img class="m3" alt="" style="overflow: auto;" src="http://www.w3.org/2008/site/images/twitter-bird" /><!--m3--><br />
+<br />
+# The first expression omited the parameter for alt attribute.<br />
+# It will be automatically converted to second expression with filename, or you can manually add.<br />
+<br />
+<!--m5--></li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+[url]http://www.w3school.com.cn/[/url]
+[url]http://www.w3school.com.cn/[W3School[/url]</pre>
+<!--m5b--># A link to one page:<br />
+<a class="m4" target="_blank" href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a><!--m4--><br />
+<a class="m4b" target="_blank" href="http://www.w3school.com.cn/" style="max-height: 9003px;">W3School</a><!--m4--><br />
+<br />
+# The second expression assigned a description text.<br />
+<br />
+<!--m5--></li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+[color]orange]Its name from the orange fruit.[/color]
+[color]#6495ED]Cornflower blue, a shade of azure[/color]
+[b]Bolded Text[/b]
+[small]Small Text[/small]</pre>
+<!--m5b--># Color a part of a text or change font:<br />
+<span class="m6" style="color: orange" dir="ltr">Its name from the orange fruit.</span><!--m6--><br />
+<span class="m6" style="color: #6495ED" dir="ltr">Cornflower blue, a shade of azure</span><!--m6--><br />
+<span class="m7">Bolded Text</span><!--m7--><br />
+<span class="m8">Small Text</span><!--m8--><br />
+<br />
+<!--m5--></li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+[last][/last]</pre>
+<!--m5b--># Last modified date:<br />
+<span class="m9">Last modified: 2013-09-01 21:28:20</span><!--m9--><br />
+<br />
+<!--m5--></li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;script type=&quot;text/javascript&quot;&gt;<!--m5--><br/><!--m5b-->document.write(&quot;Test!&quot;);<!--m5--><br/><!--m5b-->&lt;/script&gt;&lt;br/&gt;Newline here!<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5--></pre>
+<!--m5b--># HTML retain:<br />
+<!--m5-->
+<script type="text/javascript">
+document.write("Test!");
+</script><br/>Newline here!
+<!--m5b--><br />
+<br />
+# This expression will retain all html tags and javascript.<br />
+# But one except: &lt;br /&gt;, &lt;br /&gt; will be losted by second edit because of PHP function nl2br().<br />
+# To retain newline tag, use &lt;br/&gt; instead.<br />
+<br />
+<!--m5--></li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;">
+y[h]sup]4[/h]
+C[h]sub]hex[/h]
+[h]h4]This is heading 4[/h]
+...</pre>
+<!--m5b--># For some plain symmetrical html tags:<br />
+y<!--m10--><sup class="m10">4</sup><!--m10b--><br />
+C<!--m10--><sub class="m10">hex</sub><!--m10b--><br />
+<!--m10--><h4 class="m10">This is heading 4</h4><!--m10b--><!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Typesetting Guild:</span><!--m6--><br />
+<!--m5--><ol><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;img style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;<!--m5--><br/><!--m5b-->src=&quot;http://www.ietf.org/images/isoc_logo.gif&quot; alt=&quot;&quot; /&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->The quick brown fox jumps over the lazy dog.
+...</pre>
+<!--m5b--># Image float left:<br />
+<!--m5-->
+<img style="float: left; margin-right: 10px; margin-bottom: 10px;"
+src="http://www.ietf.org/images/isoc_logo.gif" alt="" />
+<!--m5b-->The quick brown fox jumps over the lazy dog.<br />
+The quick brown fox jumps over the lazy dog.<br />
+<br />
+<br />
+<!--m5--></li><li>
+<pre style="background-color: #C0C0C0; padding: 5px; margin: 5px;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;div style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m10--><span class="m10">[</span><!--m10b-->img]http://tools.ietf.org/images/ietflogo3h.png<!--m10--><span class="m10">[</span><!--m10b-->/img]<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;a class=&quot;m4_style&quot; style=&quot;font-size: 12px;&quot; target=&quot;_blank&quot;<!--m5--><br/><!--m5b-->href=&quot;http://tools.ietf.org/tools/rfcmarkup/&quot;&gt;Rfcmarkup Tool&lt;/a&gt;&lt;/div&gt;<!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->...</pre>
+<!--m5b--># Div float left with Link:<br />
+<!--m5--><div style="float: left; margin-right: 10px; margin-bottom: 10px;">
+<!--m5b--><img class="m3" alt="ietflogo3h" style="overflow: auto;" src="http://tools.ietf.org/images/ietflogo3h.png" /><!--m3--><br />
+<!--m5--><a class="m4_style" style="font-size: 12px;" target="_blank"
+href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div><!--m5b-->The quick brown fox jumps over the lazy dog.<br />
+The quick brown fox jumps over the lazy dog.<br />
+The quick brown fox jumps over the lazy dog.<br />
+<br />
+<!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Note:</span><!--m6--><br />
+<!--m5--><ol><li><!--m5b-->If the sentences are too complex, check them by <a class="m4b" target="_blank" href="http://validator.w3.org/" style="max-height: 9003px;">W3C Markup Validator</a><!--m4--> is a good idea.<br />
+<!--m5--></li><li><!--m5b-->Block elements or margin will case line spacing too large, delete the newline according to the situation.<br />
+<!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">License:</span><!--m6--><br />
+<br />
+Philosophy is Free.<br />
+minicode is too simple to become a copyright material.<br />
+Welcome to use minicode source or modify it.<br />
+<br />
+<span class="m6" style="color: green" dir="ltr">Construct:</span><!--m6--><br />
+<br />
+You can modify all rules from <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php" style="max-height: 9003px;">post.php</a><!--m4-->, according to personal taste.<br />
+Some keywords of minicode depends CSS, the <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/htmindex.css" style="max-height: 9003px;">default CSS</a><!--m4--> provided to show the predefined style.<br />
+For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt" style="max-height: 9003px;">minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_r.txt" style="max-height: 9003px;">XHTML</a><!--m4--> -&gt; this page(Encapsulated)<br />
