@@ -75,14 +75,12 @@ document.write("Test!");
 
 [html]</li><li>
 <pre style="background-color: #C0C0C0;">
-y[h]sup]4[/h]
-C[h]sub]hex[/h]
-[h]h4]This is heading 4[/h]
-...</pre>
+[h]h4]This is heading 4[/h]y[h]sup]4[/h]
+C[h]sub]hex[/h], ...</pre>
 [/html]# For some plain symmetrical html tags:
-y[h]sup]4[/h]
-C[h]sub]hex[/h]
-[h]h4]This is heading 4[/h][html]</li></ol>[/html][color]green]Typesetting Guild:[/color]
+[h]h4]This is heading 4[/h]y[h]sup]4[/h]
+C[h]sub]hex[/h], ...
+[html]</li></ol>[/html][color]green]Typesetting Guild:[/color]
 [html]<ol><li>
 <pre style="background-color: #C0C0C0;">[/html][h]span][[/h]html][html]<br/>[/html]<img style="float: left; margin-right: 10px; margin-bottom: 10px;"[html]<br/>[/html]src="http://www.ietf.org/images/isoc_logo.gif" alt="" />[html]<br/>[/html][h]span][[/h]/html][html]The quick brown fox jumps over the lazy dog.
 ...</pre>
@@ -106,7 +104,7 @@ The quick brown fox jumps over the lazy dog.
 
 [html]</li></ol>[/html][color]green]Note:[/color]
 [html]<ol><li>[/html]If the sentences are too complex, check them by [url]http://validator.w3.org/[W3C Markup Validator[/url] is a good idea.
-[html]</li><li>[/html]Block elements or margin will case line spacing too large, delete the newline according to the situation.
+[html]</li><li>[/html]Block elements or margin will case line spacing too large, delete a newline according to the situation.
 [html]</li></ol>[/html][color]green]License:[/color]
 
 Philosophy is Free.

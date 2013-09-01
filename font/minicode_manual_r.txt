@@ -58,7 +58,7 @@ In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m
 <pre style="background-color: #C0C0C0;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-01 22:16:22</span><!--m9--><br />
+<span class="m9">Last modified: 2013-09-01 22:32:16</span><!--m9--><br />
 <br />
 <!--m5--></li><li>
 <pre style="background-color: #C0C0C0;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;script type=&quot;text/javascript&quot;&gt;<!--m5--><br/><!--m5b-->document.write(&quot;Test!&quot;);<!--m5--><br/><!--m5b-->&lt;/script&gt;&lt;br/&gt;Newline here!<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5--></pre>
@@ -75,14 +75,12 @@ document.write("Test!");
 <br />
 <!--m5--></li><li>
 <pre style="background-color: #C0C0C0;">
-y[h]sup]4[/h]
-C[h]sub]hex[/h]
-[h]h4]This is heading 4[/h]
-...</pre>
+[h]h4]This is heading 4[/h]y[h]sup]4[/h]
+C[h]sub]hex[/h], ...</pre>
 <!--m5b--># For some plain symmetrical html tags:<br />
-y<!--m10--><sup class="m10">4</sup><!--m10b--><br />
-C<!--m10--><sub class="m10">hex</sub><!--m10b--><br />
-<!--m10--><h4 class="m10">This is heading 4</h4><!--m10b--><!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Typesetting Guild:</span><!--m6--><br />
+<!--m10--><h4 class="m10">This is heading 4</h4><!--m10b-->y<!--m10--><sup class="m10">4</sup><!--m10b--><br />
+C<!--m10--><sub class="m10">hex</sub><!--m10b-->, ...<br />
+<!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Typesetting Guild:</span><!--m6--><br />
 <!--m5--><ol><li>
 <pre style="background-color: #C0C0C0;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;img style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;<!--m5--><br/><!--m5b-->src=&quot;http://www.ietf.org/images/isoc_logo.gif&quot; alt=&quot;&quot; /&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->The quick brown fox jumps over the lazy dog.
 ...</pre>
@@ -106,7 +104,7 @@ The quick brown fox jumps over the lazy dog.<br />
 <br />
 <!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Note:</span><!--m6--><br />
 <!--m5--><ol><li><!--m5b-->If the sentences are too complex, check them by <a class="m4b" target="_blank" href="http://validator.w3.org/" style="max-height: 9003px;">W3C Markup Validator</a><!--m4--> is a good idea.<br />
-<!--m5--></li><li><!--m5b-->Block elements or margin will case line spacing too large, delete the newline according to the situation.<br />
+<!--m5--></li><li><!--m5b-->Block elements or margin will case line spacing too large, delete a newline according to the situation.<br />
 <!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">License:</span><!--m6--><br />
 <br />
 Philosophy is Free.<br />
