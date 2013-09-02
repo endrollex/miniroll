@@ -57,7 +57,9 @@ In this situation, you can use HTML directly.</li></ol><!--m5b--><span class="m6
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-02 22:45:48</span><!--m9--><br />
+<span class="m9">Last modified: 2013-09-02 22:53:23</span><!--m9--><br />
+<br />
+# By the way: this page initially completed on 2013-09-02.<br />
 <br />
 <!--m5--></li><li>
 <pre style="background-color: #D3D3D3;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;script type=&quot;text/javascript&quot;&gt;<!--m5--><br/><!--m5b-->document.write(&quot;Test!&quot;);<!--m5--><br/><!--m5b-->&lt;/script&gt;&lt;br/&gt;Newline here!<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5--></pre>
