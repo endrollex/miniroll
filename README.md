@@ -43,7 +43,7 @@ Folders Explanation:
 * manage_dir: Management's dir
 * upload: Upload's dir
 
-PHP environment require:
+PHP Environment Require:
 -------------------
 * Require PHP verion: PHP5
 * Require library: GD library, for img_ident.php
@@ -59,7 +59,7 @@ This file is part of miniroll.
 miniroll is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+any later version.
 
 miniroll is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of

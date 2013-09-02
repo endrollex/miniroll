@@ -6,7 +6,6 @@
  * Require files (Entire website front):
  *     htmindex.css: All in one CSS
  *     htmindex.js: Get browser's screen size
- *     
  *     index_top.php: Top part of index.php
  *     index_top2.php: Top part of index.php
  *     comment.php: Comment module
@@ -22,6 +21,9 @@
  *     f_assistant/prettify: prettify, syntax highlighting
  *
  * This file have some CSS class or JS, please modify them for wanted style.
+ *
+ * Copyright 2013 Huang Yiting (http://endrollex.com)
+ * miniroll is distributed under the terms of the GNU General Public License
 */
 $show_top2 = false;
 require('global_var.php');

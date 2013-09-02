@@ -3,6 +3,9 @@
  * Service for index.php
  * Get post infromations for index.php
  * This file have some CSS class or JS, please modify them for wanted style.
+ *
+ * Copyright 2013 Huang Yiting (http://endrollex.com)
+ * miniroll is distributed under the terms of the GNU General Public License
 */
 //get meta elements for SEO
 function meta_seo_get(

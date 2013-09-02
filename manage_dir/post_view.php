@@ -12,6 +12,9 @@
  * External files:
  *     checkreload: Prevent reload
  *     post.php: Send the post to post.php for edit
+ *
+ * Copyright 2013 Huang Yiting (http://endrollex.com)
+ * miniroll is distributed under the terms of the GNU General Public License
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();

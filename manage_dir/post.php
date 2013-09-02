@@ -12,6 +12,9 @@
  *     checkreload: Prevent reload
  * 
  * if year > 9999, modify the miniroll
+ *
+ * Copyright 2013 Huang Yiting (http://endrollex.com)
+ * miniroll is distributed under the terms of the GNU General Public License
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();

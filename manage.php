@@ -2,6 +2,9 @@
 /**
  * Management entrance, hide the real manage function PHP file.
  * $dir_manage = "manage_dir", can be modified
+ *
+ * Copyright 2013 Huang Yiting (http://endrollex.com)
+ * miniroll is distributed under the terms of the GNU General Public License
 */
 require('global_var.php');
 //here can add some security check and rules

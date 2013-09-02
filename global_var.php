@@ -3,6 +3,9 @@
  * Global and inital variable, Service for all PHP
  * Define labels, SEO, dir, post load PHP
  * $label_code, $label_text, $label_keywords, all array length require equal
+ *
+ * Copyright 2013 Huang Yiting (http://endrollex.com)
+ * miniroll is distributed under the terms of the GNU General Public License
 */
 //Encoding Type: UTF-8(w/o BOM)
 //label ini

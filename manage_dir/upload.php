@@ -9,7 +9,10 @@
  *     post_bottom.php: Bottom of post_view.php
  *     post.php: Send the post to post.php for edit
  *
- * Why Use fwrite() to upload: for server's flexible permission, if want to upload big files, please use FTP and so on.
+ * Why Use fwrite() to upload: for server's flexible permission, if want to upload big files, please use FTP or others.
+ *
+ * Copyright 2013 Huang Yiting (http://endrollex.com)
+ * miniroll is distributed under the terms of the GNU General Public License
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();

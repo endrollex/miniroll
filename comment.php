@@ -5,11 +5,12 @@
  * Require files:
  *     comment_w.php: Comment form
  *     img_ident.php: Generate a image
- *     
  *     font/cet4_s.txt: The words list for generate image
  *     font/x.ttf: Font files
- *
  *     az_comment/lock: Prevent concurrent
+ *
+ * Copyright 2013 Huang Yiting (http://endrollex.com)
+ * miniroll is distributed under the terms of the GNU General Public License
 */
 ?>
 <div class="div_com1">

@@ -12,9 +12,11 @@
  *     login_data.php: Where store admin data, delete it can reset admin account
  *     login_hash.php: If this file exists, password's algorithm will use this mothod replace the default mothod
  *     check_time: The max of try password times, if exceed, all login request will be drop, delete it can reset
- *
  *     log/login_log.php: Records success login action
  *     log/login_log_err.php: Records failed login action
+ *
+ * Copyright 2013 Huang Yiting (http://endrollex.com)
+ * miniroll is distributed under the terms of the GNU General Public License
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();

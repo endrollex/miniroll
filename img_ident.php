@@ -3,6 +3,9 @@
  * Service for comment.php
  * PHP environment require: GD library
  * Create a image, determine whether or not the user is human
+ *
+ * Copyright 2013 Huang Yiting (http://endrollex.com)
+ * miniroll is distributed under the terms of the GNU General Public License
 */
 header('Content-type: image/png');
 session_start();

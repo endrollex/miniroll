@@ -4,16 +4,15 @@
 
 minicode is a lightweight markup language for [url]https://github.com/endrollex/miniroll[miniroll[/url] easy editing, like BBCode.
 The available tags are usually indicated by square brackets ([ ]) surrounding a keyword.
-Mechanism of minicode is base on "Search and Replace", the process is reversible and very simply.
-It abbreviated commonly-used XHTML to short code, or mixes others XHTML.
-The result is a HyperText of XHTML tags, some with a little comment markup (<!--...-->) to reversion.
+It is designed for for Blog, thus let through unsafe HTML like <script>.
+minicode allow user to write HTML freely and unlimitedly.
 
 [color]green]Syntax:[/color]
 [html]<ol><li>The minicode cannot nest:
 <pre style="background-color: #D3D3D3;">[url]http://goo.gl/[/url] OK
 [b][url]http://goo.gl/[/url][/b] This expression is ERROR!!!
 </pre>Because nest will be complex and bloated.
-In this situation, you can use XHTML directly.</li></ol>[/html][color]green]Keywords and Usage:[/color]
+In this situation, you can use HTML directly.</li></ol>[/html][color]green]Keywords and Usage:[/color]
 [html]<ol><li>
 <pre style="background-color: #D3D3D3;">[code]echo ipconfig[/code]</pre>
 [/html]# Preformatted text for code:
@@ -69,7 +68,7 @@ document.write("Test!");
 </script><br/>Newline here!
 [/html]
 
-# This expression will retain all html tags and javascript.
+# This expression will retain all HTML tags and javascript.
 # But one except: <br />, <br /> will be losted by second edit because of PHP function nl2br().
 # To retain newline tag, use <br/> instead.
 
@@ -77,7 +76,7 @@ document.write("Test!");
 <pre style="background-color: #D3D3D3;">
 [h]h4]This is heading 4[/h]y[h]sup]4[/h]
 C[h]sub]hex[/h], ...</pre>
-[/html]# For some plain symmetrical html tags:
+[/html]# For some plain symmetrical HTML tags:
 [h]h4]This is heading 4[/h]y[h]sup]4[/h]
 C[h]sub]hex[/h], ...
 [html]</li></ol>[/html][color]green]Typesetting Guild:[/color]
@@ -96,7 +95,7 @@ The quick brown fox jumps over the lazy dog.
 <pre style="background-color: #D3D3D3;">[/html][h]span][[/h]html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">[html]<br/>[/html][h]span][[/h]/html][h]span][[/h]img]http://tools.ietf.org/images/ietflogo3h.png[h]span][[/h]/img][html]<br/>[/html][h]span][[/h]html]<a class="m4_style" style="font-size: 12px;" target="_blank"[html]<br/>[/html]href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[h]span][[/h]/html][html]...</pre>
 [/html]# Div float left with Link:
 [html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-[/html][img]http://tools.ietf.org/images/ietflogo3h.png[/img]
+[/html][img]ietflogo3h]http://tools.ietf.org/images/ietflogo3h.png[/img]
 [html]<a class="m4_style" style="font-size: 12px;" target="_blank"
 href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[/html]The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog.
@@ -105,14 +104,21 @@ The quick brown fox jumps over the lazy dog.
 [html]</li></ol>[/html][color]green]Note:[/color]
 [html]<ol><li>[/html]If the sentences are too complex, check them by [url]http://validator.w3.org/[W3C Markup Validator[/url] is a good idea.
 [html]</li><li>[/html]Block elements or margin will case line spacing too large, delete a newline according to the situation.
-[html]</li></ol>[/html][color]green]License:[/color]
+[html]</li></ol>[/html][color]green]Mechanism:[/color]
 
-Philosophy is Free.
-minicode is too simple to become a copyright material.
-Welcome to use minicode source or modify it.
+Mechanism of minicode is base on "Search and Replace", the process is reversible and very simply.
+It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.
+The result article is a HyperText of HTML tags, some with a little comment markup (<!--...-->) to reversion purpose.
+Some keywords of minicode depends CSS, the [url]https://github.com/endrollex/miniroll/blob/master/htmindex.css[default CSS[/url] provided to show the predefined style.
+For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[minicode[/url] -> [url]http://endrollex.com/font/minicode_manual.txt[XHTML[/url] -> this page(Encapsulated)
 
 [color]green]Construct:[/color]
 
-You can modify all rules from [url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url], according to personal taste.
-Some keywords of minicode depends CSS, the [url]https://github.com/endrollex/miniroll/blob/master/htmindex.css[default CSS[/url] provided to show the predefined style.
-For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[minicode[/url] -> [url]http://endrollex.com/font/minicode_manual.txt[XHTML[/url] -> this page(Encapsulated)
+minicode of miniroll is writed by PHP, HTML version is XHTML 1.0.
+You can modify all rules from [url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url].
+minicode function is not independent from miniroll yet, but I think the work is easy.
+
+[color]green]Licence:[/color]
+
+Copyright 2013 Huang Yiting (http://endrollex.com)
+[url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url] is a part of miniroll, it is distributed under the [url]http://www.gnu.org/licenses/gpl.txt[GNU General Public License[/url].

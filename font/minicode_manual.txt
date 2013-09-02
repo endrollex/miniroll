@@ -4,16 +4,15 @@
 <br />
 minicode is a lightweight markup language for <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll" style="max-height: 9003px;">miniroll</a><!--m4--> easy editing, like BBCode.<br />
 The available tags are usually indicated by square brackets ([ ]) surrounding a keyword.<br />
-Mechanism of minicode is base on &quot;Search and Replace&quot;, the process is reversible and very simply.<br />
-It abbreviated commonly-used XHTML to short code, or mixes others XHTML.<br />
-The result is a HyperText of XHTML tags, some with a little comment markup (&lt;!--...--&gt;) to reversion.<br />
+It is designed for for Blog, thus let through unsafe HTML like &lt;script&gt;.<br />
+minicode allow user to write HTML freely and unlimitedly.<br />
 <br />
 <span class="m6" style="color: green" dir="ltr">Syntax:</span><!--m6--><br />
 <!--m5--><ol><li>The minicode cannot nest:
 <pre style="background-color: #D3D3D3;">[url]http://goo.gl/[/url] OK
 [b][url]http://goo.gl/[/url][/b] This expression is ERROR!!!
 </pre>Because nest will be complex and bloated.
-In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Keywords and Usage:</span><!--m6--><br />
+In this situation, you can use HTML directly.</li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Keywords and Usage:</span><!--m6--><br />
 <!--m5--><ol><li>
 <pre style="background-color: #D3D3D3;">[code]echo ipconfig[/code]</pre>
 <!--m5b--># Preformatted text for code:<br />
@@ -58,7 +57,7 @@ In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-02 15:38:47</span><!--m9--><br />
+<span class="m9">Last modified: 2013-09-02 22:05:48</span><!--m9--><br />
 <br />
 <!--m5--></li><li>
 <pre style="background-color: #D3D3D3;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;script type=&quot;text/javascript&quot;&gt;<!--m5--><br/><!--m5b-->document.write(&quot;Test!&quot;);<!--m5--><br/><!--m5b-->&lt;/script&gt;&lt;br/&gt;Newline here!<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5--></pre>
@@ -69,7 +68,7 @@ document.write("Test!");
 </script><br/>Newline here!
 <!--m5b--><br />
 <br />
-# This expression will retain all html tags and javascript.<br />
+# This expression will retain all HTML tags and javascript.<br />
 # But one except: &lt;br /&gt;, &lt;br /&gt; will be losted by second edit because of PHP function nl2br().<br />
 # To retain newline tag, use &lt;br/&gt; instead.<br />
 <br />
@@ -77,7 +76,7 @@ document.write("Test!");
 <pre style="background-color: #D3D3D3;">
 [h]h4]This is heading 4[/h]y[h]sup]4[/h]
 C[h]sub]hex[/h], ...</pre>
-<!--m5b--># For some plain symmetrical html tags:<br />
+<!--m5b--># For some plain symmetrical HTML tags:<br />
 <!--m10--><h4 class="m10">This is heading 4</h4><!--m10b-->y<!--m10--><sup class="m10">4</sup><!--m10b--><br />
 C<!--m10--><sub class="m10">hex</sub><!--m10b-->, ...<br />
 <!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Typesetting Guild:</span><!--m6--><br />
@@ -105,14 +104,21 @@ The quick brown fox jumps over the lazy dog.<br />
 <!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Note:</span><!--m6--><br />
 <!--m5--><ol><li><!--m5b-->If the sentences are too complex, check them by <a class="m4b" target="_blank" href="http://validator.w3.org/" style="max-height: 9003px;">W3C Markup Validator</a><!--m4--> is a good idea.<br />
 <!--m5--></li><li><!--m5b-->Block elements or margin will case line spacing too large, delete a newline according to the situation.<br />
-<!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">License:</span><!--m6--><br />
+<!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Mechanism:</span><!--m6--><br />
 <br />
-Philosophy is Free.<br />
-minicode is too simple to become a copyright material.<br />
-Welcome to use minicode source or modify it.<br />
+Mechanism of minicode is base on &quot;Search and Replace&quot;, the process is reversible and very simply.<br />
+It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.<br />
+The result article is a HyperText of HTML tags, some with a little comment markup (&lt;!--...--&gt;) to reversion purpose.<br />
+Some keywords of minicode depends CSS, the <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/htmindex.css" style="max-height: 9003px;">default CSS</a><!--m4--> provided to show the predefined style.<br />
+For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt" style="max-height: 9003px;">minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual.txt" style="max-height: 9003px;">XHTML</a><!--m4--> -&gt; this page(Encapsulated)<br />
 <br />
 <span class="m6" style="color: green" dir="ltr">Construct:</span><!--m6--><br />
 <br />
-You can modify all rules from <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php" style="max-height: 9003px;">post.php</a><!--m4-->, according to personal taste.<br />
-Some keywords of minicode depends CSS, the <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/htmindex.css" style="max-height: 9003px;">default CSS</a><!--m4--> provided to show the predefined style.<br />
-For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt" style="max-height: 9003px;">minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual.txt" style="max-height: 9003px;">XHTML</a><!--m4--> -&gt; this page(Encapsulated)<br />
+minicode of miniroll is writed by PHP, HTML version is XHTML 1.0.<br />
+You can modify all rules from <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php" style="max-height: 9003px;">post.php</a><!--m4-->.<br />
+minicode function is not independent from miniroll yet, but I think the work is easy.<br />
+<br />
+<span class="m6" style="color: green" dir="ltr">Licence:</span><!--m6--><br />
+<br />
+Copyright 2013 Huang Yiting (http://endrollex.com)<br />
+<a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php" style="max-height: 9003px;">post.php</a><!--m4--> is a part of miniroll, it is distributed under the <a class="m4b" target="_blank" href="http://www.gnu.org/licenses/gpl.txt" style="max-height: 9003px;">GNU General Public License</a><!--m4-->.<br />
