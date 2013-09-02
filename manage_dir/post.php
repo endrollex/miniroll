@@ -162,7 +162,7 @@ function r_mini(&$decode_s) {
 		'#<a class="m4".+href=".+?">#',
 		'#<a class="m4b".+?href="#',
 		'#<span class="m9">.+?</span><!--m9-->#',
-		'#</.+?><!--m10b-->#'
+		'#</[\w]{1,20}><!--m10b-->#'
 	);
 	$mini_p = array('[url]', '[url]', '[last][/last]', '[/h]');
 	$decode_s = preg_replace($styl_p, $mini_p, $decode_s);
@@ -203,7 +203,7 @@ if (isset($_POST['f_isedit'])) {
 	$edit_c = substr($edit_t, 0, 12);
 }
 //begin post
-$html_post_msg = 'minicode: Assisted HTML marker.';
+$html_post_msg = 'minicode - easy editing XHTML';
 if ($isedit) $html_post_msg = '<span class="span_blue">Post editing: <a href="../index.php?p='.$edit_t.'">'.$edit_t.'</a></span>';
 //########Authenticate################################################################
 if(isset($_POST['title']) && isset($_POST['content']) && isset($_SESSION['v_user']))

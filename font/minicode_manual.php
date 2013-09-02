@@ -13,6 +13,6 @@
 <body onload="prettyPrint();">
 <div style="padding-top: 20px; padding-bottom: 60px; margin-right: auto; margin-left: auto; width: 80%; min-width: 750px; max-width: 1000px; font-size: 14px; font-family: Tahoma, Verdana, Geneva, sans-serif;">
 <?php
-readfile('minicode_manual_r.txt');
+readfile('minicode_manual.txt');
 ?>
 </div></body></html>

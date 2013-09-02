@@ -58,7 +58,7 @@ In this situation, you can use XHTML directly.</li></ol><!--m5b--><span class="m
 <pre style="background-color: #C0C0C0;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-01 22:32:16</span><!--m9--><br />
+<span class="m9">Last modified: 2013-09-02 10:17:14</span><!--m9--><br />
 <br />
 <!--m5--></li><li>
 <pre style="background-color: #C0C0C0;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;script type=&quot;text/javascript&quot;&gt;<!--m5--><br/><!--m5b-->document.write(&quot;Test!&quot;);<!--m5--><br/><!--m5b-->&lt;/script&gt;&lt;br/&gt;Newline here!<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5--></pre>
@@ -115,4 +115,4 @@ Welcome to use minicode source or modify it.<br />
 <br />
 You can modify all rules from <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php" style="max-height: 9003px;">post.php</a><!--m4-->, according to personal taste.<br />
 Some keywords of minicode depends CSS, the <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/htmindex.css" style="max-height: 9003px;">default CSS</a><!--m4--> provided to show the predefined style.<br />
-For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt" style="max-height: 9003px;">minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_r.txt" style="max-height: 9003px;">XHTML</a><!--m4--> -&gt; this page(Encapsulated)<br />
+For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt" style="max-height: 9003px;">minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual.txt" style="max-height: 9003px;">XHTML</a><!--m4--> -&gt; this page(Encapsulated)<br />
