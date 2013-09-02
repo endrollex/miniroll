@@ -7,7 +7,9 @@ miniroll - small blog Quick-and-dirty
 
 Introduction:
 -------------
-It do not need database, using a very simple framework with file system, just like a Blog Hello World. But it may be cumbersome to use. You shall modify some codes to create own blog style. For reference.	
+miniroll do not need database, using a very simple framework with file system,
+just like a Blog Hello World. But it may be cumbersome to use.
+You shall modify some codes to create own blog style. For reference.
 
 How to Run:
 -----------
@@ -40,3 +42,29 @@ Folders Explanation:
 * journal_menu: Where left menu's protocol, or other link
 * manage_dir: Management's dir
 * upload: Upload's dir
+
+PHP environment require:
+-------------------
+* Required PHP verion: PHP5
+* Required library: GD library, for img_ident.php
+
+Copyright and License:
+-------------------
+Copyright 2013 Huang Yiting (http://endrollex.com)
+
+miniroll is distributed under the terms of the GNU General Public License
+
+This file is part of miniroll.
+
+miniroll is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+miniroll is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
