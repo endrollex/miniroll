@@ -57,7 +57,7 @@ In this situation, you can use HTML directly.</li></ol><!--m5b--><span class="m6
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-02 22:05:48</span><!--m9--><br />
+<span class="m9">Last modified: 2013-09-02 22:16:53</span><!--m9--><br />
 <br />
 <!--m5--></li><li>
 <pre style="background-color: #D3D3D3;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;script type=&quot;text/javascript&quot;&gt;<!--m5--><br/><!--m5b-->document.write(&quot;Test!&quot;);<!--m5--><br/><!--m5b-->&lt;/script&gt;&lt;br/&gt;Newline here!<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5--></pre>
@@ -108,9 +108,9 @@ The quick brown fox jumps over the lazy dog.<br />
 <br />
 Mechanism of minicode is base on &quot;Search and Replace&quot;, the process is reversible and very simply.<br />
 It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.<br />
-The result article is a HyperText of HTML tags, some with a little comment markup (&lt;!--...--&gt;) to reversion purpose.<br />
+The result article is a HyperText of HTML tags, some with a little comment markup (&lt;!--...--&gt;) to reversion.<br />
 Some keywords of minicode depends CSS, the <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/htmindex.css" style="max-height: 9003px;">default CSS</a><!--m4--> provided to show the predefined style.<br />
-For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt" style="max-height: 9003px;">minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual.txt" style="max-height: 9003px;">XHTML</a><!--m4--> -&gt; this page(Encapsulated)<br />
+For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt" style="max-height: 9003px;">minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual.txt" style="max-height: 9003px;">XHTML article</a><!--m4--> -&gt; this page (Encapsulated)<br />
 <br />
 <span class="m6" style="color: green" dir="ltr">Construct:</span><!--m6--><br />
 <br />

@@ -108,9 +108,9 @@ The quick brown fox jumps over the lazy dog.
 
 Mechanism of minicode is base on "Search and Replace", the process is reversible and very simply.
 It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.
-The result article is a HyperText of HTML tags, some with a little comment markup (<!--...-->) to reversion purpose.
+The result article is a HyperText of HTML tags, some with a little comment markup (<!--...-->) to reversion.
 Some keywords of minicode depends CSS, the [url]https://github.com/endrollex/miniroll/blob/master/htmindex.css[default CSS[/url] provided to show the predefined style.
-For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[minicode[/url] -> [url]http://endrollex.com/font/minicode_manual.txt[XHTML[/url] -> this page(Encapsulated)
+For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[minicode[/url] -> [url]http://endrollex.com/font/minicode_manual.txt[XHTML article[/url] -> this page (Encapsulated)
 
 [color]green]Construct:[/color]
 
