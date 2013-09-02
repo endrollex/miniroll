@@ -103,7 +103,7 @@ The quick brown fox jumps over the lazy dog.
 
 [html]</li></ol>[/html][color]green]Note:[/color]
 [html]<ol><li>[/html]If the sentences are too complex, check them by [url]http://validator.w3.org/[W3C Markup Validator[/url] is a good idea.
-[html]</li><li>[/html]Block elements or margin will case line spacing too large, delete a newline according to the situation.
+[html]</li><li>[/html]Block elements or margin may cause line spacing too large, delete a newline according to the situation.
 [html]</li></ol>[/html][color]green]Mechanism:[/color]
 
 Mechanism of minicode is base on "Search and Replace", the process is reversible and very simply.
