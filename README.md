@@ -45,8 +45,8 @@ Folders Explanation:
 
 PHP environment require:
 -------------------
-* Required PHP verion: PHP5
-* Required library: GD library, for img_ident.php
+* Require PHP verion: PHP5
+* Require library: GD library, for img_ident.php
 
 Copyright and License:
 -------------------
