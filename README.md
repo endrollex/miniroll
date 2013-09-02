@@ -50,9 +50,9 @@ PHP Environment Require:
 
 Copyright and License:
 -------------------
-Copyright 2013 Huang Yiting (http://endrollex.com)
+miniroll - small blog Quick-and-dirty
 
-miniroll is distributed under the terms of the GNU General Public License
+Copyright 2013 Huang Yiting (http://endrollex.com)
 
 This file is part of miniroll.
 
