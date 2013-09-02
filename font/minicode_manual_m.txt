@@ -10,20 +10,20 @@ The result is a HyperText of XHTML tags, some with a little comment markup (<!--
 
 [color]green]Syntax:[/color]
 [html]<ol><li>The minicode cannot nest:
-<pre style="background-color: #C0C0C0;">[url]http://goo.gl/[/url] OK
+<pre style="background-color: #D3D3D3;">[url]http://goo.gl/[/url] OK
 [b][url]http://goo.gl/[/url][/b] This expression is ERROR!!!
 </pre>Because nest will be complex and bloated.
 In this situation, you can use XHTML directly.</li></ol>[/html][color]green]Keywords and Usage:[/color]
 [html]<ol><li>
-<pre style="background-color: #C0C0C0;">[code]echo ipconfig[/code]</pre>
+<pre style="background-color: #D3D3D3;">[code]echo ipconfig[/code]</pre>
 [/html]# Preformatted text for code:
 [code]echo ipconfig[/code]
 [html]</li><li>
-<pre style="background-color: #C0C0C0;">[output]ipconfig[/output]</pre>
+<pre style="background-color: #D3D3D3;">[output]ipconfig[/output]</pre>
 [/html]# Preformatted text for code with output style:
 [output]ipconfig[/output]
 [html]</li><li>
-<pre style="background-color: #C0C0C0;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
+<pre style="background-color: #D3D3D3;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
 [img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
 [/html]# To insert an image:
 [img]wikimedia-button]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
@@ -33,7 +33,7 @@ In this situation, you can use XHTML directly.</li></ol>[/html][color]green]Keyw
 # It will be automatically converted to second expression with filename, or you can manually add.
 
 [html]</li><li>
-<pre style="background-color: #C0C0C0;">
+<pre style="background-color: #D3D3D3;">
 [url]http://www.w3school.com.cn/[/url]
 [url]http://www.w3school.com.cn/[W3School[/url]</pre>
 [/html]# A link to one page:
@@ -43,7 +43,7 @@ In this situation, you can use XHTML directly.</li></ol>[/html][color]green]Keyw
 # The second expression assigned a description text.
 
 [html]</li><li>
-<pre style="background-color: #C0C0C0;">
+<pre style="background-color: #D3D3D3;">
 [color]orange]Its name from the orange fruit.[/color]
 [color]#6495ED]Cornflower blue, a shade of azure[/color]
 [b]Bolded Text[/b]
@@ -55,13 +55,13 @@ In this situation, you can use XHTML directly.</li></ol>[/html][color]green]Keyw
 [small]Small Text[/small]
 
 [html]</li><li>
-<pre style="background-color: #C0C0C0;">
+<pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 [/html]# Last modified date:
 [last][/last]
 
 [html]</li><li>
-<pre style="background-color: #C0C0C0;">[/html][h]span][[/h]html][html]<br/>[/html]<script type="text/javascript">[html]<br/>[/html]document.write("Test!");[html]<br/>[/html]</script><br/>Newline here![html]<br/>[/html][h]span][[/h]/html][html]</pre>
+<pre style="background-color: #D3D3D3;">[/html][h]span][[/h]html][html]<br/>[/html]<script type="text/javascript">[html]<br/>[/html]document.write("Test!");[html]<br/>[/html]</script><br/>Newline here![html]<br/>[/html][h]span][[/h]/html][html]</pre>
 [/html]# HTML retain:
 [html]
 <script type="text/javascript">
@@ -74,7 +74,7 @@ document.write("Test!");
 # To retain newline tag, use <br/> instead.
 
 [html]</li><li>
-<pre style="background-color: #C0C0C0;">
+<pre style="background-color: #D3D3D3;">
 [h]h4]This is heading 4[/h]y[h]sup]4[/h]
 C[h]sub]hex[/h], ...</pre>
 [/html]# For some plain symmetrical html tags:
@@ -82,7 +82,7 @@ C[h]sub]hex[/h], ...</pre>
 C[h]sub]hex[/h], ...
 [html]</li></ol>[/html][color]green]Typesetting Guild:[/color]
 [html]<ol><li>
-<pre style="background-color: #C0C0C0;">[/html][h]span][[/h]html][html]<br/>[/html]<img style="float: left; margin-right: 10px; margin-bottom: 10px;"[html]<br/>[/html]src="http://www.ietf.org/images/isoc_logo.gif" alt="" />[html]<br/>[/html][h]span][[/h]/html][html]The quick brown fox jumps over the lazy dog.
+<pre style="background-color: #D3D3D3;">[/html][h]span][[/h]html][html]<br/>[/html]<img style="float: left; margin-right: 10px; margin-bottom: 10px;"[html]<br/>[/html]src="http://www.ietf.org/images/isoc_logo.gif" alt="" />[html]<br/>[/html][h]span][[/h]/html][html]The quick brown fox jumps over the lazy dog.
 ...</pre>
 [/html]# Image float left:
 [html]
@@ -93,7 +93,7 @@ The quick brown fox jumps over the lazy dog.
 
 
 [html]</li><li>
-<pre style="background-color: #C0C0C0;">[/html][h]span][[/h]html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">[html]<br/>[/html][h]span][[/h]/html][h]span][[/h]img]http://tools.ietf.org/images/ietflogo3h.png[h]span][[/h]/img][html]<br/>[/html][h]span][[/h]html]<a class="m4_style" style="font-size: 12px;" target="_blank"[html]<br/>[/html]href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[h]span][[/h]/html][html]...</pre>
+<pre style="background-color: #D3D3D3;">[/html][h]span][[/h]html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">[html]<br/>[/html][h]span][[/h]/html][h]span][[/h]img]http://tools.ietf.org/images/ietflogo3h.png[h]span][[/h]/img][html]<br/>[/html][h]span][[/h]html]<a class="m4_style" style="font-size: 12px;" target="_blank"[html]<br/>[/html]href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[h]span][[/h]/html][html]...</pre>
 [/html]# Div float left with Link:
 [html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
 [/html][img]http://tools.ietf.org/images/ietflogo3h.png[/img]
