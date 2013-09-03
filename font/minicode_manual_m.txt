@@ -21,13 +21,19 @@ In this situation, you can use HTML directly.<br/><br/></li>
 Position of tag option depends on the converted HTML tag sentence.
 </li></ol>[/html][color]green]Keywords and Usage:[/color]
 [html]<ol><li>
-<pre style="background-color: #D3D3D3;">[code]echo ipconfig[/code]</pre>
+<pre style="background-color: #D3D3D3;">[code]
+for (vector&lt;int&gt;::size_type ix = 0; ix != ivec.size(); ++ix)
+	ivec[ix] = 0;
+[/code]</pre>
 [/html]# Preformatted text for code:
-[code]echo ipconfig[/code]
+[code]
+for (vector<int>::size_type ix = 0; ix != ivec.size(); ++ix)
+	ivec[ix] = 0;
+[/code]
 [html]</li><li>
-<pre style="background-color: #D3D3D3;">[output]ipconfig[/output]</pre>
+<pre style="background-color: #D3D3D3;">[output]Reply from 127.0.0.1: bytes=32 time&lt;1ms TTL=128[/output]</pre>
 [/html]# Preformatted text for code with output style:
-[output]ipconfig[/output]
+[output]Reply from 127.0.0.1: bytes=32 time<1ms TTL=128[/output]
 [html]</li><li>
 <pre style="background-color: #D3D3D3;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
 [img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
@@ -125,4 +131,4 @@ For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[mini
 
 minicode of miniroll is writed by PHP, HTML version is XHTML 1.0.
 You can modify all rules from [url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url].
-minicode function is not independent from miniroll yet, but I think the work is easy.
+minicode function is not independent from miniroll yet, but I think isolating the function code is easy.
