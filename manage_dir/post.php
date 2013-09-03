@@ -128,8 +128,39 @@ function minicode(&$need_eidt, &$which_ix) {
 			break;
 	}
 }
+//minicode find
+function minicode_find(&$process, &$p1, &$p2, &$p_start, &$p_offset,
+	&$post_content, &$need_try, &$minicode, &$content_len, &$minicode_e,
+	&$p_end, &$p_end_len, &$ix
+	) {
+	$p1 = strpos($post_content, '[', $p_start+$p_offset);
+	$p2 = strpos($post_content, ']', $p_start+$p_offset);
+	$lookfor = '';
+	$get1code = false;
+	if ($p1 !== false && $p2 !== false) {
+		if($p2 > $p1) {$lookfor = substr($post_content, $p1, $p2-$p1+1); $get1code = true;}
+	}
+	else {$need_try = false; $process = false;}
+	//begin of minicode
+	$lookok = false;
+	$ix = 0;
+	if ($get1code) {
+		while ($lookok === false && $ix !== count($minicode)) {
+			if ($lookfor === $minicode[$ix]) $lookok = true;
+			else ++$ix;
+		}
+	}
+	//end of minicode
+	if ($lookok) $p_end = strpos($post_content, $minicode_e[$ix], $p_start+$p_offset);
+	if ($p_end !== false) {
+		$p_end_len = $p_end-$p1+strlen($minicode_e[$ix]);
+		$need_try = false;
+	}
+	if ($need_try) $p_offset = $p2-$p_start+1;
+	if ($p_start+$p_offset > $content_len-4) {$need_try = false; $process = false;}
+}
 //minicode decode
-function r_mini(&$decode_s) {
+function minicode_reverse(&$decode_s) {
 	$styl_s = array(
 		'<pre class="prettyprint linenums">',
 		'</pre><div class="m1"></div>',
@@ -197,7 +228,7 @@ if ($isedit) {
 	$t2_temp = '';
 	if (file_exists($dir.$edit_t)) {
 		$t2_temp = html_entity_decode(str_replace($ent_s, $rem_s, file_get_contents($dir.$edit_c)), ENT_QUOTES, 'UTF-8');
-		$t2_temp = r_mini($t2_temp);
+		$t2_temp = minicode_reverse($t2_temp);
 	}
 }
 if (isset($_POST['f_isedit'])) {
@@ -259,35 +290,13 @@ if ($writeok === 1) {
 	//process
 	$need_try = true;
 	$p_offset = 0;
-	while ($need_try) {
-		$p1 = strpos($_POST['content'], '[', $p_start+$p_offset);
-		$p2 = strpos($_POST['content'], ']', $p_start+$p_offset);
-		$lookfor = '';
-		$get1code = false;
-		if ($p1 !== false && $p2 !== false) {
-			if($p2 > $p1) {$lookfor = substr($_POST['content'], $p1, $p2-$p1+1); $get1code = true;}
-		}
-		else {$need_try = false; $process = false;}
-		//begin of minicode
-		$lookok = false;
-		$ix = 0;
-		if ($get1code) {
-			while ($lookok === false && $ix !== count($minicode)) {
-				if ($lookfor === $minicode[$ix]) $lookok = true;
-				else ++$ix;
-			}
-		}
-		//end of minicode
-		$p_end = false;
-		$p_end_len = false;
-		if ($lookok) $p_end = strpos($_POST['content'], $minicode_e[$ix], $p_start+$p_offset);
-		if ($p_end !== false) {
-			$p_end_len = $p_end-$p1+strlen($minicode_e[$ix]);
-			$need_try = false;
-		}
-		if ($need_try) $p_offset = $p2-$p_start+1;
-		if ($p_start+$p_offset > $content_len-4) {$need_try = false; $process = false;}
-	}
+	$p_end = false;
+	$p_end_len = false;
+	$ix = 0;
+	while ($need_try) 
+		minicode_find($process, $p1, $p2, $p_start, $p_offset,
+			$_POST['content'], $need_try, $minicode, $content_len, $minicode_e,
+			$p_end, $p_end_len, $ix);
 	if ($process && $p1 !== $p_start)
 		//htmlspecialchars
 		array_push($co_arr, nl2br(htmlspecialchars(substr($_POST['content'], $p_start, $p1-$p_start), ENT_QUOTES)));
