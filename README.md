@@ -52,9 +52,9 @@ PHP Environment Require:
 * Require PHP verion: PHP5
 * Require library: GD library, for img_ident.php
 
-Mechanism Brief:
-----------
-1. miniroll is a simple blog, all function is minimize.
+Mechanism and Features Brief:
+-----------------------------
+1. miniroll is a simple blog, most functions are minimize.
 2. post.php produces journals, the journals store in the filesystem directly.
 3. Every normal journals have two file, title and content, content's filename is a date('YmdHi', time()),
    title's filename has additional tags what indicates various labels.
@@ -64,7 +64,7 @@ Mechanism Brief:
    This feature lets a post run PHP code, thus you can do everything.
 
 Copyright and License:
--------------------
+----------------------
 miniroll - small blog Quick-and-dirty
 
 Copyright 2013 Huang Yiting (http://endrollex.com)
