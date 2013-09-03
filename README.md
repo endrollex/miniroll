@@ -54,14 +54,14 @@ PHP Environment Require:
 
 Mechanism Brief:
 ----------
-1 miniroll is a simple blog, all function is minimize.
-2 post.php produces journals, the journals store in the filesystem directly.
-3 Every normal journals have two file, title and content, content's filename is a date('YmdHi', time()),
-  title's filename has additional tags what indicates various labels.
-4 index.php is a reader to organize these journal files for browse.
-5 The markup language minicode (variant of BBCode) is designed for Blog, easy editing XHTML.
-6 If you write a third file for journal, it will be loaded by PHP requre() function.
-  This feature lets a post run PHP code, thus you can do everything.
+1. miniroll is a simple blog, all function is minimize.
+2. post.php produces journals, the journals store in the filesystem directly.
+3. Every normal journals have two file, title and content, content's filename is a date('YmdHi', time()),
+   title's filename has additional tags what indicates various labels.
+4. index.php is a reader to organize these journal files for browse.
+5. The markup language minicode (variant of BBCode) is designed for Blog, easy editing XHTML.
+6. If you write a third file for journal, it will be loaded by PHP requre() function.
+   This feature lets a post run PHP code, thus you can do everything.
 
 Copyright and License:
 -------------------
