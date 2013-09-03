@@ -124,3 +124,4 @@ minicode function is not independent from miniroll yet, but I think the work is 
 
 Copyright 2013 Huang Yiting (http://endrollex.com)
 [url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url] is a part of miniroll, it is distributed under the [url]http://www.gnu.org/licenses/gpl.txt[GNU General Public License[/url].
+And the philosophy is free, you can build your own lightweight markup language.

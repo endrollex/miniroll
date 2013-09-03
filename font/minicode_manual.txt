@@ -57,7 +57,7 @@ In this situation, you can use HTML directly.</li></ol><!--m5b--><span class="m6
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-02 22:53:23</span><!--m9--><br />
+<span class="m9">Last modified: 2013-09-03 09:39:16</span><!--m9--><br />
 <br />
 # By the way: this page initially completed on 2013-09-02.<br />
 <br />
@@ -124,3 +124,4 @@ minicode function is not independent from miniroll yet, but I think the work is 
 <br />
 Copyright 2013 Huang Yiting (http://endrollex.com)<br />
 <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php" style="max-height: 9003px;">post.php</a><!--m4--> is a part of miniroll, it is distributed under the <a class="m4b" target="_blank" href="http://www.gnu.org/licenses/gpl.txt" style="max-height: 9003px;">GNU General Public License</a><!--m4-->.<br />
+And the philosophy is free, you can build your own lightweight markup language.<br />
