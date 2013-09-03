@@ -1,9 +1,9 @@
-[b]minicode - easy editing XHTML[/b]
+[b]minicode (variant of BBCode) - easy editing XHTML[/b]
 
 [color]green]Introduction:[/color]
 
-minicode is a lightweight markup language for [url]https://github.com/endrollex/miniroll[miniroll[/url] easy editing, like BBCode.
-The available tags are usually indicated by square brackets ([ ]) surrounding a keyword.
+minicode is a lightweight markup language for [url]https://github.com/endrollex/miniroll[miniroll[/url] easy editing, learn from [url]https://www.phpbb.com/community/faq.php?mode=bbcode[BBCode[/url].
+The tags are indicated by square brackets [ ] surrounding a keyword.
 It is designed for for Blog, thus let through unsafe HTML like <script>.
 minicode allow user to write HTML freely and unlimitedly.
 
@@ -12,7 +12,14 @@ minicode allow user to write HTML freely and unlimitedly.
 <pre style="background-color: #D3D3D3;">[url]http://goo.gl/[/url] OK
 [b][url]http://goo.gl/[/url][/b] This expression is ERROR!!!
 </pre>Because nest will be complex and bloated.
-In this situation, you can use HTML directly.</li></ol>[/html][color]green]Keywords and Usage:[/color]
+In this situation, you can use HTML directly.<br/><br/></li>
+<li>Difference between minicode and BBCode:
+<pre style="background-color: #D3D3D3;">[url]http://php.net/docs.php[PHP Manual[/url]
+[color]#B22222]FireBrick[/color]
+</pre>Note the tag option is close to the [tag] with a sigle square bracket:<br/>
+[tag]option]...[/tag], or [tag]...[option[/tag]<br/>
+Position of tag option depends on the converted HTML tag sentence.
+</li></ol>[/html][color]green]Keywords and Usage:[/color]
 [html]<ol><li>
 <pre style="background-color: #D3D3D3;">[code]echo ipconfig[/code]</pre>
 [/html]# Preformatted text for code:
@@ -110,7 +117,7 @@ The quick brown fox jumps over the lazy dog.
 
 Mechanism of minicode is base on "Search and Replace", the process is reversible and very simply.
 It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.
-The result article is a HyperText of HTML tags, some with a little comment markup (<!--...-->) to reversion.
+The converted HTML may contain a little comment markup <!-- -->, intend for reversion.
 Some keywords of minicode depends CSS, the [url]https://github.com/endrollex/miniroll/blob/master/htmindex.css[default CSS[/url] provided to show the predefined style.
 For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[minicode[/url] -> [url]http://endrollex.com/font/minicode_manual.txt[XHTML article[/url] -> this page (Encapsulated)
 
@@ -119,9 +126,3 @@ For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[mini
 minicode of miniroll is writed by PHP, HTML version is XHTML 1.0.
 You can modify all rules from [url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url].
 minicode function is not independent from miniroll yet, but I think the work is easy.
-
-[color]green]Licence:[/color]
-
-Copyright 2013 Huang Yiting (http://endrollex.com)
-[url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url] is a part of miniroll, it is distributed under the [url]http://www.gnu.org/licenses/gpl.txt[GNU General Public License[/url].
-And the philosophy is free, you can build your own lightweight markup language.
