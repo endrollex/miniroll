@@ -41,7 +41,7 @@ Folders Explanation:
 * font: Font files and misc
 * f_assistant: This folder contain thrid party codes
 * images: The website default images
-* journal: Blog's all journal store
+* journal: Blog's all journals store
 * journal/mf_php: The journal with PHP function
 * journal_menu: Where left menu's protocol, or other link
 * manage_dir: Management's dir
