@@ -18,7 +18,7 @@ In this situation, you can use HTML directly.<br/><br/></li>
 [color]#B22222]FireBrick[/color]
 </pre>Note the tag option is close to the [tag] with a sigle square bracket:<br/>
 [tag]option]...[/tag], or [tag]...[option[/tag]<br/>
-Position of tag option depends on the converted HTML tag sentence.
+Position of tag option depends on the presented HTML sentence.
 </li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Keywords and Usage:</span><!--m6--><br />
 <!--m5--><ol><li>
 <pre style="background-color: #D3D3D3;">[code]
@@ -70,7 +70,7 @@ for (vector&lt;int&gt;::size_type ix = 0; ix != ivec.size(); ++ix)
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-03 21:47:23</span><!--m9--><br />
+<span class="m9">Last modified: 2013-09-04 05:08:41</span><!--m9--><br />
 <br />
 # By the way: this page initially completed on 2013-09-02.<br />
 <br />
