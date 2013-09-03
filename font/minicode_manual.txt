@@ -4,7 +4,7 @@
 <br />
 minicode is a lightweight markup language for <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll" style="max-height: 9003px;">miniroll</a><!--m4--> easy editing, learn from <a class="m4b" target="_blank" href="https://www.phpbb.com/community/faq.php?mode=bbcode" style="max-height: 9003px;">BBCode</a><!--m4-->.<br />
 The tags are indicated by square brackets [ ] surrounding a keyword.<br />
-It is designed for for Blog, thus let through unsafe HTML like &lt;script&gt;.<br />
+It is designed for Blog, thus let through unsafe HTML like &lt;script&gt;.<br />
 minicode allow user to write HTML freely and unlimitedly.<br />
 <br />
 <span class="m6" style="color: green" dir="ltr">Syntax:</span><!--m6--><br />
@@ -70,7 +70,7 @@ for (vector&lt;int&gt;::size_type ix = 0; ix != ivec.size(); ++ix)
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-03 17:35:48</span><!--m9--><br />
+<span class="m9">Last modified: 2013-09-03 21:47:23</span><!--m9--><br />
 <br />
 # By the way: this page initially completed on 2013-09-02.<br />
 <br />

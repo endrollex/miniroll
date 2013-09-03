@@ -30,9 +30,13 @@ You can see the detail in every files.
 * index_top.php: Top part of index.php
 * index_top2.php: Top part of index.php
 * manage.php: Management entrance
+* manage_dir/login.php: Login function
+* manage_dir/post.php: Post function
+* manage_dir/post_view.php: Post edit function
+* manage_dir/upload.php: Upload function
 
 Folders Explanation:
--------------------
+--------------------
 * az_comment: Guest comment store
 * font: Font files and misc
 * f_assistant: This folder contain thrid party codes
@@ -44,9 +48,20 @@ Folders Explanation:
 * upload: Upload's dir
 
 PHP Environment Require:
--------------------
+------------------------
 * Require PHP verion: PHP5
 * Require library: GD library, for img_ident.php
+
+Mechanism Brief:
+----------
+1 miniroll is a simple blog, all function is minimize.
+2 post.php produces journals, the journals store in the filesystem directly.
+3 Every normal journals have two file, title and content, content's filename is a date('YmdHi', time()),
+  title's filename has additional tags what indicates various labels.
+4 index.php is a reader to organize these journal files for browse.
+5 The markup language minicode (variant of BBCode) is designed for Blog, easy editing XHTML.
+6 If you write a third file for journal, it will be loaded by PHP requre() function.
+  This feature lets a post run PHP code, thus you can do everything.
 
 Copyright and License:
 -------------------

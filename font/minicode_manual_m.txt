@@ -4,7 +4,7 @@
 
 minicode is a lightweight markup language for [url]https://github.com/endrollex/miniroll[miniroll[/url] easy editing, learn from [url]https://www.phpbb.com/community/faq.php?mode=bbcode[BBCode[/url].
 The tags are indicated by square brackets [ ] surrounding a keyword.
-It is designed for for Blog, thus let through unsafe HTML like <script>.
+It is designed for Blog, thus let through unsafe HTML like <script>.
 minicode allow user to write HTML freely and unlimitedly.
 
 [color]green]Syntax:[/color]
