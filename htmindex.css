@@ -233,18 +233,6 @@ a.lab:link {color: #99CCFF; text-decoration: none;}
 a.lab:visited {color: #99CCFF; text-decoration: none;}
 a.lab:hover {color: #00AEEF; text-decoration: none;}
 a.lab:active {color: #00AEEF; text-decoration: none;}
-a.m4:link {color: #000000;}
-a.m4:visited {color: #000000;}
-a.m4:hover {color: #00AEEF;}
-a.m4:active {color: #00AEEF;}
-a.m4b:link {color: #000000;}
-a.m4b:visited {color: #000000;}
-a.m4b:hover {color: #00AEEF;}
-a.m4b:active {color: #00AEEF;}
-a.m4_style:link {color: #626262;}
-a.m4_style:visited {color: #626262;}
-a.m4_style:hover {color: #00AEEF;}
-a.m4_style:active {color: #00AEEF;}
 /*----------------------------------------------------------------post.php*/
 .body_manage {
 	margin: 0px;
@@ -290,11 +278,15 @@ a.m4_style:active {color: #00AEEF;}
 .form_next {
 	display: inline;
 }
+.form_rege {
+	display: inline;
+	position: relative;
+	left: 200px;
+}
+/*minicode use*/
 .m1 {}
 .m2 {}
 .m3 {}
-.m4 {}
-.m4b {}
 .m5 {}
 .m6 {}
 .m7 {
@@ -311,11 +303,18 @@ a.m4_style:active {color: #00AEEF;}
 	position: relative;
 }
 .m10 {}
-.form_rege {
-	display: inline;
-	position: relative;
-	left: 200px;
-}
+a.m4:link {color: #000000;}
+a.m4:visited {color: #000000;}
+a.m4:hover {color: #00AEEF;}
+a.m4:active {color: #00AEEF;}
+a.m4b:link {color: #000000;}
+a.m4b:visited {color: #000000;}
+a.m4b:hover {color: #00AEEF;}
+a.m4b:active {color: #00AEEF;}
+a.m4_style:link {color: #626262;}
+a.m4_style:visited {color: #626262;}
+a.m4_style:hover {color: #00AEEF;}
+a.m4_style:active {color: #00AEEF;}
 /*----------------------------------------------------------------comment.php*/
 .div_com1 {
 	margin-top: 30px;
@@ -405,7 +404,7 @@ a.user:link {color: #2E3092; text-decoration: none; font-weight: bold;}
 a.user:visited {color: #2E3092; text-decoration: none; font-weight: bold;}
 a.user:hover {color: #2E3092; font-weight: bold;}
 a.user:active {color: #2E3092; font-weight: bold;}
-/*----------------------------------------------------------------end of index.php CSS*/
+/*----------------------------------------------------------------end of index.php*/
 /*
                     ,'|/\
                    /  | )\
@@ -440,4 +439,4 @@ a.album:link {color: #555555; text-decoration: none;}
 a.album:visited {color: #555555; text-decoration: none;}
 a.album:hover {color: #555555; text-decoration: none;}
 a.album:active {color: #555555; text-decoration: none;}
-/*----------------------------------------------------------------end of Album CSS*/
+/*----------------------------------------------------------------end of Album*/
