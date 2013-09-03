@@ -12,8 +12,8 @@ if (!isset($manage_php)) exit();
 <head>
 <meta content="zh-cn" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<script type="text/javascript" src="../htmindex.js"></script>
-<link rel="SHORTCUT ICON" href="../images/icon_4.ico"/>
+<script type="text/javascript" src="htmindex.js"></script>
+<link rel="SHORTCUT ICON" href="images/icon_4.ico"/>
 <title>miniroll management system</title>
 <link href="htmindex.css" rel="stylesheet" type="text/css" />
 <link href="f_assistant/prettify/prettify.css" rel="stylesheet" type="text/css" />
