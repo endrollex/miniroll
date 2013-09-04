@@ -56,7 +56,7 @@ PHP Environment Require:
 * Require library: GD library, for img_ident.php
 
 Mechanism Brief:
------------------------------
+----------------
 1. miniroll is a simple blog, most functions are minimize.
 2. post.php produces journals, the journals store in the filesystem directly.
 3. Every normal journal has two file, title and content, content's filename is a date('YmdHi', time()),
