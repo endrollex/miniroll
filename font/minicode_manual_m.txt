@@ -11,7 +11,7 @@ minicode allow user to write HTML freely and unlimitedly.
 [html]<ol><li>The minicode cannot nest:
 <pre style="background-color: #D3D3D3;">[url]http://goo.gl/[/url] OK
 [b][url]http://goo.gl/[/url][/b] This expression is ERROR!!!
-</pre>Because nest will be complex and bloated.
+</pre>Because nest will be complex.
 In this situation, you can use HTML directly.<br/><br/></li>
 <li>Difference between minicode and BBCode:
 <pre style="background-color: #D3D3D3;">[url]http://php.net/docs.php[PHP Manual[/url]
