@@ -7,12 +7,12 @@ miniroll - small blog Quick-and-dirty
 
 Introduction:
 -------------
-* miniroll do not need database, use a simple framework with filesystem,
+* miniroll do not need a database, use a simple framework with filesystem,
   just like a Blog Hello World.
 * It may be cumbersome to use. There is no template function here.
   Someone using this blog shall modify many codes to create own blog style manually.
 * This project is for reference purpose.
-  Generally, WordPress is a good choice, it has complete support and worldwide users.
+  Generally, WordPress is a better choice, it has complete support and worldwide users.
 
 How to Run:
 -----------
