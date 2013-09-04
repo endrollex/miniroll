@@ -18,7 +18,7 @@ In this situation, you can use HTML directly.<br/><br/></li>
 [color]#B22222]FireBrick[/color]
 </pre>Note the tag option is close to the [tag] with a sigle square bracket:<br/>
 [tag]option]...[/tag], or [tag]...[option[/tag]<br/>
-Position of tag option depends on the presented HTML sentence.
+Position of tag option depends on the implemented HTML sentence.
 </li></ol>[/html][color]green]Keywords and Usage:[/color]
 [html]<ol><li>
 <pre style="background-color: #D3D3D3;">[code]
@@ -123,7 +123,7 @@ The quick brown fox jumps over the lazy dog.
 
 Mechanism of minicode is base on "Search and Replace", the process is reversible and very simply.
 It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.
-The converted HTML may contain a little comment markup <!-- -->, intend for reversion.
+The implemented HTML may contain a little comment markup <!-- -->, intend for reversion.
 Some keywords of minicode depends CSS, the [url]https://github.com/endrollex/miniroll/blob/master/htmindex.css[default CSS[/url] provided to show the predefined style.
 For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[minicode[/url] -> [url]http://endrollex.com/font/minicode_manual.txt[XHTML article[/url] -> this page (Encapsulated)
 
