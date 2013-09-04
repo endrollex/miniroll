@@ -285,32 +285,32 @@ if ($writeok === 1) {
 	$co_arr = array();
 	$process = true;
 	$p_start = 0;
-	//control no tab
+	//
 	while ($process) {
-	//process
-	$need_try = true;
-	$p_offset = 0;
-	$p_end = false;
-	$p_end_len = false;
-	$ix = 0;
-	while ($need_try) 
-		minicode_find($process, $p1, $p2, $p_start, $p_offset,
-			$_POST['content'], $need_try, $minicode, $content_len, $minicode_e,
-			$p_end, $p_end_len, $ix);
-	if ($process && $p1 !== $p_start)
+		//process
+		$need_try = true;
+		$p_offset = 0;
+		$p_end = false;
+		$p_end_len = false;
+		$ix = 0;
+		while ($need_try) 
+			minicode_find($process, $p1, $p2, $p_start, $p_offset,
+				$_POST['content'], $need_try, $minicode, $content_len, $minicode_e,
+				$p_end, $p_end_len, $ix);
+		if ($process && $p1 !== $p_start)
+			//htmlspecialchars
+			array_push($co_arr, nl2br(htmlspecialchars(substr($_POST['content'], $p_start, $p1-$p_start), ENT_QUOTES)));
+		if ($process) {
+			//execute minicode
+			$do_edit = substr($_POST['content'], $p1, $p_end_len);
+			minicode($do_edit, $ix);
+			array_push($co_arr, $do_edit);
+			$p_start = $p_end+strlen($minicode_e[$ix]);
+			if ($p_start === $content_len) $process = false;
+		}
 		//htmlspecialchars
-		array_push($co_arr, nl2br(htmlspecialchars(substr($_POST['content'], $p_start, $p1-$p_start), ENT_QUOTES)));
-	if ($process) {
-		//execute minicode
-		$do_edit = substr($_POST['content'], $p1, $p_end_len);
-		minicode($do_edit, $ix);
-		array_push($co_arr, $do_edit);
-		$p_start = $p_end+strlen($minicode_e[$ix]);
-		if ($p_start === $content_len) $process = false;
-	}
-	//htmlspecialchars
-	else array_push($co_arr, nl2br(htmlspecialchars(substr($_POST['content'], $p_start), ENT_QUOTES)));
-	//minicode over
+		else array_push($co_arr, nl2br(htmlspecialchars(substr($_POST['content'], $p_start), ENT_QUOTES)));
+		//minicode over
 	}
 	//edit
 	if ($isedit) $fp = fopen($filename, 'wb');
