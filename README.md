@@ -7,12 +7,12 @@ miniroll - small blog Quick-and-dirty
 
 Introduction:
 -------------
-miniroll do not need database, using a very simple framework with file system,
-just like a Blog Hello World.
-But it may be cumbersome to use. There is no template function here.
-Someone using this blog shall modify many codes to create own blog style manually.
-Summary, this project is for reference purpose.
-Generally, WordPress is a good choice, it has complete support and worldwide users.
+* miniroll do not need database, using a simple framework with file system,
+  just like a Blog Hello World.
+* But it may be cumbersome to use. There is no template function here.
+  Someone using this blog shall modify many codes to create own blog style manually.
+* This project is for reference purpose.
+  Generally, WordPress is a good choice, it has complete support and worldwide users.
 
 How to Run:
 -----------
@@ -55,7 +55,7 @@ PHP Environment Require:
 * Require PHP verion: PHP5
 * Require library: GD library, for img_ident.php
 
-Mechanism and Features Brief:
+Mechanism Brief:
 -----------------------------
 1. miniroll is a simple blog, most functions are minimize.
 2. post.php produces journals, the journals store in the filesystem directly.
