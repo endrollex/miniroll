@@ -193,7 +193,7 @@ function minicode_reverse(&$decode_s) {
 		'[/html]', '[color]', ']', '[/color]', '[b]', '[/b]', '[small]', '[/small]', '[h]', ']');
 	//preg_replace
 	$styl_p = array(
-		'#<a class="m4".+href=".+?">#',
+		'#<a class="m4".+?href=".+?">#',
 		'#<a class="m4b".+?href="#',
 		'#<span class="m9">.+?</span><!--m9-->#',
 		'#</[\w]{1,20}><!--m10b-->#'
