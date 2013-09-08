@@ -20,7 +20,7 @@
 if (isset($_GET['p'])) {
 	$view_file_c = substr($_GET['p'], 0, 12);
 	//indicate menu relative files
-	$menu_file_list[0] = '000099999998_mi_mf_,000099999997_mi_mf_';
+	$menu_file_list[0] = '000099999998_mf_,000099999997_mf_';
 	$menu_file_list[1] = '000099999999_mi_';
 	//
 	for ($ix_menu = 0; $ix_menu !== count($menu_file_list); ++$ix_menu) {
