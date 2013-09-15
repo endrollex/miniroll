@@ -185,6 +185,6 @@ for ($ix98 = $count_search_res_ix98; $ix98 !== 0; --$ix98) {
 }//
 if ($search_go || $search_cache) {
 	if (isset($_SESSION['search_cache'])) echo $_SESSION['search_cache'];
-$_SESSION['back_here'] = '?p=000099999998_mi_mf_&amp;search_tit='.$search_tit_keyword_o.'&amp;search_type=cache';
+$_SESSION['back_here'] = '?p=000099999998_mf_&amp;search_tit='.$search_tit_keyword_o.'&amp;search_type=cache';
 }
 ?>

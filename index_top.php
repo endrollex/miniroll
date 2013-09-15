@@ -58,7 +58,7 @@ if (isset($_SESSION['back_here'])) {
 	unset($_SESSION['back_here']);
 }
 //O=('-'Q) echo
-//echo '<a class="lab" href="index.php'.$hatt_link_back.'">Back</a>';
+echo '<a class="lab" href="index.php'.$hatt_link_back.'">Back</a>';
 ?>
 </li>
 </ul>
