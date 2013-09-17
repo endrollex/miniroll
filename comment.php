@@ -146,7 +146,8 @@ if ($check_ident && $check_tit && $check_link && $check_cont && $check_email) {
 	//gravatar
 	if ($is_gravatar) {
 		$comm_data .= '<div class="div_com_ava">'."\r\n".'<img alt="" src="';
-		$comm_data .= get_gravatar($_POST['co_email']);
+		if ($_POST['co_email'] != '') $comm_data .= get_gravatar($_POST['co_email'], 64, 'identicon');
+		else $comm_data .= get_gravatar($_POST['co_email']);
 		$comm_data .= '" />'."\r\n".'</div>';
 	}
 	//
