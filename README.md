@@ -41,6 +41,7 @@ You can see the detail in every files.
 Folders Explanation:
 --------------------
 * az_comment: Guest comment store
+* az_comment/log/: The comment log dir
 * font: Font files and misc
 * f_assistant: This folder contain thrid party codes
 * images: The website default images

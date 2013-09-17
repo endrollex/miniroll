@@ -8,6 +8,10 @@
  *     font/cet4_s.txt: The words list for generate image
  *     font/x.ttf: Font files
  *     az_comment/lock: Prevent concurrent
+ *     az_comment/log/: The comment log dir
+ *
+ * Third party codes:
+ *     f_assistant/gravatar: Gravatar, get avatar image
  *
  * Copyright 2013 Huang Yiting (http://endrollex.com)
  * miniroll is distributed under the terms of the GNU General Public License
@@ -15,7 +19,34 @@
 ?>
 <div class="div_com1">
 <?php
-date_default_timezone_set('Etc/GMT-8');
+//gravatar
+$is_gravatar = false;
+if (file_exists('f_assistant/gravatar/gravatar.php')) {require('f_assistant/gravatar/gravatar.php'); $is_gravatar = true;}
+//comment log function
+$comm_log_p = 'az_comment/log/comm_log';
+$comm_log_maxsize = 1000000;
+function comm_log(&$comm_log_p, &$comm_log_maxsize, &$post_co_email, $post_co_tit) {
+	$comm_log = $comm_log_p.'.php';
+	if (file_exists($comm_log))
+		if (filesize($comm_log) > $comm_log_maxsize) {
+			$temp_str = date('YmdHis', time());
+			$comm_log_hist = $comm_log_p.'_'.$temp_str.'.php';
+			$temp_read = file_get_contents($comm_log);
+			file_put_contents($comm_log_hist, $temp_read);
+			file_put_contents($comm_log, '');
+	}
+	$fp = fopen($comm_log, 'ab');
+	if ($fp) {
+		$temp_str = "<?php\r\n//";
+		$temp_str .= date('Y-m-d H:i:s', time());
+		$temp_str .= ','.$post_co_email;
+		$temp_str .= ','.$post_co_tit;
+		$temp_str .= "\r\n?>\r\n";
+		fwrite($fp, $temp_str);
+		fclose($fp);
+	}
+}
+//var
 $com_dir = 'az_comment/';
 if (isset($dir_comment)) $com_dir = $dir_comment;
 $comm_file = '';
@@ -37,8 +68,10 @@ $check_tit = false;
 $check_link = false;
 $check_cont = false;
 $check_ident = false;
-//$_SESSION['com_msg'] pos0-3: title, url, content, img_identify
-$_SESSION['com_msg'] = array('', '', '', '');
+$check_email = false;
+//$_SESSION['com_msg'] pos0-4: title, url, content, img_identify, email
+$_SESSION['com_msg'] = array('', '', '', '', '');
+//check img identify
 if (isset($_POST['c_ident']) && isset($_SESSION['rand_img'])) {
 	$img_sign = ' !== ';
 	$img_succ = '<span class="span_red">Verify faile: ';
@@ -63,9 +96,9 @@ if (isset($_POST['co_tit'])) {
 	}
 }
 //check link
+$find_html_a = array('"', '\'', '<', '>', ' ', "\t", "\n", "\r", "\0", "\x0B");
 if (isset($_POST['co_link'])) {
 	$_POST['co_link'] = strtolower(trim($_POST['co_link']));
-	$find_html_a = array('"', '\'', '<', '>', ' ', "\t", "\n", "\r", "\0", "\x0B");
 	$_POST['co_link'] = str_replace($find_html_a, '', $_POST['co_link']);
 	if (strlen($_POST['co_link']) > 128) $_SESSION['com_msg'][1] = '<span class="span_red">URL too long</span>';
 	else $check_link = true;
@@ -80,9 +113,16 @@ if (isset($_POST['co_cont'])) {
 		$check_cont = true;
 	}
 }
+//check email
+if (isset($_POST['co_email'])) {
+	$_POST['co_email'] = strtolower(trim($_POST['co_email']));
+	$_POST['co_email'] = str_replace($find_html_a, '', $_POST['co_email']);
+	if (strlen($_POST['co_email']) > 128) $_SESSION['com_msg'][4] = '<span class="span_red">Email too long</span>';
+	else $check_email = true;
+}
 //check all
 $comm_data = '';
-if ($check_ident && $check_tit && $check_link && $check_cont) {
+if ($check_ident && $check_tit && $check_link && $check_cont && $check_email) {
 	//stripslashes
 	if (get_magic_quotes_gpc()) {
 		$_POST['co_cont'] = stripslashes($_POST['co_cont']);
@@ -102,14 +142,22 @@ if ($check_ident && $check_tit && $check_link && $check_cont) {
 		if (count($match_res) === 0) $_POST['co_link'] = 'http://'.$_POST['co_link'];
 	}
 	//add html tag
+	$comm_data = '<div class="div_commc">';
+	//gravatar
+	if ($is_gravatar) {
+		$comm_data .= '<div class="div_com_ava">'."\r\n".'<img alt="" src="';
+		$comm_data .= get_gravatar($_POST['co_email']);
+		$comm_data .= '" />'."\r\n".'</div>';
+	}
+	//
 	if ($show_flink) {
-		$comm_data = '<a class="user" href="'.$_POST['co_link'].'" target="_blank">'."\r\n";
+		$comm_data .= '<a class="user" href="'.$_POST['co_link'].'" target="_blank">'."\r\n";
 		$comm_data .= $_POST['co_tit'].': </a>'."\r\n";
 	}
 	else {
-		$comm_data = '<span class="span_com_tit">'.$_POST['co_tit'].': </span>'."\r\n";
+		$comm_data .= '<span class="span_com_tit">'.$_POST['co_tit'].': </span>'."\r\n";
 	}
-	$comm_data .= '<div class="div_commc"><span class="span_commc">'.$_POST['co_cont'].
+	$comm_data .= '<span class="span_commc">'.$_POST['co_cont'].
 		'</span>'."\r\n".'<div class="div_com_time">'
 		.'<span class="span_comsize">['.$comm_size.']</span>'.$time_txt.'</div></div>'."\r\n<!--comm_end-->\r\n";
 	$check_all_ok = true;
@@ -145,7 +193,7 @@ else {
 		if (isset($_POST['co_tit'])) $comm_stat_msg = '<span class="span_red">Please enter the required info.</span>';
 	}
 	else {
-		if (!$lock_f_exists) $comm_stat_msg = '<span class="span_red">lock file not exists，comment function error.</span>';
+		if (!$lock_f_exists) $comm_stat_msg = '<span class="span_red">lock file not exists, comment function error.</span>';
 		else if ($comm_file === '') $comm_stat_msg = '<span class="span_red">The post is not exists.</span>';
 	}
 }
@@ -168,8 +216,10 @@ if ($go_write) {
 		unset($_SESSION['co_tit']);
 		unset($_SESSION['co_cont']);
 		unset($_SESSION['co_link']);
+		unset($_SESSION['co_email']);
 	}
 	file_put_contents($lock_stat_f, 'can_write');
+	comm_log($comm_log_p, $comm_log_maxsize, $_POST['co_email'], $_POST['co_tit']);
 }
 //read comments
 //O=('-'Q) echo and readfile
