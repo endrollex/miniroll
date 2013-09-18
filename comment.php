@@ -168,7 +168,6 @@ $chunk_value = 50;
 $html_comm_readfile = '';
 if (file_exists($comm_file)) $html_comm_readfile = file_get_contents($comm_file);
 $second_new = ($comm_size-$comm_size%$chunk_value)/$chunk_value;
-$second_newfile = $comm_file.$second_new;
 $cf_fix = 0;
 if ($comm_size%$chunk_value === 0) $cf_fix = $comm_size/$chunk_value;
 $comm_file_rename = $comm_file.$cf_fix;
@@ -202,7 +201,8 @@ else {
 if ($go_write) {
 	$put_ok = true;
 	if ($cf_fix === 0) {
-		$html_comm_readfile = $comm_data.$html_comm_readfile;
+		//comment order direction
+		$html_comm_readfile = $html_comm_readfile.$comm_data;
 		$put_ok = file_put_contents($comm_file, $html_comm_readfile);
 	}
 	else {
@@ -226,18 +226,15 @@ if ($go_write) {
 //O=('-'Q) echo and readfile
 echo '<span class="span_l4b"><a name="commtop">Comments: </a>'.$comm_size.'</span><br/><br/>';
 if ($comm_file !== '') {
-	if ($html_comm_readfile === '') $html_comm_readfile = '<span class="span_l4">-</span><br/>';
-	echo $html_comm_readfile;
-	if ($second_new !== 0) if (file_exists($second_newfile)) readfile($second_newfile);
 	//show all file
-	if ($second_new > 1) {
-		//max view
-		$max_view = 0;
-		if ($second_new > 32) $max_view = $second_new-32;
-		for ($ix_comm = $second_new-1; $ix_comm !== $max_view; --$ix_comm) {
-			if (file_exists($comm_file.$ix)) readfile($comm_file.$ix);
+	if ($second_new > 0) {
+		//comment order direction
+		for ($ix_comm = 1; $ix_comm !== $second_new+1; ++$ix_comm) {
+			if (file_exists($comm_file.$ix_comm)) readfile($comm_file.$ix_comm);
 		}
 	}
+	if ($html_comm_readfile === '' && $second_new === 0) $html_comm_readfile = '<span class="span_l4">-</span><br/>';
+	echo $html_comm_readfile;
 }
 //rand send
 $rand_send = array();
