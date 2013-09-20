@@ -39,6 +39,8 @@ function comm_log(&$comm_log_p, &$comm_log_maxsize, &$post_co_email, $post_co_ti
 	if ($fp) {
 		$temp_str = "<?php\r\n//";
 		$temp_str .= date('Y-m-d H:i:s', time());
+		if (isset($_SERVER['REMOTE_ADDR'])) $temp_str .= ','.$_SERVER['REMOTE_ADDR'];
+		if (isset($_SERVER['HTTP_USER_AGENT'])) $temp_str .= ','.$_SERVER['HTTP_USER_AGENT'];
 		$temp_str .= ','.$post_co_email;
 		$temp_str .= ','.$post_co_tit;
 		$temp_str .= "\r\n?>\r\n";
