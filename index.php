@@ -194,8 +194,8 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 	}
 	//relative links, comments
 	if (isset($_GET['p'])) {
-		if (file_exists($dir_leftmenu.'register_link.php')) require($dir_leftmenu.'register_link.php');
-		require('comment.php');
+		if (file_exists($dir_leftmenu.'register_link.php')) require_once($dir_leftmenu.'register_link.php');
+		require_once('comment.php');
 	}
 	//link bottom
 	$html_viewlink = '';

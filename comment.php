@@ -25,7 +25,7 @@ if (file_exists('f_assistant/gravatar/gravatar.php')) {require('f_assistant/grav
 //comment log function
 $comm_log_p = 'az_comment/log/comm_log';
 $comm_log_maxsize = 1000000;
-function comm_log(&$comm_log_p, &$comm_log_maxsize, &$post_co_email, $post_co_tit) {
+function comm_log(&$comm_log_p, &$comm_log_maxsize, &$post_co_email, $post_co_tit, &$time_txt, &$comm_t_id, &$comm_id) {
 	$comm_log = $comm_log_p.'.php';
 	if (file_exists($comm_log))
 		if (filesize($comm_log) > $comm_log_maxsize) {
@@ -37,13 +37,21 @@ function comm_log(&$comm_log_p, &$comm_log_maxsize, &$post_co_email, $post_co_ti
 	}
 	$fp = fopen($comm_log, 'ab');
 	if ($fp) {
-		$temp_str = "<?php\r\n//";
-		$temp_str .= date('Y-m-d H:i:s', time());
-		if (isset($_SERVER['REMOTE_ADDR'])) $temp_str .= ','.$_SERVER['REMOTE_ADDR'];
-		if (isset($_SERVER['HTTP_USER_AGENT'])) $temp_str .= ','.$_SERVER['HTTP_USER_AGENT'];
-		$temp_str .= ','.$post_co_email;
-		$temp_str .= ','.$post_co_tit;
-		$temp_str .= "\r\n?>\r\n";
+		$cc_trace_t = '$cc_trace['.time().mt_rand(1000, 9999).']';
+		$temp_addr = '';
+		$temp_user_ag = '';
+		if (isset($_SERVER['REMOTE_ADDR'])) $temp_addr = $_SERVER['REMOTE_ADDR'];
+		if (isset($_SERVER['HTTP_USER_AGENT'])) $temp_user_ag = $_SERVER['HTTP_USER_AGENT'];
+		//
+		$temp_str = "<?php\r\n";
+		$temp_str .= $cc_trace_t.'[0] = "'.$time_txt.'";'."\r\n";
+		$temp_str .= $cc_trace_t.'[1] = "'.$comm_t_id.'";'."\r\n";
+		$temp_str .= $cc_trace_t.'[2] = "'.$comm_id.'";'."\r\n";
+		$temp_str .= $cc_trace_t.'[3] = "'.$post_co_tit.'";'."\r\n";
+		$temp_str .= $cc_trace_t.'[4] = "'.$post_co_email.'";'."\r\n";
+		$temp_str .= $cc_trace_t.'[5] = "'.$temp_addr.'";'."\r\n";
+		$temp_str .= $cc_trace_t.'[6] = "'.$temp_user_ag.'";'."\r\n";
+		$temp_str .= "?>\r\n";
 		fwrite($fp, $temp_str);
 		fclose($fp);
 	}
@@ -53,9 +61,15 @@ $com_dir = 'az_comment/';
 if (isset($dir_comment)) $com_dir = $dir_comment;
 $comm_file = '';
 $comm_count_file = '';
+$comm_c_id = '';
+$comm_t_id = '';
+if (isset($view_file)) $comm_t_id = $view_file;
 $comm_size = 0;
+$comm_id = '';
+$time_txt = '';
 //read comment count
 if (isset($_SESSION['view_file_c'])) {
+	$comm_c_id = $_SESSION['view_file_c'];
 	$comm_file = $com_dir.$_SESSION['view_file_c'].'c';
 	$comm_count_file = $comm_file.'_count';
 	if (file_exists($comm_count_file)) $comm_size = file_get_contents($comm_count_file);
@@ -64,7 +78,8 @@ if (isset($_SESSION['view_file_c'])) {
 if (isset($_POST['co_tit'])) $_SESSION['co_tit'] = $_POST['co_tit'];
 if (isset($_POST['co_cont'])) $_SESSION['co_cont'] = $_POST['co_cont'];
 if (isset($_POST['co_link'])) $_SESSION['co_link'] = $_POST['co_link'];
-//check img
+if (isset($_POST['co_email'])) $_SESSION['co_email'] = $_POST['co_email'];
+//check
 $check_all_ok = false;
 $check_tit = false;
 $check_link = false;
@@ -73,7 +88,10 @@ $check_ident = false;
 $check_email = false;
 //$_SESSION['com_msg'] pos0-4: title, url, content, img_identify, email
 $_SESSION['com_msg'] = array('', '', '', '', '');
+//once identify success, keep ident flag
+if (!isset($_SESSION['keep_ident'])) $_SESSION['keep_ident'] = array(false, 0);
 //check img identify
+$check_ident_fail = false;
 if (isset($_POST['c_ident']) && isset($_SESSION['rand_img'])) {
 	$img_sign = ' !== ';
 	$img_succ = '<span class="span_red">Verify faile: ';
@@ -82,11 +100,15 @@ if (isset($_POST['c_ident']) && isset($_SESSION['rand_img'])) {
 		$check_ident = true;
 		$img_sign = ' === ';
 		$img_succ = '<span>Verify OK: ';
+		$_SESSION['keep_ident'][0] = true;
 	}
+	else $check_ident_fail = true;
 	$_SESSION['com_msg'][3] = $img_succ.$_POST['c_ident'].$img_sign.$_SESSION['rand_img'][0].'</span><br/>';
 	if (strlen($_POST['c_ident']) == 0 || strlen($_POST['c_ident']) > 18)
 		$_SESSION['com_msg'][3] = $img_succ.'Please enter the echo word.</span>';
 }
+//max keep_ident use times
+if (isset($_SESSION['keep_ident'])) if ($_SESSION['keep_ident'][1] > 5) $_SESSION['keep_ident'] = array(false, 0);
 //check title
 if (isset($_POST['co_tit'])) {
 	$_POST['co_tit'] = htmlspecialchars(trim($_POST['co_tit']), ENT_QUOTES);
@@ -130,9 +152,7 @@ if ($check_ident && $check_tit && $check_link && $check_cont && $check_email) {
 		$_POST['co_cont'] = stripslashes($_POST['co_cont']);
 		$_POST['co_tit'] = stripslashes($_POST['co_tit']);
 	}
-	$ftime = date('ymdHi', time());
-	$time_txt = '20'.substr($ftime, 0, 2).'-'.substr($ftime, 2, 2).'-'.substr($ftime, 4, 2);
-	$time_txt = $time_txt.' '.substr($ftime, 6, 2).':'.substr($ftime, 8, 2);
+	$time_txt = date('Y-m-d H:i', time());
 	$_POST['co_cont'] = nl2br($_POST['co_cont']);
 	//add http
 	$show_flink = false;
@@ -153,12 +173,13 @@ if ($check_ident && $check_tit && $check_link && $check_cont && $check_email) {
 		$comm_data .= '" />'."\r\n".'</div>';
 	}
 	//
+	$comm_id = 'cc'.$comm_c_id.'_'.$comm_size;
 	if ($show_flink) {
-		$comm_data .= '<a class="user" href="'.$_POST['co_link'].'" target="_blank">'."\r\n";
+		$comm_data .= '<a id="'.$comm_id.'" class="user" href="'.$_POST['co_link'].'" target="_blank">'."\r\n";
 		$comm_data .= $_POST['co_tit'].': </a>'."\r\n";
 	}
 	else {
-		$comm_data .= '<span class="span_com_tit">'.$_POST['co_tit'].': </span>'."\r\n";
+		$comm_data .= '<span id="'.$comm_id.'" class="span_com_tit">'.$_POST['co_tit'].': </span>'."\r\n";
 	}
 	$comm_data .= '<span class="span_commc">'.$_POST['co_cont'].
 		'</span>'."\r\n".'<div class="div_com_time">'
@@ -222,7 +243,7 @@ if ($go_write) {
 		unset($_SESSION['co_email']);
 	}
 	file_put_contents($lock_stat_f, 'can_write');
-	comm_log($comm_log_p, $comm_log_maxsize, $_POST['co_email'], $_POST['co_tit']);
+	comm_log($comm_log_p, $comm_log_maxsize, $_POST['co_email'], $_POST['co_tit'], $time_txt, $comm_t_id, $comm_id);
 }
 //read comments
 //O=('-'Q) echo and readfile
