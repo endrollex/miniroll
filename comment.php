@@ -31,9 +31,12 @@ function comm_log(&$comm_log_p, &$comm_log_maxsize, &$post_co_email, $post_co_ti
 		if (filesize($comm_log) > $comm_log_maxsize) {
 			$temp_str = date('YmdHis', time());
 			$comm_log_hist = $comm_log_p.'_'.$temp_str.'.php';
+			$comm_log_last = $comm_log_p.'_last.php';
+			$comm_log_last_f = "<?php\r\n".'$comm_log_lastf = '."'".$comm_log_hist."';\r\n?>";
 			$temp_read = file_get_contents($comm_log);
 			file_put_contents($comm_log_hist, $temp_read);
 			file_put_contents($comm_log, '');
+			file_put_contents($comm_log_last, $comm_log_last_f);
 	}
 	$fp = fopen($comm_log, 'ab');
 	if ($fp) {
@@ -41,16 +44,16 @@ function comm_log(&$comm_log_p, &$comm_log_maxsize, &$post_co_email, $post_co_ti
 		$temp_addr = '';
 		$temp_user_ag = '';
 		if (isset($_SERVER['REMOTE_ADDR'])) $temp_addr = $_SERVER['REMOTE_ADDR'];
-		if (isset($_SERVER['HTTP_USER_AGENT'])) $temp_user_ag = $_SERVER['HTTP_USER_AGENT'];
+		if (isset($_SERVER['HTTP_USER_AGENT'])) $temp_user_ag = htmlspecialchars($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES);
 		//
 		$temp_str = "<?php\r\n";
-		$temp_str .= $cc_trace_t.'[0] = "'.$time_txt.'";'."\r\n";
-		$temp_str .= $cc_trace_t.'[1] = "'.$comm_t_id.'";'."\r\n";
-		$temp_str .= $cc_trace_t.'[2] = "'.$comm_id.'";'."\r\n";
-		$temp_str .= $cc_trace_t.'[3] = "'.$post_co_tit.'";'."\r\n";
-		$temp_str .= $cc_trace_t.'[4] = "'.$post_co_email.'";'."\r\n";
-		$temp_str .= $cc_trace_t.'[5] = "'.$temp_addr.'";'."\r\n";
-		$temp_str .= $cc_trace_t.'[6] = "'.$temp_user_ag.'";'."\r\n";
+		$temp_str .= $cc_trace_t."[0] = '".$time_txt."';\r\n";
+		$temp_str .= $cc_trace_t."[1] = '".$comm_t_id."';\r\n";
+		$temp_str .= $cc_trace_t."[2] = '".$comm_id."';\r\n";
+		$temp_str .= $cc_trace_t."[3] = '".$post_co_tit."';\r\n";
+		$temp_str .= $cc_trace_t."[4] = '".$post_co_email."';\r\n";
+		$temp_str .= $cc_trace_t."[5] = '".$temp_addr."';\r\n";
+		$temp_str .= $cc_trace_t."[6] = '".$temp_user_ag."';\r\n";
 		$temp_str .= "?>\r\n";
 		fwrite($fp, $temp_str);
 		fclose($fp);
@@ -102,7 +105,10 @@ if (isset($_POST['c_ident']) && isset($_SESSION['rand_img'])) {
 		$img_succ = '<span>Verify OK: ';
 		$_SESSION['keep_ident'][0] = true;
 	}
-	else $check_ident_fail = true;
+	else {
+		$check_ident_fail = true;
+		$_SESSION['keep_ident'][0] = false;
+	}
 	$_SESSION['com_msg'][3] = $img_succ.$_POST['c_ident'].$img_sign.$_SESSION['rand_img'][0].'</span><br/>';
 	if (strlen($_POST['c_ident']) == 0 || strlen($_POST['c_ident']) > 18)
 		$_SESSION['com_msg'][3] = $img_succ.'Please enter the echo word.</span>';
@@ -122,7 +128,7 @@ if (isset($_POST['co_tit'])) {
 //check link
 $find_html_a = array('"', '\'', '<', '>', ' ', "\t", "\n", "\r", "\0", "\x0B");
 if (isset($_POST['co_link'])) {
-	$_POST['co_link'] = strtolower(trim($_POST['co_link']));
+	$_POST['co_link'] = htmlspecialchars(strtolower(trim($_POST['co_link'])), ENT_QUOTES);
 	$_POST['co_link'] = str_replace($find_html_a, '', $_POST['co_link']);
 	if (strlen($_POST['co_link']) > 128) $_SESSION['com_msg'][1] = '<span class="span_red">URL too long</span>';
 	else $check_link = true;
@@ -139,7 +145,7 @@ if (isset($_POST['co_cont'])) {
 }
 //check email
 if (isset($_POST['co_email'])) {
-	$_POST['co_email'] = strtolower(trim($_POST['co_email']));
+	$_POST['co_email'] = htmlspecialchars(strtolower(trim($_POST['co_email'])), ENT_QUOTES);
 	$_POST['co_email'] = str_replace($find_html_a, '', $_POST['co_email']);
 	if (strlen($_POST['co_email']) > 128) $_SESSION['com_msg'][4] = '<span class="span_red">Email too long</span>';
 	else $check_email = true;
