@@ -1,8 +1,7 @@
 <?php
-//recnt comments
+//recent comments
 $comm_log_file = 'az_comment/log/comm_log.php';
 $url_index = 'http://endrollex.com/index.php?p=';
-$comm_jour_dir = 'journal/';
 if (file_exists($comm_log_file)) require($comm_log_file);
 $view_stop = false;
 if (!isset($cc_trace)) $view_stop = true;
@@ -15,9 +14,6 @@ echo '<div>';
 while (!$view_stop) {
 	$temp_arr = current($cc_trace);
 	reset($temp_arr);
-	$comm_jour_file = $comm_jour_dir.$temp_arr[1];
-	$temp_tit = '';
-	if (file_exists($comm_jour_file)) $temp_tit = file_get_contents($comm_jour_file);
 	$url_index_p = $url_index.$temp_arr[1].'#'.$temp_arr[2];
 	echo '<a class ="m4" target="_blank" href="'.$url_index_p.'">'.$temp_arr[0].', '.$temp_arr[3].'</a>';
 	if (prev($cc_trace) === false) $view_stop = true;
