@@ -34,14 +34,16 @@ $meta_keywords = 'Blog';
 $meta_description = 'Sample Blog';
 $para_get_p = '';
 if (isset($_GET['p'])) {
+	if (strlen($_GET['p']) < 10) $_GET['p'] = 'bad_value';
 	$para_get_p = $_GET['p'];
 	meta_seo_get($para_get_p, $dir, $label_code, $label_keywords, $echo_title,
 		$meta_keywords, $meta_description);
 }
 if (isset($_GET['l']) || isset($_GET['next'])) {
+	if (isset($_GET['l'])) if (strlen($_GET['l']) < 1) $_GET['l'] = 'bad_value';
 	$show_desc = true;
 	if (isset($_GET['next']) && !isset($_GET['l'])) {if ($_GET['next'] == 0) $show_desc = false;}
-	if ($show_desc ) $meta_description = '';
+	if ($show_desc) $meta_description = '';
 }
 if (isset($_GET['p'])) if (!strstr($_GET['p'], '0000999999')) $show_top2 = true;
 //top or top2
