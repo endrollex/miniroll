@@ -33,8 +33,6 @@ pre.prettyprint{
 	padding: 2px;
 	border: 0px solid #888;
 	float: left;
-	background-image: url('../images/g12.gif');
-	background-repeat: repeat-y;
 }
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums{ /* IE indents via margin-left */
