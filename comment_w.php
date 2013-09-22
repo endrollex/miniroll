@@ -4,12 +4,6 @@
  * Echo guest comment form
 */
 ?>
-<script type="text/javascript">
-function tit_onfocus() {
-document.getElementById('input_com_iden').value='<?php
-if (isset($_SESSION['rand_img'][0])) echo $_SESSION['rand_img'][0];
-?>';}
-</script>
 <form id="comment_form01"<?php 
 if (!isset($_GET['copost'])) echo ' style="display: none"';
 ?> action="<?php
@@ -65,3 +59,10 @@ Avatar support: <a href="http://en.gravatar.com/" class="page" target="_blank">g
 Comment needs to be plain text.<br/>
 *: Required
 </div></form>
+<script type="text/javascript">
+if (i_disable_comm) {
+document.getElementById('comm').style.display='none';
+document.getElementById('comm_span1').innerHTML="(=&#039;.&#039;=)";
+document.getElementById('comment_form01').style.display='none';
+document.getElementById('comment_form02').style.display='none';}
+</script>

@@ -281,18 +281,25 @@ if (isset($_GET['p'])) {
 }
 ?>
 <div>
+<script type="text/javascript">
+function form_disp(sel_action) {
+if (sel_action==1) {
+document.getElementById('comment_form01').style.display='inline';
+document.getElementById('comment_form02').style.display='inline';}
+if (sel_action==2) {
+document.getElementById('comment_form01').style.display='none';
+document.getElementById('comment_form02').style.display='none';}}
+function tit_onfocus() {
+document.getElementById('input_com_iden').value='<?php
+if (isset($_SESSION['rand_img'][0])) echo $_SESSION['rand_img'][0];
+?>';}
+</script>
 <div class="div_com_page">Echo all comments</div>
 <div class="div_com_top">
-<a name="comm" href="#comm" class="page" onclick="
-document.getElementById('comment_form01').style.display='inline';
-document.getElementById('comment_form02').style.display='inline';
-">Add a comment</a>
- | <a id="comment_form02" href="#comm" class="page"<?php 
+<a id="comm" href="#comm" class="page" onclick="form_disp(1)">Add a comment</a>
+<span id="comm_span1"> | </span><a id="comment_form02" href="#comm" class="page"<?php 
 if (!isset($_GET['copost'])) echo ' style="display: none"';
-?> onclick="
-document.getElementById('comment_form01').style.display='none';
-document.getElementById('comment_form02').style.display='none';
-">Collapse</a>
+?> onclick="form_disp(2)">Collapse</a>
 <?php
 //O=('-'Q) echo
 echo '<span class="span_comm_blank"> </span>'.$comm_stat_msg;
