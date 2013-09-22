@@ -18,9 +18,15 @@ while (!$view_stop) {
 	$temp_arr = current($cc_trace);
 	reset($temp_arr);
 	$url_index_p = $url_index.$temp_arr[1].'#'.$temp_arr[2];
-	echo '<a class ="m4" target="_blank" href="'.$url_index_p.'">'.$temp_arr[0].', '.$temp_arr[3].'</a>';
+	echo '<a class ="m4" href="'.$url_index_p.'">'.$temp_arr[0].', '.$temp_arr[3].'</a>';
 	if (prev($cc_trace) === false) $view_stop = true;
 	else echo '<br/><br/>';
 }
 echo '</div>';
+//
+$is_back_loop = false;
+if (isset($hatt_link_back) && isset($view_file)) if ($hatt_link_back == '?p='.$view_file) {
+	$is_back_loop = true;
+}
+if (isset($view_file) && !$is_back_loop) $_SESSION['back_here'] = '?p='.$view_file;
 ?>
