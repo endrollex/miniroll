@@ -5,4 +5,7 @@ Title Search: <span class="m6" style="color: #FFFFFF" dir="ltr">Test version</sp
 <input type="text" class="input_com1" style="width: 300px;" name="search_tit" />
 <input type="hidden" name="search_type" value="tit" />
 <input type="submit" class="input_com1" value="Search" />
-</form><!--m5b--><br />
+</form>
+<script type="text/javascript">
+var i_disable_comm=1;
+</script><br/><!--m5b-->
