@@ -3,6 +3,7 @@
  * The guest comment main module
  *
  * Require files:
+ *     htmindex.js: control comment form
  *     comment_w.php: Comment form
  *     img_ident.php: Generate a image
  *     font/cet4_s.txt: The words list for generate image
