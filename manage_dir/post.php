@@ -331,6 +331,7 @@ if ($writeok === 1) {
 	if ($fp) {
 		$_POST['title'] = trim($_POST['title']);
 		$_POST['title'] = htmlspecialchars($_POST['title']);
+		if (get_magic_quotes_gpc()) $_POST['title'] = stripslashes($_POST['title']);
 		fwrite($fp, $_POST['title']);
 		if ($isedit) {
 			$html_post_msg .= '<span class="span_red"><a href="../index.php?p='.$edit_t.'">'.$tit_name.'</a> edit OK!</span>';
