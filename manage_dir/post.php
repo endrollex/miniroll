@@ -120,7 +120,7 @@ function minicode(&$need_eidt, &$which_ix) {
 			$edit_matches = array();
 			$edit_img_alt = '';
 			$edit_matches = array();
-			if (preg_match("/^.{0,10}\]/", $need_eidt, $edit_matches) !== 0) {
+			if (preg_match("/^.{0,10}?\]/", $need_eidt, $edit_matches) !== 0) {
 				$need_eidt = str_replace($edit_matches[0], '', $need_eidt);
 				$edit_img_alt = substr($edit_matches[0], 0, strlen($edit_matches[0])-1);
 			}
