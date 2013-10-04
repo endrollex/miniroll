@@ -53,12 +53,12 @@ function minicode(&$need_eidt, &$which_ix) {
 			$need_eidt = substr_replace($need_eidt, '', -6, 6);
 			$edit_img_alt = '';
 			$edit_matches = array();
-			if (preg_match("/^.{0,100}\]/", $need_eidt, $edit_matches) !== 0) {
+			if (preg_match("/^.{0,100}?\]/", $need_eidt, $edit_matches) !== 0) {
 				$need_eidt = str_replace($edit_matches[0], '', $need_eidt);
 				$edit_img_alt = substr($edit_matches[0], 0, strlen($edit_matches[0])-1);
 			}
 			else  {
-				if (preg_match("#/[^/]{0,100}\.[a-zA-Z]{3}$#", $need_eidt, $edit_matches) !== 0) {
+				if (preg_match("#/[^/]{0,100}?\.[a-zA-Z]{3}$#", $need_eidt, $edit_matches) !== 0) {
 					$edit_img_alt = substr($edit_matches[0], 1, strlen($edit_matches[0])-5);
 				}
 			}
@@ -92,7 +92,7 @@ function minicode(&$need_eidt, &$which_ix) {
 			$need_eidt = substr_replace($need_eidt, '', -8, 8);
 			$edit_color = '#0000FF';
 			$edit_matches = array();
-			if (preg_match("/^(#[a-fA-F0-9]{6}|#[a-fA-F0-9]{3}|[a-zA-Z]{3,21})\]/", substr($need_eidt, 0, 21), $edit_matches) !== 0) {
+			if (preg_match("/^(#[a-fA-F0-9]{6}|#[a-fA-F0-9]{3}|[a-zA-Z]{3,21}?)\]/", substr($need_eidt, 0, 21), $edit_matches) !== 0) {
 				$need_eidt = str_replace($edit_matches[0], '', $need_eidt);
 				$edit_color = substr($edit_matches[0], 0, strlen($edit_matches[0])-1);
 				if (substr($edit_color, 0, 1) === '#') $edit_color = strtoupper($edit_color);
