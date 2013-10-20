@@ -18,8 +18,8 @@ if (isset($albumi) && isset($albums) && isset($album_path)) {
 		echo '</a>';
 		echo '<div class="album_div2">';
 		//text link
-		echo '<a target="_blank" class="album" href="'.$album_path.$albumi_c[$ix_chunk][$ix_alb-1].'">'.$albums_c[$ix_chunk][$ix_alb-1].'</a>';
-		echo '</div></div>';;
+		echo $albums_c[$ix_chunk][$ix_alb-1];
+		echo '</div></div>';
 	}
 	echo '<br/>Page:';
 	for ($ix_alb = count($albumi_c); $ix_alb != 0; --$ix_alb) {
