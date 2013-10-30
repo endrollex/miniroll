@@ -388,6 +388,10 @@ a.m4_style:active {color: #00AEEF;}
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
+.img_commc {
+	height: 64px;
+	width: 64px;
+}
 .span_commc {
 	font-size: 14px;
 	margin-top: 5px;

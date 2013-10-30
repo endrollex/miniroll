@@ -172,15 +172,15 @@ if ($check_ident && $check_tit && $check_link && $check_cont && $check_email) {
 	}
 	//add html tag
 	$comm_data = '<div class="div_commc">';
+	$comm_id = 'cc'.$comm_c_id.'_'.$comm_size;
 	//gravatar
 	if ($is_gravatar) {
 		$comm_data .= '<div class="div_com_ava">'."\r\n".'<img alt="" src="';
 		if ($_POST['co_email'] != '') $comm_data .= get_gravatar($_POST['co_email'], 64, 'identicon');
 		else $comm_data .= get_gravatar($_POST['co_email']);
-		$comm_data .= '" />'."\r\n".'</div>';
+		$comm_data .= '"'."\r\n".'class="img_commc" />'."\r\n".'</div>';
 	}
 	//
-	$comm_id = 'cc'.$comm_c_id.'_'.$comm_size;
 	if ($show_flink) {
 		$comm_data .= '<a id="'.$comm_id.'" class="user" href="'.$_POST['co_link'].'" target="_blank">'."\r\n";
 		$comm_data .= $_POST['co_tit'].': </a>'."\r\n";

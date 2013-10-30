@@ -2,7 +2,7 @@
 //recent comments
 $comm_log_file = 'az_comment/log/comm_log.php';
 $comm_log_last_file = 'az_comment/log/comm_log_last.php';
-$url_index = 'http://endrollex.com/index.php?p=';
+$url_index = 'index.php?p=';
 if (file_exists($comm_log_file)) require($comm_log_file);
 if (file_exists($comm_log_last_file)) require($comm_log_last_file);
 if (isset($comm_log_lastf)) if (file_exists($comm_log_lastf)) require($comm_log_lastf);
