@@ -28,5 +28,5 @@ $is_back_loop = false;
 if (isset($hatt_link_back) && isset($view_file)) if ($hatt_link_back == '?p='.$view_file) {
 	$is_back_loop = true;
 }
-if (isset($view_file) && !$is_back_loop) $_SESSION['back_here'] = '?p='.$view_file;
+if (isset($_GET['p']) && isset($view_file) && !$is_back_loop) $_SESSION['back_here'] = '?p='.$view_file;
 ?>
