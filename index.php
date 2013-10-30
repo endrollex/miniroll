@@ -168,7 +168,7 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 	if (isset($_SESSION['v_user']) || !isset($_SESSION['v_user'])) {
 		echo "\r\n".'<span class="span_l2"> | </span><form class="form_cpp03b_pd_edit" action="manage.php?m=0" method="post">';
 		echo "\r\n".'<input type="hidden" name="edit_d1" value="'.$view_file.'"/>';
-		echo '<input type="image" src="images/i_04b_03b_edit.gif" alt="" /></form>'."\r\n";
+		echo '<input type="image" src="images/i_04b_03b_edit.gif" alt="edit" /></form>'."\r\n";
 	}
 	if (isset($_GET['l'])) echo '<span class="span_l2"> | '.$a_link1v_comm.'Comments: '.$echo_comm_size_a.$a_link2.'</span>';
 	echo '</div>';
