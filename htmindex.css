@@ -434,7 +434,7 @@ a.user:active {color: #2E3092; font-weight: bold;}
 */
 /*----------------------------------------------------------------Album*/
 .album_div1 {
-	margin: 20px 30px 20px 30px;
+	margin: 20px 20px 20px 20px;
 	display: inline-block;
 	vertical-align: top;
 }
