@@ -254,7 +254,7 @@ if ($go_write) {
 }
 //read comments
 //O=('-'Q) echo and readfile
-echo '<span class="span_l4b"><a name="commtop">Comments: </a>'.$comm_size.'</span><br/><br/>';
+echo '<span class="span_l4b"><a id="commtop">Comments: </a>'.$comm_size.'</span><br/><br/>';
 if ($comm_file !== '') {
 	//show all file
 	if ($second_new > 0) {
