@@ -178,7 +178,8 @@ if ($check_ident && $check_tit && $check_link && $check_cont && $check_email) {
 		$comm_data .= '<div class="div_com_ava">'."\r\n".'<img alt="" src="';
 		if ($_POST['co_email'] != '') $comm_data .= get_gravatar($_POST['co_email'], 64, 'identicon');
 		else $comm_data .= get_gravatar($_POST['co_email']);
-		$comm_data .= '"'."\r\n".'class="img_commc" />'."\r\n".'</div>';
+		$comm_data .= '"'."\r\n".'class="img_commc" id="'.
+			$comm_id.'i" onerror="rep_err('."'".$comm_id."i'".');" />'."\r\n".'</div>';
 	}
 	//
 	if ($show_flink) {
@@ -283,6 +284,8 @@ if (isset($_GET['p'])) {
 ?>
 <div>
 <script type="text/javascript">
+function rep_err(doc_id) {
+document.getElementById(doc_id).src="/images/bad_gravatar.gif";}
 function form_disp(sel_action) {
 if (sel_action==1) {
 document.getElementById('comment_form01').style.display='inline';
