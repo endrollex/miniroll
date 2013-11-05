@@ -19,6 +19,10 @@
 */
 ?>
 <div class="div_com1">
+<script type="text/javascript">
+function rep_err(doc_id) {
+document.getElementById(doc_id).src="/images/bad_gravatar.gif";}
+</script>
 <?php
 //gravatar
 $is_gravatar = false;
@@ -140,9 +144,7 @@ if (isset($_POST['co_cont'])) {
 	if (strlen($_POST['co_cont']) < 2) $_SESSION['com_msg'][2] = '<span class="span_red">Content too short</span>';
 	$co_cont_max = 1000;
 	if (strlen($_POST['co_cont']) > $co_cont_max*3) $_SESSION['com_msg'][2] = '<span class="span_red">Content too long, max: '.$co_cont_max.'</span>';
-	if ($_SESSION['com_msg'][2] === '') {
-		$check_cont = true;
-	}
+	if ($_SESSION['com_msg'][2] === '') $check_cont = true;
 }
 //check email
 if (isset($_POST['co_email'])) {
@@ -175,10 +177,10 @@ if ($check_ident && $check_tit && $check_link && $check_cont && $check_email) {
 	$comm_id = 'cc'.$comm_c_id.'_'.$comm_size;
 	//gravatar
 	if ($is_gravatar) {
-		$comm_data .= '<div class="div_com_ava">'."\r\n".'<img alt="" src="';
+		$comm_data .= '<div class="div_com_ava">'."\r\n".'<img src="';
 		if ($_POST['co_email'] != '') $comm_data .= get_gravatar($_POST['co_email'], 64, 'identicon');
 		else $comm_data .= get_gravatar($_POST['co_email']);
-		$comm_data .= '"'."\r\n".'class="img_commc" id="'.
+		$comm_data .= '"'."\r\n".'alt="avatar" class="img_commc" id="'.
 			$comm_id.'i" onerror="rep_err('."'".$comm_id."i'".');" />'."\r\n".'</div>';
 	}
 	//
@@ -284,8 +286,6 @@ if (isset($_GET['p'])) {
 ?>
 <div>
 <script type="text/javascript">
-function rep_err(doc_id) {
-document.getElementById(doc_id).src="/images/bad_gravatar.gif";}
 function form_disp(sel_action) {
 if (sel_action==1) {
 document.getElementById('comment_form01').style.display='inline';
