@@ -1,4 +1,4 @@
-﻿<span class="m7">minicode (variant of BBCode) - easy editing XHTML</span><!--m7--><br />
+﻿<span class="m7">minicode (variant of BBCode) - easy editing HTML</span><!--m7--><br />
 <br />
 <span class="m6" style="color: green" dir="ltr">Introduction:</span><!--m6--><br />
 <br />
@@ -22,18 +22,18 @@ Position of tag option depends on the implemented HTML sentence.
 </li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Keywords and Usage:</span><!--m6--><br />
 <!--m5--><ol><li>
 <pre style="background-color: #D3D3D3;">[code]
-for (vector&lt;int&gt;::size_type ix = 0; ix != ivec.size(); ++ix)
-	ivec[ix] = 0;
+while (ivec.size() != ivec.capacity())
+	ivec.push_back(0);
 [/code]</pre>
 <!--m5b--># Preformatted text for code:<br />
 <pre class="prettyprint linenums">
-for (vector&lt;int&gt;::size_type ix = 0; ix != ivec.size(); ++ix)
-	ivec[ix] = 0;
+while (ivec.size() != ivec.capacity())
+	ivec.push_back(0);
 </pre><div class="m1"></div><br />
 <!--m5--></li><li>
-<pre style="background-color: #D3D3D3;">[output]Reply from 127.0.0.1: bytes=32 time&lt;1ms TTL=128[/output]</pre>
+<pre style="background-color: #D3D3D3;">[output]Reply from 74.125.128.100: bytes=32 time=266ms TTL=37[/output]</pre>
 <!--m5b--># Preformatted text for code with output style:<br />
-<pre class="pre_output">Reply from 127.0.0.1: bytes=32 time&lt;1ms TTL=128</pre><div class="m2"></div><br />
+<pre class="pre_output">Reply from 74.125.128.100: bytes=32 time=266ms TTL=37</pre><div class="m2"></div><br />
 <!--m5--></li><li>
 <pre style="background-color: #D3D3D3;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
 [img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
@@ -70,7 +70,7 @@ for (vector&lt;int&gt;::size_type ix = 0; ix != ivec.size(); ++ix)
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-09-04 17:40:19</span><!--m9--><br />
+<span class="m9">Last modified: 2013-11-06 11:20:43</span><!--m9--><br />
 <br />
 # By the way: this page initially completed on 2013-09-02.<br />
 <br />
@@ -116,7 +116,7 @@ href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div><!--m5b-->
 The quick brown fox jumps over the lazy dog.<br />
 The quick brown fox jumps over the lazy dog.<br />
 <br />
-<!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Note:</span><!--m6--><br />
+<!--m5--></li></ol><div></div><!--m5b--><span class="m6" style="color: green" dir="ltr">Note:</span><!--m6--><br />
 <!--m5--><ol><li><!--m5b-->If the sentences are too complex, check them by <a class="m4b" target="_blank" href="http://validator.w3.org/" style="max-height: 9003px;">W3C Markup Validator</a><!--m4--> is a good idea.<br />
 <!--m5--></li><li><!--m5b-->Block elements or margin may cause line spacing too large, delete a newline according to the situation.<br />
 <!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Mechanism:</span><!--m6--><br />
@@ -125,10 +125,10 @@ Mechanism of minicode is base on &quot;Search and Replace&quot;, the process is 
 It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.<br />
 The implemented HTML may contain a little comment markup &lt;!-- --&gt;, intend for reversion.<br />
 Some keywords of minicode depends CSS, the <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/htmindex.css" style="max-height: 9003px;">default CSS</a><!--m4--> provided to show the predefined style.<br />
-For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt" style="max-height: 9003px;">minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual.txt" style="max-height: 9003px;">XHTML article</a><!--m4--> -&gt; this page (Encapsulated)<br />
+For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt" style="max-height: 9003px;">minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual.txt" style="max-height: 9003px;">HTML article</a><!--m4--> -&gt; this page (Encapsulated)<br />
 <br />
 <span class="m6" style="color: green" dir="ltr">Construct:</span><!--m6--><br />
 <br />
-minicode of miniroll is writed by PHP, HTML version is XHTML 1.0.<br />
+minicode of miniroll is writed by PHP, HTML version is HTML5.<br />
 You can modify all rules from <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php" style="max-height: 9003px;">post.php</a><!--m4-->.<br />
 minicode function is not independent from miniroll yet, but I think isolating the function code is easy.<br />

@@ -1,4 +1,4 @@
-[b]minicode (variant of BBCode) - easy editing XHTML[/b]
+[b]minicode (variant of BBCode) - easy editing HTML[/b]
 
 [color]green]Introduction:[/color]
 
@@ -22,18 +22,18 @@ Position of tag option depends on the implemented HTML sentence.
 </li></ol>[/html][color]green]Keywords and Usage:[/color]
 [html]<ol><li>
 <pre style="background-color: #D3D3D3;">[code]
-for (vector&lt;int&gt;::size_type ix = 0; ix != ivec.size(); ++ix)
-	ivec[ix] = 0;
+while (ivec.size() != ivec.capacity())
+	ivec.push_back(0);
 [/code]</pre>
 [/html]# Preformatted text for code:
 [code]
-for (vector<int>::size_type ix = 0; ix != ivec.size(); ++ix)
-	ivec[ix] = 0;
+while (ivec.size() != ivec.capacity())
+	ivec.push_back(0);
 [/code]
 [html]</li><li>
-<pre style="background-color: #D3D3D3;">[output]Reply from 127.0.0.1: bytes=32 time&lt;1ms TTL=128[/output]</pre>
+<pre style="background-color: #D3D3D3;">[output]Reply from 74.125.128.100: bytes=32 time=266ms TTL=37[/output]</pre>
 [/html]# Preformatted text for code with output style:
-[output]Reply from 127.0.0.1: bytes=32 time<1ms TTL=128[/output]
+[output]Reply from 74.125.128.100: bytes=32 time=266ms TTL=37[/output]
 [html]</li><li>
 <pre style="background-color: #D3D3D3;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
 [img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
@@ -116,7 +116,7 @@ href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[/html]The
 The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog.
 
-[html]</li></ol>[/html][color]green]Note:[/color]
+[html]</li></ol><div></div>[/html][color]green]Note:[/color]
 [html]<ol><li>[/html]If the sentences are too complex, check them by [url]http://validator.w3.org/[W3C Markup Validator[/url] is a good idea.
 [html]</li><li>[/html]Block elements or margin may cause line spacing too large, delete a newline according to the situation.
 [html]</li></ol>[/html][color]green]Mechanism:[/color]
@@ -125,10 +125,10 @@ Mechanism of minicode is base on "Search and Replace", the process is reversible
 It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.
 The implemented HTML may contain a little comment markup <!-- -->, intend for reversion.
 Some keywords of minicode depends CSS, the [url]https://github.com/endrollex/miniroll/blob/master/htmindex.css[default CSS[/url] provided to show the predefined style.
-For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[minicode[/url] -> [url]http://endrollex.com/font/minicode_manual.txt[XHTML article[/url] -> this page (Encapsulated)
+For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[minicode[/url] -> [url]http://endrollex.com/font/minicode_manual.txt[HTML article[/url] -> this page (Encapsulated)
 
 [color]green]Construct:[/color]
 
-minicode of miniroll is writed by PHP, HTML version is XHTML 1.0.
+minicode of miniroll is writed by PHP, HTML version is HTML5.
 You can modify all rules from [url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url].
 minicode function is not independent from miniroll yet, but I think isolating the function code is easy.
