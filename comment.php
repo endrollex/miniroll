@@ -19,10 +19,6 @@
 */
 ?>
 <div class="div_com1">
-<script type="text/javascript">
-function rep_err(doc_id) {
-document.getElementById(doc_id).src="/images/bad_gravatar.gif";}
-</script>
 <?php
 //gravatar
 $is_gravatar = false;
@@ -286,15 +282,8 @@ if (isset($_GET['p'])) {
 ?>
 <div>
 <script type="text/javascript">
-function form_disp(sel_action) {
-if (sel_action==1) {
-document.getElementById('comment_form01').style.display='inline';
-document.getElementById('comment_form02').style.display='inline';}
-if (sel_action==2) {
-document.getElementById('comment_form01').style.display='none';
-document.getElementById('comment_form02').style.display='none';}}
 function tit_onfocus() {
-document.getElementById('input_com_iden').value='<?php
+document.getElementById('input_com_iden').value = '<?php
 if (isset($_SESSION['rand_img'][0])) echo $_SESSION['rand_img'][0];
 ?>';}
 </script>

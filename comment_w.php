@@ -60,9 +60,5 @@ Comment needs to be plain text.<br/>
 *: Required
 </div></form>
 <script type="text/javascript">
-if (i_disable_comm == 1) {
-document.getElementById('comm').style.display='none';
-document.getElementById('comm_span1').innerHTML="(=&#039;.&#039;=)";
-document.getElementById('comment_form01').style.display='none';
-document.getElementById('comment_form02').style.display='none';}
+if (i_disable_comm == 1) form_dis_comm();
 </script>
