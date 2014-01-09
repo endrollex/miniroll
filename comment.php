@@ -193,7 +193,7 @@ if ($check_ident && $check_tit && $check_link && $check_cont && $check_email) {
 	$check_all_ok = true;
 }
 //chunk comments, every $chunk_value in a file
-$chunk_value = 50;
+$chunk_value = 30;
 $html_comm_readfile = '';
 if (file_exists($comm_file)) $html_comm_readfile = file_get_contents($comm_file);
 $second_new = ($comm_size-$comm_size%$chunk_value)/$chunk_value;
@@ -255,15 +255,25 @@ if ($go_write) {
 //O=('-'Q) echo and readfile
 echo '<span class="span_l4b"><a id="commtop">Comments: </a>'.$comm_size.'</span><br/><br/>';
 if ($comm_file !== '') {
-	//show all file
-	if ($second_new > 0) {
-		//comment order direction
-		for ($ix_comm = 1; $ix_comm !== $second_new+1; ++$ix_comm) {
-			if (file_exists($comm_file.$ix_comm)) readfile($comm_file.$ix_comm);
-		}
+	//show file
+	$comm_readix = $second_new;
+	if (isset($_GET['comp'])) {
+		if ($_GET['comp'] < 1 || $_GET['comp'] > $second_new) $_GET['comp'] = $second_new;
+		$comm_readix = $_GET['comp'];
 	}
+	if (file_exists($comm_file.$comm_readix)) readfile($comm_file.$comm_readix);
 	if ($html_comm_readfile === '' && $second_new === 0) $html_comm_readfile = '<span class="span_l4">-</span><br/>';
-	echo $html_comm_readfile;
+	if ($comm_readix == $second_new) echo $html_comm_readfile;
+	//O=('-'Q) echo comm page
+	$comm_page = 'index.php?p='.$comm_t_id.'&amp;comp=';
+	echo '<div class="div_com_page">';
+	$ix_comm = $second_new;
+	if ($ix_comm === 0) echo '.';
+	for ($ix_comm = $second_new; $ix_comm != 0; --$ix_comm) {
+		if ($comm_readix == $ix_comm) echo ' '.$ix_comm;
+		else echo ' <a class="user" href="'.$comm_page.$ix_comm.'#comm">'.$ix_comm.'</a>';
+	}
+	echo '</div>';
 }
 //rand send
 $rand_send = array();
@@ -287,7 +297,6 @@ document.getElementById('input_com_iden').value = '<?php
 if (isset($_SESSION['rand_img'][0])) echo $_SESSION['rand_img'][0];
 ?>';}
 </script>
-<div class="div_com_page">Echo all comments</div>
 <div class="div_com_top">
 <a id="comm" href="#comm" class="page" onclick="form_disp(1)">Add a comment</a>
 <span id="comm_span1"> | </span><a id="comment_form02" href="#comm" class="page"<?php 

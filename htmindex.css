@@ -398,8 +398,10 @@ a.m4_style:active {color: #00AEEF;}
 	display: block;
 }
 .div_com_page {
+	font-size: 14px;
 	text-align: center;
-	color: #FFFFFF;
+	color: #CCCCCC;
+	font-weight: bold;
 }
 .span_comm_blank {
 	display: inline-block;

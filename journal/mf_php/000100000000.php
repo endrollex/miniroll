@@ -1,8 +1,20 @@
 <?php
+//function
+function album_sel_ix($sel_ix)
+{
+	$album_alpha = array(
+		'&Alpha;', '&Beta;', '&Gamma;', '&Delta;', '&Epsilon;', '&Zeta;', '&Eta;', '&Theta;', '&Iota;', '&Kappa;',
+		'&Lambda;', '&Mu;', '&Nu;', '&Xi;', '&Omicron;', '&Pi;', '&Rho;', '&Sigma;', '&Tau', '&Upsilon;',
+		'&Phi;', '&Chi;', '&Psi;', '&Omega;', '&bull;'
+	);
+	if ($sel_ix >= count($album_alpha) || $sel_ix < 0) return $album_alpha[count($album_alpha)-1];
+    return $album_alpha[$sel_ix];
+}
 //album
 $album_post = $dir.$view_file_c;
 $album_page = 'index.php?p='.$view_file.'&amp;albp=';
-$chunk_size = 30;
+$chunk_size = 20;
+//
 if (file_exists($album_post)) require($album_post);
 if (isset($albumi) && isset($albums) && isset($album_path)) {
 	$albumi_c = array_chunk($albumi, $chunk_size);
@@ -21,9 +33,11 @@ if (isset($albumi) && isset($albums) && isset($album_path)) {
 		echo $albums_c[$ix_chunk][$ix_alb-1];
 		echo '</div></div>';
 	}
-	echo '<br/>Page:';
+	echo '<div class="div_com_page">';
 	for ($ix_alb = count($albumi_c); $ix_alb != 0; --$ix_alb) {
-		echo ' <a class="album" href="'.$album_page.($ix_alb-1).'">'.($ix_alb-1).'</a>';
+		if ($ix_chunk == ($ix_alb-1)) echo ' '.album_sel_ix($ix_alb-1).'';
+		else echo ' <a class="album" href="'.$album_page.($ix_alb-1).'">'.album_sel_ix($ix_alb-1).'</a>';
 	}
+	echo '</div>';
 }
 ?>
