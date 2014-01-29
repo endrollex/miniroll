@@ -1,14 +1,16 @@
 <?php
 //function
-function album_sel_ix($sel_ix)
-{
-	$album_alpha = array(
-		'&Alpha;', '&Beta;', '&Gamma;', '&Delta;', '&Epsilon;', '&Zeta;', '&Eta;', '&Theta;', '&Iota;', '&Kappa;',
-		'&Lambda;', '&Mu;', '&Nu;', '&Xi;', '&Omicron;', '&Pi;', '&Rho;', '&Sigma;', '&Tau', '&Upsilon;',
-		'&Phi;', '&Chi;', '&Psi;', '&Omega;', '&bull;'
-	);
-	if ($sel_ix >= count($album_alpha) || $sel_ix < 0) return $album_alpha[count($album_alpha)-1];
-    return $album_alpha[$sel_ix];
+if (!function_exists('album_sel_ix')) {
+	function album_sel_ix($sel_ix)
+	{
+		$album_alpha = array(
+			'&Alpha;', '&Beta;', '&Gamma;', '&Delta;', '&Epsilon;', '&Zeta;', '&Eta;', '&Theta;', '&Iota;', '&Kappa;',
+			'&Lambda;', '&Mu;', '&Nu;', '&Xi;', '&Omicron;', '&Pi;', '&Rho;', '&Sigma;', '&Tau', '&Upsilon;',
+			'&Phi;', '&Chi;', '&Psi;', '&Omega;', '&bull;'
+		);
+		if ($sel_ix >= count($album_alpha) || $sel_ix < 0) return $album_alpha[count($album_alpha)-1];
+	    return $album_alpha[$sel_ix];
+	}
 }
 //album
 $album_post = $dir.$view_file_c;
@@ -40,4 +42,8 @@ if (isset($albumi) && isset($albums) && isset($album_path)) {
 	}
 	echo '</div>';
 }
+//unset
+unset($albumi);
+unset($albums);
+unset($album_path);
 ?>
