@@ -237,7 +237,7 @@ if (isset($_POST['f_isedit'])) {
 	$edit_c = substr($edit_t, 0, 12);
 }
 //begin post
-$html_post_msg = 'minicode (variant of BBCode) - easy editing XHTML';
+$html_post_msg = 'minicode (variant of BBCode) - easy editing HTML';
 if ($isedit) $html_post_msg = '<span class="span_blue">Post editing: <a href="../index.php?p='.$edit_t.'">'.$edit_t.'</a></span>';
 //########Authenticate################################################################
 if(isset($_POST['title']) && isset($_POST['content']) && isset($_SESSION['v_user']))
