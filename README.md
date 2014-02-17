@@ -20,7 +20,7 @@ Put all files in a PHP server.
 
 Files Explanation:
 ------------------
-You can see the detail in every files.
+You can see the detail in every file.
 
 * comment.php: The guest comment main module
 * comment_w.php: Echo guest comment form

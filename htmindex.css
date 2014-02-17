@@ -1,7 +1,7 @@
 ﻿/*----------------------------------------------------------------index.php*/
 html {
 	height: 100%;
-	/*overflow-y is trick*/
+	/*overflow-y is CSS3*/
 	overflow-y: scroll;
 }
 textarea {
@@ -283,6 +283,15 @@ a.lab:active {color: #00AEEF; text-decoration: none;}
 	position: relative;
 	left: 200px;
 }
+/*post edit reserved*/
+a.m4_style:link {color: #626262;}
+a.m4_style:visited {color: #626262;}
+a.m4_style:hover {color: #00AEEF;}
+a.m4_style:active {color: #00AEEF;}
+a.m4_style2:link {color: #000000;}
+a.m4_style2:visited {color: #000000;}
+a.m4_style2:hover {color: #00AEEF;}
+a.m4_style2:active {color: #00AEEF;}
 /*minicode use*/
 .m1 {}
 .m2 {}
@@ -311,10 +320,6 @@ a.m4b:link {color: #000000;}
 a.m4b:visited {color: #000000;}
 a.m4b:hover {color: #00AEEF;}
 a.m4b:active {color: #00AEEF;}
-a.m4_style:link {color: #626262;}
-a.m4_style:visited {color: #626262;}
-a.m4_style:hover {color: #00AEEF;}
-a.m4_style:active {color: #00AEEF;}
 /*----------------------------------------------------------------comment.php*/
 .div_com_ava {
 	float: left;

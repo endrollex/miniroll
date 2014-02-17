@@ -196,7 +196,12 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 	}
 	//relative links, comments
 	if (isset($_GET['p'])) {
-		if (file_exists($dir_leftmenu.'register_link.php')) require_once($dir_leftmenu.'register_link.php');
+		if (file_exists($dir_leftmenu.'register_link.php')) {
+			//O=('-'Q) echo
+			echo '<div class="div_cpp03b_pt_content">';
+			require_once($dir_leftmenu.'register_link.php');
+			echo '</div>';
+		}
 		require_once('comment.php');
 	}
 	//link bottom

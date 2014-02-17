@@ -5,13 +5,12 @@
  * This file have some CSS class or JS, please modify them for wanted style.
 */
 ?>
-<div style="font-size: 14px;">
 <?php
 //here register menu
 if (isset($_GET['p']) && isset($view_file_c)) {
 	//indicate relative links
 	$menu_file_list = array();
-	$menu_file_list[0] = '201301291539_ph_js_,201301141050_ph_';
+	$menu_file_list[0] = '201301291539_ph_,201301141050_ph_';
 	$menu_file_list[1] = '201302221548_wa_,201302241812_wa_';
 	$menu_file_list[2] = '201303222300_fo_rp_,201303222327_fo_rp_,201303222342_fo_rp_';
 	//
@@ -38,4 +37,3 @@ if (isset($_GET['p']) && isset($view_file_c)) {
 	}
 }
 ?>
-</div>
