@@ -35,7 +35,8 @@ if (isset($_GET['p'])) {
 					$vpass_menu_text = str_replace("\xEF\xBB\xBF", '', file_get_contents($dir.$menu_what_else[$ix2_menu]) );
 					$vpass_menu_light = ($menu_what_else[$ix2_menu] === $_GET['p']);
 					$vpass_menu_style = 2;
-					menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style);
+					$vpass_menu_style2 = false;
+					menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style, $vpass_menu_style2);
 					$show_left_menu = 2;
 				}
 			}
@@ -51,7 +52,8 @@ if (isset($_GET['l'])) if ($_GET['l'] === 'do') {
 	$vpass_menu_text = 'Download';
 	$vpass_menu_light = true;
 	$vpass_menu_style = 1;
-	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style);
+	$vpass_menu_style2 = false;
+	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style, $vpass_menu_style2);
 	$show_left_menu = 2;
 }
 ?>

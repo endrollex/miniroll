@@ -6,6 +6,7 @@
  * Require files (Entire website front):
  *     htmindex.css: All in one CSS
  *     htmindex.js: Get browser's screen size
+ *     htmindex.js.php: Execute JS code at the bottom of the page
  *     index_top.php: Top part of index.php
  *     index_top2.php: Top part of index.php
  *     comment.php: Comment module
@@ -36,8 +37,7 @@ $para_get_p = '';
 if (isset($_GET['p'])) {
 	if (strlen($_GET['p']) < 10) $_GET['p'] = 'bad_value';
 	$para_get_p = $_GET['p'];
-	meta_seo_get($para_get_p, $dir, $label_code, $label_keywords, $echo_title,
-		$meta_keywords, $meta_description);
+	meta_seo_get($para_get_p, $dir, $label_code, $label_keywords, $echo_title, $meta_keywords, $meta_description);
 }
 if (isset($_GET['l']) || isset($_GET['next'])) {
 	if (isset($_GET['l'])) if (strlen($_GET['l']) < 1) $_GET['l'] = 'bad_value';
@@ -91,7 +91,8 @@ if ($show_left_menu === 0) {
 	$vpass_menu_text = 'All';
 	$vpass_menu_light = ($_SESSION['l'] === 'all');
 	$vpass_menu_style = 2;
-	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style);
+	$vpass_menu_style2 = false;
+	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style, $vpass_menu_style2);
 	//hidden last label
 	for ($ix_index = 0; $ix_index !== count($label_text)-1; ++$ix_index) {
 		$menu_light = false;
@@ -100,7 +101,7 @@ if ($show_left_menu === 0) {
 		}
 		$vpass_menu_link = '?l='.$label_code[$ix_index];
 		$vpass_menu_style = 2;
-		menu_mark_show($vpass_menu_link, $label_text[$ix_index], $menu_light, $vpass_menu_style);
+		menu_mark_show($vpass_menu_link, $label_text[$ix_index], $menu_light, $vpass_menu_style, $vpass_menu_style2);
 	}
 }
 //structure dir
@@ -231,6 +232,8 @@ echo '</div>';
 echo '</div>';///trace.hatt_div_c
 //google analytics
 if (file_exists('f_assistant/google_analytics/analyticstracking.php')) include_once('f_assistant/google_analytics/analyticstracking.php');
+//htmindex.js.php
+include_once('htmindex.js.php');
 ?>
 <!--#..............................................................table-->
 </td></tr></table>
