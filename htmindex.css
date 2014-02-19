@@ -125,11 +125,9 @@ pre {
 .div_cpp03b_pt {
 	font-size: 14px;
 	font-weight: bold;
-	text-indent: 19px;
 	position: relative;
 	color: #E4E4E4;
-	top: 2px;
-	left: 2px;
+	margin: 2px 0px -2px 21px;
 }
 .h1_cpp03b_pt {
 	/*for old version IE not support CSS3 text-shadow*/
