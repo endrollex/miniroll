@@ -16,8 +16,7 @@ if (isset($_GET['m'])) {
 	if  ($get_m !== '') {
 		require($dir_manage.'post_top.php');
 		require($dir_manage.$manage_file[$get_m]);
-		if ($get_m == 3) require($dir_manage.'post_bottom2.php');
-		else require($dir_manage.'post_bottom.php');
+		require($dir_manage.'post_bottom.php');
 	}
 }
 ?>
