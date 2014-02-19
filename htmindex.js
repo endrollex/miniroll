@@ -34,3 +34,20 @@ function rep_err(doc_id) {
 //  :         ;
 //   \       /
 //    `.___.' SSt
+//i_dev_width: viewport
+var i_dev_width = "device-width";
+var i_dev_height = "100%";
+if (screen.availWidth) {
+	if (screen.availWidth > 636 && screen.availWidth < 1112) i_dev_width = screen.availWidth;
+}
+//detect mobile browser
+var i_is_mobile = false;
+if (screen.availWidth) if (screen.availWidth < 760) i_is_mobile = true;
+if (navigator.userAgent) {
+	var i_get_str = navigator.userAgent.match(/(android|webos|blackberry|windows phone|opera mini|iemobile)/i);
+	if (i_get_str) i_is_mobile = true;
+}
+//post_bottom.php
+function scr_post_backgr() {
+	if (i_is_mobile) document.getElementById("dom_index01").style.backgroundImage = "url('images/alge_bg1_320b.gif')";
+}
