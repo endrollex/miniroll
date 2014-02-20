@@ -6,7 +6,6 @@
  * Require files (Entire website front):
  *     htmindex.css: All in one CSS
  *     htmindex.js: Get browser's screen size
- *     htmindex.js.php: Execute JS code at the bottom of the page
  *     index_top.php: Top part of index.php
  *     index_top2.php: Top part of index.php
  *     comment.php: Comment module
@@ -232,8 +231,6 @@ echo '</div>';
 echo '</div>';///trace.hatt_div_c
 //google analytics
 if (file_exists('f_assistant/google_analytics/analyticstracking.php')) include_once('f_assistant/google_analytics/analyticstracking.php');
-//htmindex.js.php
-include_once('htmindex.js.php');
 ?>
 <!--#..............................................................table-->
 </td></tr></table>

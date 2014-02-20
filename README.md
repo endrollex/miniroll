@@ -27,7 +27,6 @@ You can see the detail in every file.
 * global_var.php: Global and inital variable
 * htmindex.css: All in one CSS
 * htmindex.js: Get browser's screen size
-* htmindex.js.php: Execute JS code at the bottom of the page
 * img_ident.php: Create a image, determine whether or not the user is human
 * index.php: Main producer creates XHTML tags, default entrance
 * index_func.php: Functions for index.php

@@ -11,9 +11,7 @@ if (!isset($manage_php)) exit();
 ?>
 </div><!--/trace.div_normal-->
 <script type="text/javascript">
-//<![CDATA[
-scr_post_backgr();
-//]]>
+package_post();
 </script>
 </body>
 </html>

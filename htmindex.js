@@ -21,19 +21,6 @@ function form_dis_comm() {
 function rep_err(doc_id) {
 	document.getElementById(doc_id).src = "/images/bad_gravatar.gif";
 }
-//     _____
-//    `.___,'
-//     (___)
-//     <   >
-//      ) (
-//     /`-.\
-//    /     \
-//   / _    _\
-//  :,' `-.' `:
-//  |         |
-//  :         ;
-//   \       /
-//    `.___.' SSt
 //i_dev_width: viewport
 var i_dev_width = "device-width";
 var i_dev_height = "100%";
@@ -47,7 +34,20 @@ if (navigator.userAgent) {
 	var i_get_str = navigator.userAgent.match(/(android|webos|blackberry|windows phone|opera mini|iemobile)/i);
 	if (i_get_str) i_is_mobile = true;
 }
-//post_bottom.php
-function scr_post_backgr() {
+//post_bottom.php package function
+function package_post() {
 	if (i_is_mobile) document.getElementById("dom_index01").style.backgroundImage = "url('images/alge_bg1_320b.gif')";
 }
+//     _____
+//    `.___,'
+//     (___)
+//     <   >
+//      ) (
+//     /`-.\
+//    /     \
+//   / _    _\
+//  :,' `-.' `:
+//  |         |
+//  :         ;
+//   \       /
+//    `.___.' SSt
