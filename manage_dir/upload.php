@@ -157,8 +157,6 @@ for ($ix = 0; $ix !== count($get_scandir); ++$ix) {
 echo '<br/>';
 //O=('-'Q) echo msg
 echo $html_upload_msg.'<br/><br/>';
-//google analytics
-if (file_exists('font/analyticstracking.php')) include_once('font/analyticstracking.php');
 ?>
 <!--#..............................................................upload-->
 <div class="post_explain">
