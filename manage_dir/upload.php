@@ -100,7 +100,7 @@ if (isset($_POST['mkdir_one']) && isset($_SESSION['v_user'])) {
 		$html_upload_msg = '<span class=span_blue>The floder or file exists.</span>';
 	}
 	if ($check_mkdir_one) {
-		if (mkdir($upload_curr_dir.$_POST['mkdir_one'], 0700))
+		if (mkdir($upload_curr_dir.$_POST['mkdir_one'], 0711))
 			$html_upload_msg = '<span class=span_red>mkdir OK: '.$upload_curr_dir.$_POST['mkdir_one'].'</span>';
 		else $html_upload_msg = '<span class=span_blue>Failed to create the folder.</span>';
 	}
