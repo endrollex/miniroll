@@ -2,7 +2,7 @@
 /**
  * Link relative posts, Service for index.php
  * Please edit $menu_file_list array
- * This file have some CSS class or JS, please modify them for wanted style.
+ * This file has some CSS class or JS, please modify them for wanted style.
 */
 ?>
 <?php

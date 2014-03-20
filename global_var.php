@@ -11,13 +11,13 @@
 //label ini
 $label_code = array('bo', 'mi', 'mf', 'do');
 $label_text = array(
-	'Book', 'Misc', 'plug-in', 'Download'
+	'Book', 'Misc', 'Plugin', 'Download'
 );
 //which label load PHP script files
 $post_load_php = $label_code[2].'_';
 //for SEO
 $label_keywords = array(
-	'Book,', 'Misc,', 'plug-in,', 'Download,'
+	'Book,', 'Misc,', 'Plugin,', 'Download,'
 );
 //top post
 $global_var_top_post = 'if_need_top_enter_filename';

@@ -20,7 +20,7 @@
  *     f_assistant/jwplayer: JW Player, media player
  *     f_assistant/prettify: prettify, syntax highlighting
  *
- * This file have some CSS class or JS, please modify them for wanted style.
+ * This file has some CSS class or JS, please modify them for wanted style.
  *
  * Copyright 2013 Huang Yiting (http://endrollex.com)
  * miniroll is distributed under the terms of the GNU General Public License
@@ -28,7 +28,7 @@
 $show_top2 = false;
 require('global_var.php');
 require('index_func.php');
-//meta elements for SEO
+//meta elements
 $echo_title = 'Sample Blog';
 $meta_keywords = 'Blog';
 $meta_description = 'Sample Blog';
@@ -90,8 +90,7 @@ if ($show_left_menu === 0) {
 	$vpass_menu_text = 'All';
 	$vpass_menu_light = ($_SESSION['l'] === 'all');
 	$vpass_menu_style = 2;
-	$vpass_menu_style2 = false;
-	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style, $vpass_menu_style2);
+	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style);
 	//hidden last label
 	for ($ix_index = 0; $ix_index !== count($label_text)-1; ++$ix_index) {
 		$menu_light = false;
@@ -100,7 +99,7 @@ if ($show_left_menu === 0) {
 		}
 		$vpass_menu_link = '?l='.$label_code[$ix_index];
 		$vpass_menu_style = 2;
-		menu_mark_show($vpass_menu_link, $label_text[$ix_index], $menu_light, $vpass_menu_style, $vpass_menu_style2);
+		menu_mark_show($vpass_menu_link, $label_text[$ix_index], $menu_light, $vpass_menu_style);
 	}
 }
 //structure dir

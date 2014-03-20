@@ -92,7 +92,7 @@ $check_ident = false;
 $check_email = false;
 //$_SESSION['com_msg'] pos0-4: title, url, content, img_identify, email
 $_SESSION['com_msg'] = array('', '', '', '', '');
-//once identify success, keep ident flag
+//once identify success, keep ident flag for a while
 if (!isset($_SESSION['keep_ident'])) $_SESSION['keep_ident'] = array(false, 0);
 //check img identify
 $check_ident_fail = false;
@@ -114,7 +114,7 @@ if (isset($_POST['c_ident']) && isset($_SESSION['rand_img'])) {
 	if (strlen($_POST['c_ident']) == 0 || strlen($_POST['c_ident']) > 18)
 		$_SESSION['com_msg'][3] = $img_succ.'Please enter the echo word.</span>';
 }
-//max keep_ident use times
+//max keep_ident lifetime
 if (isset($_SESSION['keep_ident'])) if ($_SESSION['keep_ident'][1] > 5) $_SESSION['keep_ident'] = array(false, 0);
 //check title
 if (isset($_POST['co_tit'])) {

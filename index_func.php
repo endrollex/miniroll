@@ -7,7 +7,7 @@
  * Copyright 2013 Huang Yiting (http://endrollex.com)
  * miniroll is distributed under the terms of the GNU General Public License
 */
-//get meta elements for SEO
+//get meta elements
 function meta_seo_get(
 	&$para_get_p,
 	&$dir,
@@ -21,7 +21,7 @@ function meta_seo_get(
 	if (file_exists($dir.$para_get_p)) {
 		$echo_title = file_get_contents($dir.$para_get_p);
 		if (substr($echo_title, 0, 3) == "\xEF\xBB\xBF") $echo_title = substr($echo_title, 3);
-		//keywords, keywords is a junk for SEO
+		//keywords
 		$label_comb = array_combine($label_code, $label_keywords);
 		$tag = substr($para_get_p, 11);
 		$tag = explode('_', $tag);
@@ -91,7 +91,7 @@ function structure_dir(
 	$pag_sum = count($all_file_o);	
 }
 //echo menu HTML
-function menu_mark_show(&$menu_link, &$menu_text, &$menu_light, &$menu_style, &$menu_style2 = false) {
+function menu_mark_show(&$menu_link, &$menu_text, &$menu_light, &$menu_style, &$menu_css = '') {
 	//$menu_style, value: 2(custom color) other(default color)
 	$span_l1 = '';
 	$span_l2 = '';
@@ -104,11 +104,9 @@ function menu_mark_show(&$menu_link, &$menu_text, &$menu_light, &$menu_style, &$
 		$span_l1 = '<span class="span_l">';
 		$span_l2 = '</span>';
 	}
-	$func_temp = '';
-	if ($menu_style2) $func_temp = mt_rand(30, 100);
 	//O=('-'Q) echo
-	echo '<div class="div_cpp03a_c" style="width: '.$func_temp.
-		'px;"><a class="lab" href="'.$menu_link.'">'.$span_l1.$menu_text.$span_l2.'</a></div>';
+	echo '<div class="div_cpp03a_c" '.$menu_css.
+		'><a class="lab" href="'.$menu_link.'">'.$span_l1.$menu_text.$span_l2.'</a></div>';
 }
 //flag for menu_mark_show(..., &$menu_light, ...), control menu style
 function light_p($light_get_p) {
@@ -186,7 +184,6 @@ function page_array(
 			'<a class="page" href="?next='.($pag_sum-1).$b_cate.'">'.($pag_sum-1).'</a>';
 	}
 	else $html_span_page1 .= '<span class="span_l3">0-0</span>';
-	
 	for ($ix = 0; $ix != $pag_sum; ++$ix) {
 		if ($ix == $now_page) $html_span_page2 .= '<span class="span_l3">'.$ix.'</span> ';
 		else {

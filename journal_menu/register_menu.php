@@ -7,14 +7,14 @@
  * 
  * There are tow modes for menu
  *     step1:
- *         mode 1: for one by one posts, Please edit $menu_file_list array
- *         mode 2: for same lable posts, Write function menu_mark_show()
+ *         mode 1: for one by one posts, please edit $menu_file_list array
+ *         mode 2: for same lable posts, write parameters send to the function menu_mark_show()
  *
- *     step2: Edit index_top.php menu XHTML tags
+ *     step2: Edit index_top.php menu HTML tags
  *
  *     step3: Edit index.php menu code
  *
- * This file have some CSS class or JS, please modify them for wanted style.
+ * This file has some CSS class or JS, please modify them for wanted style.
 */
 //mode 1: register one by one posts
 if (isset($_GET['p'])) {
@@ -35,8 +35,7 @@ if (isset($_GET['p'])) {
 					$vpass_menu_text = str_replace("\xEF\xBB\xBF", '', file_get_contents($dir.$menu_what_else[$ix2_menu]) );
 					$vpass_menu_light = ($menu_what_else[$ix2_menu] === $_GET['p']);
 					$vpass_menu_style = 2;
-					$vpass_menu_style2 = false;
-					menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style, $vpass_menu_style2);
+					menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style);
 					$show_left_menu = 2;
 				}
 			}
@@ -52,8 +51,7 @@ if (isset($_GET['l'])) if ($_GET['l'] === 'do') {
 	$vpass_menu_text = 'Download';
 	$vpass_menu_light = true;
 	$vpass_menu_style = 1;
-	$vpass_menu_style2 = false;
-	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style, $vpass_menu_style2);
+	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style);
 	$show_left_menu = 2;
 }
 ?>

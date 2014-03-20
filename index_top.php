@@ -2,7 +2,7 @@
 /**
  * Service for index.php
  * Top part style 1 for index.php
- * This file have some CSS class or JS, please modify them for wanted style.
+ * This file has some CSS class or JS, please modify them for wanted style.
 */
 ?>
 <!DOCTYPE html>
@@ -43,22 +43,6 @@ echo '<title>'.$echo_tit_top.'</title>';
 <li class="li_top01"><a class="lab" href="index.php?l=do">Download</a></li>
 <li class="li_top01"><a class="lab" href="index.php?p=000099999999_mi_">About</a></li>
 <li class="li_top01">
-<?php
-$hatt_link_back = '#';
-if (isset($_SESSION['l'])) {
-	if ($_SESSION['l'] !== 'nul') {
-		$hatt_link_back = '?l='.$_SESSION['l'];
-		if (isset($_SESSION['next_sav'])) $hatt_link_back = $hatt_link_back.'&amp;next='.$_SESSION['next_sav'];
-	}
-	else {if (isset($_SESSION['next_sav'])) $hatt_link_back = '?next='.$_SESSION['next_sav'];}
-}
-if (isset($_SESSION['back_here'])) {
-	$hatt_link_back = $_SESSION['back_here'];
-	unset($_SESSION['back_here']);
-}
-//O=('-'Q) echo
-echo '<a class="lab" href="index.php'.$hatt_link_back.'">Back</a>';
-?>
 </li>
 </ul>
 </div>
