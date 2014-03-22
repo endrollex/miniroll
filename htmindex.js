@@ -34,9 +34,9 @@ if (navigator.userAgent) {
 	var i_get_str = navigator.userAgent.match(/(android|webos|blackberry|windows phone|opera mini|iemobile)/i);
 	if (i_get_str) i_is_mobile = true;
 }
-//post_bottom.php package function
-function package_post() {
-	if (i_is_mobile) document.getElementById("dom_index01").style.backgroundImage = "url('images/alge_bg1_320b.gif')";
+//post_top.php css function
+function scr_post() {
+	if (i_is_mobile) document.getElementById("dom_index01").style.backgroundImage = "none";
 }
 //     _____
 //    `.___,'

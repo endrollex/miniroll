@@ -33,3 +33,6 @@ input {font-size: 12px;}
 <a href="manage.php?m=2">Upload file</a> | 
 <a href="manage.php?m=3">Login</a><br/>
 --------<br/>
+<script type="text/javascript">
+scr_post();
+</script>
