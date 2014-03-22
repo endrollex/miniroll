@@ -7,7 +7,6 @@
  * Require files:
  *     post_top.php: Top part of post_view.php
  *     post_bottom.php: Bottom of post_view.php
- *     post.php: Send the post to post.php for edit
  *
  * External files:
  *     checkreload: Prevent reload
@@ -248,7 +247,7 @@ for ($ix = 0; $ix != count($label_code); ++$ix) {
 <!--#..............................................................edit-->
 <div class="post_explain">
 Edit the journal. Send the title and content to post.php.
-<form action="post.php" method="post">
+<form action="manage.php?m=0" method="post">
 <input type="hidden" name="edit_d1" value="<?php echo $view_file; ?>"/>
 <input type="submit" value="Edit"<?php disa(); ?>/>
 </form>
