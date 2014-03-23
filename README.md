@@ -7,7 +7,7 @@ miniroll - small blog Quick-and-dirty
 
 Introduction:
 -------------
-* miniroll do not need a database, use a simple framework with filesystem,
+* miniroll does not need a database, use a simple framework with filesystem,
   just like a Blog Hello World.
 * It may be cumbersome to use. There is no template function here.
   Someone using this blog shall modify many codes to create own blog style manually.
