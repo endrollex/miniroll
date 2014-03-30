@@ -114,6 +114,10 @@ if (isset($_POST['c_ident']) && isset($_SESSION['rand_img'])) {
 	if (strlen($_POST['c_ident']) == 0 || strlen($_POST['c_ident']) > 18)
 		$_SESSION['com_msg'][3] = $img_succ.'Please enter the echo word.</span>';
 }
+if (isset($_POST['c_ident']) && !isset($_SESSION['rand_img'])) {
+	$check_ident_fail = true;
+	$_SESSION['com_msg'][3] = '<span class="span_red">The image is time out.</span>';
+}
 //max keep_ident lifetime
 if (isset($_SESSION['keep_ident'])) if ($_SESSION['keep_ident'][1] > 5) $_SESSION['keep_ident'] = array(false, 0);
 //check title
