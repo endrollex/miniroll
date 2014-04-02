@@ -6,12 +6,10 @@
  *     index_func.php: Use function menu_mark_show()
  * 
  * There are tow modes for menu
- *     step1:
+ *     step1: mode 1 or 2
  *         mode 1: for one by one posts, please edit $menu_file_list array
  *         mode 2: for same lable posts, write parameters send to the function menu_mark_show()
- *
  *     step2: Edit index_top.php menu HTML tags
- *
  *     step3: Edit index.php menu code
  *
  * This file has some CSS class or JS, please modify them for wanted style.
