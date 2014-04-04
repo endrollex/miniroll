@@ -28,7 +28,7 @@ You can see the detail in every file.
 * htmindex.css: All in one CSS
 * htmindex.js: Get browser's screen size
 * img_ident.php: Create a image, determine whether or not the user is human
-* index.php: Main producer creates XHTML tags, default entrance
+* index.php: Main producer creates HTML tags, default entrance
 * index_func.php: Functions for index.php
 * index_top.php: Top part of index.php
 * index_top2.php: Top part of index.php
@@ -63,8 +63,8 @@ Mechanism Brief:
 3. Every normal journal has two files, title and content, content's filename is a date('YmdHi', time()),
    title's filename has additional tags what indicates various labels.
 4. index.php is a reader to organize these journal files for browse.
-5. The markup language minicode (variant of BBCode) is designed for Blog, easy editing XHTML.
-6. If you write a third file for journal, it will be loaded by PHP requre() function.
+5. The markup language minicode (variant of BBCode) is designed for Blog, easy editing HTML.
+6. If you write a third file for journal, it will be loaded by PHP require() function.
    This feature lets a post run PHP code, thus you can do everything.
 
 Copyright and License:
