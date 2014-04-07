@@ -7,7 +7,6 @@
  * Require files:
  *     post_top.php: Top part of post_view.php
  *     post_bottom.php: Bottom of post_view.php
- *     post.php: Send the post to post.php for edit
  *
  * Why Use fwrite() to upload: for server's flexible permission, if want to upload big files, please use FTP or others.
  *

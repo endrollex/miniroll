@@ -112,20 +112,24 @@ if ($dh = opendir($dir)) {
 }
 //regular expression match
 $is_regu = false;
-if (isset($_POST['rege_str'])) if(strlen($_POST['rege_str']) > 0) $is_regu = true;
+if (!isset($_SESSION['rege_str'])) $_SESSION['rege_str'] = '';
+if (isset($_POST['rege_str'])) $_SESSION['rege_str'] = $_POST['rege_str'];
+if (strlen($_SESSION['rege_str']) > 0) $is_regu = true;
+$get_rege_str = $_SESSION['rege_str'];
 if ($is_regu) {
-	$_POST['rege_str'] = trim($_POST['rege_str']);
-	if (strlen($_POST['rege_str']) > 30) $_POST['rege_str'] = substr($_POST['rege_str'], 0, 30);
-	$_POST['rege_str'] = preg_replace("#[^\w_\s]#", '', $_POST['rege_str']);
-	$_POST['rege_str'] = preg_replace("#\s+#", '))(?=.*(', $_POST['rege_str']);
-	$_POST['rege_str'] = substr_replace('#(?=.*())#', $_POST['rege_str'], 7, 0);
-	$all_file_o = preg_grep($_POST['rege_str'], $all_file_o);
+	$get_rege_str = trim($get_rege_str);
+	if (strlen($get_rege_str) > 30) $get_rege_str = substr($get_rege_str, 0, 30);
+	$get_rege_str = preg_replace("#[^\w_\s]#", '', $get_rege_str);
+	$get_rege_str = preg_replace("#\s+#", '))(?=.*(', $get_rege_str);
+	$get_rege_str = substr_replace('#(?=.*())#', $get_rege_str, 7, 0);
+	$all_file_o = preg_grep($get_rege_str, $all_file_o);
+	sort($all_file_o);
 	$now_page = 0;
 }
-//regular expression match
+//regular expression match page
 $temp_page = 0;
-if (isset($_POST['s_match2']) && isset($_POST['view_one'])) {
-	for ($ix = 0; $ix !== count($all_file_o); ++$ix) if ($_POST['view_one'] === $all_file_o[$ix])
+if (($is_regu) && isset($_POST['view_one'])) {
+	for ($ix = 0; $ix !== count($all_file_o); ++$ix) if ($_POST['view_one'] == $all_file_o[$ix])
 		{$temp_page = ($ix-$ix%10)/10; break;}
 }
 //count file
@@ -136,7 +140,7 @@ $pag_sum = count($all_file_o);
 if ($f_sum !== 0) $now_page = $pag_sum-1;
 else $now_page = 0;
 if (isset($_POST['sel_ix1'])) {
-	if (isset($_POST['s_match2'])) $now_page = $temp_page;
+	if ($is_regu) $now_page = $temp_page;
 	else $now_page = $_POST['sel_ix1'];
 }
 //input
@@ -175,8 +179,7 @@ echo ($now_page+1);
 </form>
 <?php echo ' Page: '.$now_page; ?>
 <form action="manage.php?m=1" method="post" class="form_rege">
-<input type="text" name="rege_str" value=""/>
-<input type="hidden" name="s_match1" value="1"/>
+<input type="text" name="rege_str" value="<?php if ($is_regu) echo $_SESSION['rege_str']; ?>"/>
 <input type="submit" value="Filter"/>
 </form>
 <form action="manage.php?m=1" method="post">
@@ -187,10 +190,6 @@ for ($ix = 0; $ix != count($all_file); ++$ix) {
 	if ($view_file === $all_file[$ix]) echo ' checked="checked"';
 	echo '/>'.$all_file[$ix].'<br/>';
 }
-?>
-<?php
-//regular expression match
-if (isset($_POST['s_match1'])) echo '<input type="hidden" name="s_match2" value="1"/>';
 ?>
 <input type="hidden" name="sel_ix1" value="<?php echo $now_page; ?>"/>
 <input type="submit" value="Select"/>
