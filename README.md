@@ -65,7 +65,8 @@ Mechanism Brief:
 4. index.php is a reader to organize these journal files for browse.
 5. The markup language minicode (variant of BBCode) is designed for Blog, easy editing HTML.
 6. If you write a third file for journal, it will be loaded by PHP require() function.
-   This feature lets a post run PHP code, thus you can do everything.
+   This feature lets a post run PHP code, thus you can do everything,
+   however, it is VERY UNSAFE when a hacked account logins.
 
 Copyright and License:
 ----------------------
