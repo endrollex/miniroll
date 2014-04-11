@@ -60,13 +60,14 @@ Mechanism Brief:
 ----------------
 1. miniroll is a simple blog, most functions are minimize.
 2. post.php produces journals, the journals store in the filesystem directly.
-3. Every normal journal has two files, title and content, content's filename is a date('YmdHi', time()),
+3. Every normal journal at least has two files, title and content, content's filename is a date('YmdHi', time()),
    title's filename has additional tags what indicates various labels.
 4. index.php is a reader to organize these journal files for browse.
 5. The markup language minicode (variant of BBCode) is designed for Blog, easy editing HTML.
-6. If you write a third file for journal, it will be loaded by PHP require() function.
-   This feature lets a post run PHP code, thus you can do everything,
-   however, it is ***VERY UNSAFE*** when a hacked account logins.
+6. If you write a third file(*.php) for the journal and specify the label, it will be loaded by PHP require() function.
+   This feature lets the third file run PHP code, thus you can do everything.
+7. A content file even can run PHP by require() chain, this way is ***VERY UNSAFE*** when a hacked account logins,
+   however, it is very freedom too.
 
 Copyright and License:
 ----------------------
