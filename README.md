@@ -64,10 +64,12 @@ Mechanism Brief:
    title's filename has additional tags what indicates various labels.
 4. index.php is a reader to organize these journal files for browse.
 5. The markup language minicode (variant of BBCode) is designed for Blog, easy editing HTML.
-6. If you write a third file(*.php) for the journal and specify the label, it will be loaded by PHP require() function.
+6. If you write a third file (*.php, cannot be created from web management) for the journal and specify the label,
+   it will be loaded by PHP require() function.
    This feature lets the third file run PHP code, thus you can do everything.
-7. A content file even can run PHP by require() chain, this way is ***VERY UNSAFE*** when a hacked account logins,
-   however, it is very freedom too.
+7. A content file even can run PHP by require() chain, for instance, Album function,
+   this way is ***VERY UNSAFE*** when a hacked account logins
+   (content can be modified by web management), however, it is very freedom too.
 
 Copyright and License:
 ----------------------
