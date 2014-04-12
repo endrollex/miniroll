@@ -68,8 +68,8 @@ Mechanism Brief:
    it will be loaded by PHP require() function.
    This feature lets the third file run PHP code.
 7. A content file even can run PHP by require() chain, for instance, Album function,
-   this way is ***VERY UNSAFE*** when a hacked account logins
-   (content can be modified by web management), however, I like journal writing freely.
+   this way is ***UNSAFE*** when a hacked account logins
+   (content can be modified by web management).
 
 Copyright and License:
 ----------------------
