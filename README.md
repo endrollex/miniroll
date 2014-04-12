@@ -66,10 +66,10 @@ Mechanism Brief:
 5. The markup language minicode (variant of BBCode) is designed for Blog, easy editing HTML.
 6. If you write a third file (*.php, cannot be created from web management) for the journal and specify the label,
    it will be loaded by PHP require() function.
-   This feature lets the third file run PHP code, thus you can do everything.
+   This feature lets the third file run PHP code.
 7. A content file even can run PHP by require() chain, for instance, Album function,
    this way is ***VERY UNSAFE*** when a hacked account logins
-   (content can be modified by web management), however, it is very freedom too.
+   (content can be modified by web management), however, I like journal writing freely.
 
 Copyright and License:
 ----------------------
