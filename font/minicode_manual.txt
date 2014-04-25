@@ -1,25 +1,33 @@
-﻿<span class="m7">minicode (variant of BBCode) - easy editing HTML</span><!--m7--><br />
+﻿<span style="display: none;"><!--mi_lead--><br />
+[tit] @= &lt;span style=&quot;font-size: 20pt; font-weight: bold;&quot;&gt;<br />
+[/tit] @= &lt;/span&gt;<br />
+[h1] @= &lt;span style=&quot;font-size: 16pt; color: green;&quot;&gt;<br />
+[/h1] @= &lt;/span&gt;<br />
+[title1] @= &lt;span style=&quot;font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;&quot;&gt;<br />
+[/title1] @= &lt;/span&gt;<br />
+[hello1][/hello1] @= Just say hello.<br />
+</span><!--mi_lead--><span style="font-size: 20pt; font-weight: bold;"><!--mi1-->minicode (variant of BBCode) - easy editing HTML</span><!--mi2--><br />
 <br />
-<span class="m6" style="color: green" dir="ltr">Introduction:</span><!--m6--><br />
+<span style="font-size: 16pt; color: green;"><!--mi3-->Introduction:</span><!--mi4--><br />
 <br />
-minicode is a lightweight markup language for <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll" style="max-height: 9003px;">miniroll</a><!--m4--> easy editing, learn from <a class="m4b" target="_blank" href="https://www.phpbb.com/community/faq.php?mode=bbcode" style="max-height: 9003px;">BBCode</a><!--m4-->.<br />
+minicode is a lightweight markup language for <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll"><!--m4a-->miniroll</a><!--m4--> easy editing, learn from <a class="m4b" target="_blank" href="https://www.phpbb.com/community/faq.php?mode=bbcode"><!--m4a-->BBCode</a><!--m4-->.<br />
 The tags are indicated by square brackets [ ] surrounding a keyword.<br />
 It is designed for Blog, thus let through unsafe HTML like &lt;script&gt;.<br />
 minicode allow user to write HTML freely and unlimitedly.<br />
 <br />
-<span class="m6" style="color: green" dir="ltr">Syntax:</span><!--m6--><br />
+<span style="font-size: 16pt; color: green;"><!--mi3-->Syntax:</span><!--mi4--><br />
 <!--m5--><ol><li>The minicode cannot nest:
 <pre style="background-color: #D3D3D3;">[url]http://goo.gl/[/url] OK
 [b][url]http://goo.gl/[/url][/b] This expression is ERROR!!!
 </pre>Because nest will be complex.
-In this situation, you can use HTML directly.<br/><br/></li>
+In this situation, you can use HTML directly or use [lead_define].<br/><br/></li>
 <li>Difference between minicode and BBCode:
 <pre style="background-color: #D3D3D3;">[url]http://php.net/docs.php[PHP Manual[/url]
 [color]#B22222]FireBrick[/color]
 </pre>Note the tag option is close to the [tag] with a sigle square bracket:<br/>
 [tag]option]...[/tag], or [tag]...[option[/tag]<br/>
 Position of tag option depends on the implemented HTML sentence.
-</li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Keywords and Usage:</span><!--m6--><br />
+</li></ol><!--m5b--><span style="font-size: 16pt; color: green;"><!--mi3-->Keywords and Usage:</span><!--mi4--><br />
 <!--m5--><ol><li>
 <pre style="background-color: #D3D3D3;">[code]
 while (ivec.size() != ivec.capacity())
@@ -38,8 +46,8 @@ while (ivec.size() != ivec.capacity())
 <pre style="background-color: #D3D3D3;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
 [img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
 <!--m5b--># To insert an image:<br />
-<img class="m3" alt="wikimedia-button" style="overflow: auto;" src="http://bits.wikimedia.org/images/wikimedia-button.png" /><!--m3--><br />
-<img class="m3" alt="" style="overflow: auto;" src="http://www.w3.org/2008/site/images/twitter-bird" /><!--m3--><br />
+<!--m3a--><img alt="wikimedia-button" class="m3" src="http://bits.wikimedia.org/images/wikimedia-button.png" /><!--m3--><br />
+<!--m3a--><img alt="" class="m3" src="http://www.w3.org/2008/site/images/twitter-bird" /><!--m3--><br />
 <br />
 # The first expression omited the parameter for alt attribute.<br />
 # It will be automatically converted to second expression with filename, or you can manually add.<br />
@@ -50,7 +58,7 @@ while (ivec.size() != ivec.capacity())
 [url]http://www.w3school.com.cn/[W3School[/url]</pre>
 <!--m5b--># A link to one page:<br />
 <a class="m4" target="_blank" href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a><!--m4--><br />
-<a class="m4b" target="_blank" href="http://www.w3school.com.cn/" style="max-height: 9003px;">W3School</a><!--m4--><br />
+<a class="m4b" target="_blank" href="http://www.w3school.com.cn/"><!--m4a-->W3School</a><!--m4--><br />
 <br />
 # The second expression assigned a description text.<br />
 <br />
@@ -61,8 +69,8 @@ while (ivec.size() != ivec.capacity())
 [b]Bolded Text[/b]
 [small]Small Text[/small]</pre>
 <!--m5b--># Color a part of a text or change font:<br />
-<span class="m6" style="color: orange" dir="ltr">Its name from the orange fruit.</span><!--m6--><br />
-<span class="m6" style="color: #6495ED" dir="ltr">Cornflower blue, a shade of azure</span><!--m6--><br />
+<span class="m6" style="color: orange"><!--m6a-->Its name from the orange fruit.</span><!--m6--><br />
+<span class="m6" style="color: #6495ED"><!--m6a-->Cornflower blue, a shade of azure</span><!--m6--><br />
 <span class="m7">Bolded Text</span><!--m7--><br />
 <span class="m8">Small Text</span><!--m8--><br />
 <br />
@@ -70,7 +78,7 @@ while (ivec.size() != ivec.capacity())
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2013-11-06 11:20:43</span><!--m9--><br />
+<span class="m9">Last modified: 2014-04-25 11:57:12</span><!--m9--><br />
 <br />
 # By the way: this page initially completed on 2013-09-02.<br />
 <br />
@@ -94,7 +102,22 @@ C[h]sub]hex[/h], ...</pre>
 <!--m5b--># For some plain symmetrical HTML tags:<br />
 <!--m10--><h4 class="m10">This is heading 4</h4><!--m10b-->y<!--m10--><sup class="m10">4</sup><!--m10b--><br />
 C<!--m10--><sub class="m10">hex</sub><!--m10b-->, ...<br />
-<!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Typesetting Guild:</span><!--m6--><br />
+<br />
+<!--m5--></li><li>
+<pre style="background-color: #D3D3D3;">
+[lead_define]
+[title] @= &lt;span style="font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;"&gt;
+[/title] @= &lt;/span&gt;
+[hello][/hello] @= Just say hello.
+[/lead_define][title]My Title[/title]
+[hello][/hello]
+</pre>
+<!--m5b--># Define hot minicode in a post.<br />
+# You can define several minicode, but all need to be in one [lead_define].<br />
+<br />
+<span style="font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;"><!--mi5-->My Title</span><!--mi6--><br />
+Just say hello.<!--mi7--><br />
+<!--m5--></li></ol><!--m5b--><span style="font-size: 16pt; color: green;"><!--mi3-->Typesetting Guild:</span><!--mi4--><br />
 <!--m5--><ol><li>
 <pre style="background-color: #D3D3D3;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;img style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;<!--m5--><br/><!--m5b-->src=&quot;http://www.ietf.org/images/isoc_logo.gif&quot; alt=&quot;&quot; /&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->The quick brown fox jumps over the lazy dog.
 ...</pre>
@@ -110,25 +133,25 @@ The quick brown fox jumps over the lazy dog.<br />
 <pre style="background-color: #D3D3D3;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;div style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m10--><span class="m10">[</span><!--m10b-->img]http://tools.ietf.org/images/ietflogo3h.png<!--m10--><span class="m10">[</span><!--m10b-->/img]<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;a class=&quot;m4_style&quot; style=&quot;font-size: 12px;&quot; target=&quot;_blank&quot;<!--m5--><br/><!--m5b-->href=&quot;http://tools.ietf.org/tools/rfcmarkup/&quot;&gt;Rfcmarkup Tool&lt;/a&gt;&lt;/div&gt;<!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->...</pre>
 <!--m5b--># Div float left with Link:<br />
 <!--m5--><div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-<!--m5b--><img class="m3" alt="ietflogo3h" style="overflow: auto;" src="http://tools.ietf.org/images/ietflogo3h.png" /><!--m3--><br />
+<!--m5b--><!--m3a--><img alt="ietflogo3h" class="m3" src="http://tools.ietf.org/images/ietflogo3h.png" /><!--m3--><br />
 <!--m5--><a class="m4_style" style="font-size: 12px;" target="_blank"
 href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div><!--m5b-->The quick brown fox jumps over the lazy dog.<br />
 The quick brown fox jumps over the lazy dog.<br />
 The quick brown fox jumps over the lazy dog.<br />
 <br />
-<!--m5--></li></ol><div></div><!--m5b--><span class="m6" style="color: green" dir="ltr">Note:</span><!--m6--><br />
-<!--m5--><ol><li><!--m5b-->If the sentences are too complex, check them by <a class="m4b" target="_blank" href="http://validator.w3.org/" style="max-height: 9003px;">W3C Markup Validator</a><!--m4--> is a good idea.<br />
+<!--m5--></li></ol><div></div><!--m5b--><span style="font-size: 16pt; color: green;"><!--mi3-->Note:</span><!--mi4--><br />
+<!--m5--><ol><li><!--m5b-->If the sentences are too complex, check them by <a class="m4b" target="_blank" href="http://validator.w3.org/"><!--m4a-->W3C Markup Validator</a><!--m4--> is a good idea.<br />
 <!--m5--></li><li><!--m5b-->Block elements or margin may cause line spacing too large, delete a newline according to the situation.<br />
-<!--m5--></li></ol><!--m5b--><span class="m6" style="color: green" dir="ltr">Mechanism:</span><!--m6--><br />
+<!--m5--></li></ol><!--m5b--><span style="font-size: 16pt; color: green;"><!--mi3-->Mechanism:</span><!--mi4--><br />
 <br />
 Mechanism of minicode is base on &quot;Search and Replace&quot;, the process is reversible and very simply.<br />
 It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.<br />
 The implemented HTML may contain a little comment markup &lt;!-- --&gt;, intend for reversion.<br />
-Some keywords of minicode depends CSS, the <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/htmindex.css" style="max-height: 9003px;">default CSS</a><!--m4--> provided to show the predefined style.<br />
-For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt" style="max-height: 9003px;">minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual.txt" style="max-height: 9003px;">HTML article</a><!--m4--> -&gt; this page (Encapsulated)<br />
+Some keywords of minicode depends CSS, the <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/htmindex.css"><!--m4a-->default CSS</a><!--m4--> provided to show the predefined style.<br />
+For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt"><!--m4a-->minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual.txt"><!--m4a-->HTML article</a><!--m4--> -&gt; this page (Encapsulated)<br />
 <br />
-<span class="m6" style="color: green" dir="ltr">Construct:</span><!--m6--><br />
+<span style="font-size: 16pt; color: green;"><!--mi3-->Construct:</span><!--mi4--><br />
 <br />
 minicode of miniroll is writed by PHP, HTML version is HTML5.<br />
-You can modify all rules from <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php" style="max-height: 9003px;">post.php</a><!--m4-->.<br />
-minicode function is not independent from miniroll yet, but I think isolating the function code is easy.<br />
+You can modify all rules from <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php"><!--m4a-->post.php</a><!--m4-->.<br />
+minicode function is not independent from miniroll yet, but I think isolating the function code is easy.

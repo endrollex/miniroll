@@ -3,14 +3,14 @@
  * Post function
  * All management functions can not be direct visited, the entrance is ../manage.php
  * Notice: the working directory is the root of website
- * 
+ *
  * Require files:
- *     post_top.php: Top part of post.php
- *     post_bottom.php: Bottom of post.php
+ *	   post_top.php: Top part of post.php
+ *	   post_bottom.php: Bottom of post.php
  *
  * External files:
- *     checkreload: Prevent reload
- * 
+ *	   checkreload: Prevent reload
+ *
  * if year > 9999, modify the miniroll
  *
  * Copyright 2013 Huang Yiting (http://endrollex.com)
@@ -37,18 +37,19 @@ $minicode_e = array('[/code]', '[/output]', '[/img]', '[/url]', '[/html]', '[/co
 function minicode(&$need_eidt, &$which_ix) {
 	$delete_char = '#[<>\'"]#';
 	switch ($which_ix) {
-		case 0:
+		case 0: // code
 			$need_eidt = htmlspecialchars($need_eidt, ENT_QUOTES);
 			$need_eidt = substr_replace($need_eidt, '<pre class="prettyprint linenums">', 0, 6);
 			$need_eidt = substr_replace($need_eidt, '</pre><div class="m1"></div>', -7, 7);
 			break;
-		case 1:
+		case 1: // output
 			$need_eidt = htmlspecialchars($need_eidt, ENT_QUOTES);
 			$need_eidt = substr_replace($need_eidt, '<pre class="pre_output">', 0, 8);
 			$need_eidt = substr_replace($need_eidt, '</pre><div class="m2"></div>', -9, 9);
 			break;
-		case 2:
+		case 2: // img
 			$need_eidt = preg_replace($delete_char, '', $need_eidt);
+			$need_eidt = htmlspecialchars($need_eidt, ENT_QUOTES);
 			$need_eidt = substr_replace($need_eidt, '', 0, 5);
 			$need_eidt = substr_replace($need_eidt, '', -6, 6);
 			$edit_img_alt = '';
@@ -63,11 +64,12 @@ function minicode(&$need_eidt, &$which_ix) {
 				}
 			}
 			//for decode, use junk tags
-			$need_eidt = '<img class="m3" alt="'.$edit_img_alt
-				.'" style="overflow: auto;" src="'.$need_eidt.'" /><!--m3-->';
+			$need_eidt = '<!--m3a--><img alt="'.$edit_img_alt
+				.'" class="m3" src="'.$need_eidt.'" /><!--m3-->';
 			break;
-		case 3:
+		case 3: //url
 			$need_eidt = preg_replace($delete_char, '', $need_eidt);
+			$need_eidt = htmlspecialchars($need_eidt, ENT_QUOTES);
 			//preg_replace decode
 			$need_eidt = substr_replace($need_eidt, '', 0, 5);
 			$need_eidt = substr_replace($need_eidt, '', -6, 6);
@@ -77,16 +79,16 @@ function minicode(&$need_eidt, &$which_ix) {
 			if (preg_match("#\[.+$#", $need_eidt, $edit_matches) !== 0) {
 				$need_eidt = str_replace($edit_matches[0], '', $need_eidt);
 				$edit_matches[0] = substr($edit_matches[0], 1, strlen($edit_matches[0])-1);
-				$need_eidt = '<a class="m4b" '.$tar_blank.'href="'.$need_eidt.'" style="max-height: 9003px;">'
+				$need_eidt = '<a class="m4b" '.$tar_blank.'href="'.$need_eidt.'"><!--m4a-->'
 					.$edit_matches[0].'</a><!--m4-->';
 			}
 			else $need_eidt = '<a class="m4" '.$tar_blank.'href="'.$need_eidt.'">'.$need_eidt.'</a><!--m4-->';
 			break;
-		case 4:
+		case 4: //html
 			$need_eidt = substr_replace($need_eidt, '<!--m5-->', 0, 6);
 			$need_eidt = substr_replace($need_eidt, '<!--m5b-->', -7, 7);
 			break;
-		case 5;
+		case 5; //color
 			$need_eidt = htmlspecialchars($need_eidt, ENT_QUOTES);
 			$need_eidt = substr_replace($need_eidt, '', 0, 7);
 			$need_eidt = substr_replace($need_eidt, '', -8, 8);
@@ -97,24 +99,24 @@ function minicode(&$need_eidt, &$which_ix) {
 				$edit_color = substr($edit_matches[0], 0, strlen($edit_matches[0])-1);
 				if (substr($edit_color, 0, 1) === '#') $edit_color = strtoupper($edit_color);
 			}
-			$need_eidt = '<span class="m6" style="color: '.$edit_color.'" dir="ltr">'.$need_eidt.'</span><!--m6-->';
+			$need_eidt = '<span class="m6" style="color: '.$edit_color.'"><!--m6a-->'.$need_eidt.'</span><!--m6-->';
 			break;
-		case 6;
+		case 6; //b
 			$need_eidt = htmlspecialchars($need_eidt, ENT_QUOTES);
 			$need_eidt = substr_replace($need_eidt, '', 0, 3);
 			$need_eidt = substr_replace($need_eidt, '', -4, 4);
 			$need_eidt = '<span class="m7">'.$need_eidt.'</span><!--m7-->';
 			break;
-		case 7;
+		case 7; //small
 			$need_eidt = htmlspecialchars($need_eidt, ENT_QUOTES);
 			$need_eidt = substr_replace($need_eidt, '', 0, 7);
 			$need_eidt = substr_replace($need_eidt, '', -8, 8);
 			$need_eidt = '<span class="m8">'.$need_eidt.'</span><!--m8-->';
 			break;
-		case 8;
+		case 8; //last
 			$need_eidt = '<span class="m9">Last modified: '.date('Y-m-d H:i:s', time()).'</span><!--m9-->';
 			break;
-		case 9;
+		case 9; //h
 			$need_eidt = substr_replace($need_eidt, '', 0, 3);
 			$need_eidt = substr_replace($need_eidt, '', -4, 4);
 			$edit_matches = array();
@@ -160,25 +162,25 @@ function minicode_find(&$process, &$p1, &$p2, &$p_start, &$p_offset,
 	if ($p_start+$p_offset > $content_len-4) {$need_try = false; $process = false;}
 }
 //minicode decode
-function minicode_reverse(&$decode_s) {
+function minicode_decode(&$decode_s) {
 	$styl_s = array(
 		'<pre class="prettyprint linenums">',
 		'</pre><div class="m1"></div>',
 		'<pre class="pre_output">',
 		'</pre><div class="m2"></div>',
 		//img
-		'<img class="m3" alt="',
-		'" style="overflow: auto;" src="',
+		'<!--m3a--><img alt="',
+		'" class="m3" src="',
 		'" /><!--m3-->',
 		//url
 		'</a><!--m4-->',
-		'" style="max-height: 9003px;">',
+		'"><!--m4a-->',
 		//html
 		'<!--m5-->',
 		'<!--m5b-->',
 		//color
 		'<span class="m6" style="color: ',
-		'" dir="ltr">',
+		'"><!--m6a-->',
 		'</span><!--m6-->',
 		//span
 		'<span class="m7">',
@@ -187,7 +189,7 @@ function minicode_reverse(&$decode_s) {
 		'</span><!--m8-->',
 		//h
 		'<!--m10--><',
-		' class="m10">'		
+		' class="m10">'
 	);
 	$mini_s = array('[code]', '[/code]', '[output]', '[/output]', '[img]', ']', '[/img]', '[/url]', '[', '[html]',
 		'[/html]', '[color]', ']', '[/color]', '[b]', '[/b]', '[small]', '[/small]', '[h]', ']');
@@ -202,6 +204,41 @@ function minicode_reverse(&$decode_s) {
 	$decode_s = preg_replace($styl_p, $mini_p, $decode_s);
 	return str_replace($styl_s, $mini_s, $decode_s);
 }
+//minicode [lead_define], [lead_define] will be cut and glue
+function minicode_lead_define(&$post_content, &$lead_arr_1, &$lead_arr_2, &$lead_str) {
+	$is_lead_define = false;
+	$p1 = strpos($post_content, '[lead_define]');
+	$p2 = strpos($post_content, '[/lead_define]');
+	if ($p1 !== false && $p2) if ($p1 < $p2) $is_lead_define = true;
+	if ($is_lead_define) {
+		$lead_str = substr($post_content, $p1+13, $p2-$p1-13);
+		$lead_arr = explode("\n", $lead_str);
+		for ($ix = 0; $ix != count($lead_arr); ++$ix) {
+			if (strlen(trim($lead_arr[$ix])) !== 0) {
+				if (strpos($lead_arr[$ix], '@=') !== false) {
+					$lead_temp = explode('@=', $lead_arr[$ix]);
+					if (count($lead_temp) === 2) {
+						array_push($lead_arr_1, trim($lead_temp[0]));
+						array_push($lead_arr_2, trim($lead_temp[1]).'<!--mi'.$ix.'-->');
+					}
+				}
+			}
+		}
+		$lead_str = '[lead_define]'.$lead_str.'[/lead_define]';
+		//$post_content = str_replace($lead_str , '' , $post_content);
+		$post_content = substr_replace($post_content, '', $p1, $p2-$p1+14);
+	}
+	return $is_lead_define;
+}
+function minicode_lead_define_decode(&$decode_s) {
+	$styl_s = array(
+		'<span style="display: none;"><!--mi_lead-->',
+		'</span><!--mi_lead-->'
+	);
+	$mini_s = array(
+		'[lead_define]', '[/lead_define]');
+	return str_replace($styl_s, $mini_s, $decode_s);
+}
 //disabled function
 function disa(&$isedit) {
 	if ($isedit || !isset($_SESSION['v_user'])) echo ' disabled="disabled"';
@@ -209,6 +246,8 @@ function disa(&$isedit) {
 function disa2() {
 	if (!isset($_SESSION['v_user'])) echo ' disabled="disabled"';
 }
+//functions end
+//
 //hold input
 $t2_temp = '';
 $t1_temp = '';
@@ -217,6 +256,13 @@ if (isset($_POST['content'])) $t2_temp = $_POST['content'];
 //edit
 $edit_t = '';
 $edit_c = '';
+//minicode [lead_define]
+$lead_arr_1 = array();
+$lead_arr_2 = array();
+$lead_str = '';
+$lead_find_ready = false;
+$lead_find_ok = false;
+//
 if ($isedit) {
 	$edit_t = $_POST['edit_d1'];
 	$edit_c = substr($edit_t, 0, 12);
@@ -228,7 +274,13 @@ if ($isedit) {
 	$t2_temp = '';
 	if (file_exists($dir.$edit_t)) {
 		$t2_temp = html_entity_decode(str_replace($ent_s, $rem_s, file_get_contents($dir.$edit_c)), ENT_QUOTES, 'UTF-8');
-		$t2_temp = minicode_reverse($t2_temp);
+		//minicode [lead_define]
+		$t2_temp = minicode_lead_define_decode($t2_temp);
+		$lead_find_ok = minicode_lead_define($t2_temp, $lead_arr_1, $lead_arr_2, $lead_str);
+		$lead_find_ready = true;
+		$t2_temp = str_replace($lead_arr_2, $lead_arr_1, $t2_temp);
+		if ($lead_find_ok) $t2_temp = $lead_str.$t2_temp;
+		$t2_temp = minicode_decode($t2_temp);
 	}
 }
 if (isset($_POST['f_isedit'])) {
@@ -281,6 +333,8 @@ else {
 if ($writeok === 1) {
 	//stripslashes
 	if (get_magic_quotes_gpc()) $_POST['content'] = stripslashes($_POST['content']);
+	//minicode [lead_define]
+	if (!$lead_find_ready) $lead_find_ok = minicode_lead_define($_POST['content'], $lead_arr_1, $lead_arr_2, $lead_str);
 	//array minicode
 	$co_arr = array();
 	$process = true;
@@ -293,7 +347,7 @@ if ($writeok === 1) {
 		$p_end = false;
 		$p_end_len = false;
 		$ix = 0;
-		while ($need_try) 
+		while ($need_try)
 			minicode_find($process, $p1, $p2, $p_start, $p_offset,
 				$_POST['content'], $need_try, $minicode, $content_len, $minicode_e,
 				$p_end, $p_end_len, $ix);
@@ -310,7 +364,17 @@ if ($writeok === 1) {
 		}
 		//htmlspecialchars
 		else array_push($co_arr, nl2br(htmlspecialchars(substr($_POST['content'], $p_start), ENT_QUOTES)));
-		//minicode over
+		//minicode array over
+	}
+	//minicode [lead_define]
+	if ($lead_find_ok) {
+		$co_arr = str_replace($lead_arr_1, $lead_arr_2, $co_arr);
+		$co_temp = array();
+		$lead_str = substr($lead_str, 13, strlen($lead_str)-27);
+		$lead_str = nl2br(htmlspecialchars($lead_str, ENT_QUOTES));
+		$lead_str = '<span style="display: none;"><!--mi_lead-->'.$lead_str.'</span><!--mi_lead-->';
+		array_push($co_temp, $lead_str);
+		$co_arr = array_merge($co_temp, $co_arr);
 	}
 	//edit
 	if ($isedit) $fp = fopen($filename, 'wb');

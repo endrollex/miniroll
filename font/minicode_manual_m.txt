@@ -1,25 +1,33 @@
-[b]minicode (variant of BBCode) - easy editing HTML[/b]
+[lead_define]
+[tit] @= <span style="font-size: 20pt; font-weight: bold;">
+[/tit] @= </span>
+[h1] @= <span style="font-size: 16pt; color: green;">
+[/h1] @= </span>
+[title1] @= <span style="font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;">
+[/title1] @= </span>
+[hello1][/hello1] @= Just say hello.
+[/lead_define][tit]minicode (variant of BBCode) - easy editing HTML[/tit]
 
-[color]green]Introduction:[/color]
+[h1]Introduction:[/h1]
 
 minicode is a lightweight markup language for [url]https://github.com/endrollex/miniroll[miniroll[/url] easy editing, learn from [url]https://www.phpbb.com/community/faq.php?mode=bbcode[BBCode[/url].
 The tags are indicated by square brackets [ ] surrounding a keyword.
 It is designed for Blog, thus let through unsafe HTML like <script>.
 minicode allow user to write HTML freely and unlimitedly.
 
-[color]green]Syntax:[/color]
+[h1]Syntax:[/h1]
 [html]<ol><li>The minicode cannot nest:
 <pre style="background-color: #D3D3D3;">[url]http://goo.gl/[/url] OK
 [b][url]http://goo.gl/[/url][/b] This expression is ERROR!!!
 </pre>Because nest will be complex.
-In this situation, you can use HTML directly.<br/><br/></li>
+In this situation, you can use HTML directly or use [lead_define].<br/><br/></li>
 <li>Difference between minicode and BBCode:
 <pre style="background-color: #D3D3D3;">[url]http://php.net/docs.php[PHP Manual[/url]
 [color]#B22222]FireBrick[/color]
 </pre>Note the tag option is close to the [tag] with a sigle square bracket:<br/>
 [tag]option]...[/tag], or [tag]...[option[/tag]<br/>
 Position of tag option depends on the implemented HTML sentence.
-</li></ol>[/html][color]green]Keywords and Usage:[/color]
+</li></ol>[/html][h1]Keywords and Usage:[/h1]
 [html]<ol><li>
 <pre style="background-color: #D3D3D3;">[code]
 while (ivec.size() != ivec.capacity())
@@ -94,7 +102,22 @@ C[h]sub]hex[/h], ...</pre>
 [/html]# For some plain symmetrical HTML tags:
 [h]h4]This is heading 4[/h]y[h]sup]4[/h]
 C[h]sub]hex[/h], ...
-[html]</li></ol>[/html][color]green]Typesetting Guild:[/color]
+
+[html]</li><li>
+<pre style="background-color: #D3D3D3;">
+[lead_define]
+[title] @= &lt;span style="font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;"&gt;
+[/title] @= &lt;/span&gt;
+[hello][/hello] @= Just say hello.
+[/lead_define][title]My Title[/title]
+[hello][/hello]
+</pre>
+[/html]# Define hot minicode in a post.
+# You can define several minicode, but all need to be in one [lead_define].
+
+[title1]My Title[/title1]
+[hello1][/hello1]
+[html]</li></ol>[/html][h1]Typesetting Guild:[/h1]
 [html]<ol><li>
 <pre style="background-color: #D3D3D3;">[/html][h]span][[/h]html][html]<br/>[/html]<img style="float: left; margin-right: 10px; margin-bottom: 10px;"[html]<br/>[/html]src="http://www.ietf.org/images/isoc_logo.gif" alt="" />[html]<br/>[/html][h]span][[/h]/html][html]The quick brown fox jumps over the lazy dog.
 ...</pre>
@@ -116,10 +139,10 @@ href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[/html]The
 The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog.
 
-[html]</li></ol><div></div>[/html][color]green]Note:[/color]
+[html]</li></ol><div></div>[/html][h1]Note:[/h1]
 [html]<ol><li>[/html]If the sentences are too complex, check them by [url]http://validator.w3.org/[W3C Markup Validator[/url] is a good idea.
 [html]</li><li>[/html]Block elements or margin may cause line spacing too large, delete a newline according to the situation.
-[html]</li></ol>[/html][color]green]Mechanism:[/color]
+[html]</li></ol>[/html][h1]Mechanism:[/h1]
 
 Mechanism of minicode is base on "Search and Replace", the process is reversible and very simply.
 It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.
@@ -127,7 +150,7 @@ The implemented HTML may contain a little comment markup <!-- -->, intend for re
 Some keywords of minicode depends CSS, the [url]https://github.com/endrollex/miniroll/blob/master/htmindex.css[default CSS[/url] provided to show the predefined style.
 For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[minicode[/url] -> [url]http://endrollex.com/font/minicode_manual.txt[HTML article[/url] -> this page (Encapsulated)
 
-[color]green]Construct:[/color]
+[h1]Construct:[/h1]
 
 minicode of miniroll is writed by PHP, HTML version is HTML5.
 You can modify all rules from [url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url].
