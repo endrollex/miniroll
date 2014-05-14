@@ -34,6 +34,9 @@ if (navigator.userAgent) {
 	var i_get_str = navigator.userAgent.match(/(android|webos|blackberry|windows phone|opera mini|iemobile)/i);
 	if (i_get_str) i_is_mobile = true;
 }
+//force_is_moible: 3 = auto, 4 = pc, 5 = mobile
+if (force_is_mobile == 5) i_is_mobile = true;
+if (force_is_mobile == 4) i_is_mobile = false;
 //post_top.php css function
 function scr_post() {
 	if (i_is_mobile) document.getElementById("dom_index01").style.backgroundImage = "none";
