@@ -251,8 +251,16 @@ function disa2() {
 //hold input
 $t2_temp = '';
 $t1_temp = '';
-if (isset($_POST['title'])) $t1_temp = $_POST['title'];
-if (isset($_POST['content'])) $t2_temp = $_POST['content'];
+if (isset($_POST['title'])) {
+	//stripslashes
+	if (get_magic_quotes_gpc()) $_POST['title'] = stripslashes($_POST['title']);
+	$t1_temp = $_POST['title'];
+}
+if (isset($_POST['content'])) {
+	//stripslashes
+	if (get_magic_quotes_gpc()) $_POST['content'] = stripslashes($_POST['content']);
+	$t2_temp = $_POST['content'];
+}
 //edit
 $edit_t = '';
 $edit_c = '';
@@ -331,8 +339,6 @@ else {
 }
 //minicode
 if ($writeok === 1) {
-	//stripslashes
-	if (get_magic_quotes_gpc()) $_POST['content'] = stripslashes($_POST['content']);
 	//minicode [lead_define]
 	if (!$lead_find_ready) $lead_find_ok = minicode_lead_define($_POST['content'], $lead_arr_1, $lead_arr_2, $lead_str);
 	//array minicode
