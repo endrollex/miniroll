@@ -46,8 +46,8 @@ while (ivec.size() != ivec.capacity())
 <pre style="background-color: #D3D3D3;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
 [img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
 [/html]# To insert an image:
-[img]wikimedia-button]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
-[img]]http://www.w3.org/2008/site/images/twitter-bird[/img]
+[img]wikimedia-button]http://www.endrollex.com/upload/img/icon/manual/wikimedia-button.png[/img]
+[img]twitter-bird]http://www.endrollex.com/upload/img/icon/manual/twitter-bird.png[/img]
 
 # The first expression omited the parameter for alt attribute.
 # It will be automatically converted to second expression with filename, or you can manually add.
@@ -124,7 +124,7 @@ C[h]sub]hex[/h], ...
 [/html]# Image float left:
 [html]
 <img style="float: left; margin-right: 10px; margin-bottom: 10px;"
-src="http://www.ietf.org/images/isoc_logo.gif" alt="" />
+src="http://www.endrollex.com/upload/img/icon/manual/isoc_logo.gif" alt="" />
 [/html]The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog.
 
@@ -133,7 +133,7 @@ The quick brown fox jumps over the lazy dog.
 <pre style="background-color: #D3D3D3;">[/html][h]span][[/h]html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">[html]<br/>[/html][h]span][[/h]/html][h]span][[/h]img]http://tools.ietf.org/images/ietflogo3h.png[h]span][[/h]/img][html]<br/>[/html][h]span][[/h]html]<a class="m4_style" style="font-size: 12px;" target="_blank"[html]<br/>[/html]href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[h]span][[/h]/html][html]...</pre>
 [/html]# Div float left with Link:
 [html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-[/html][img]ietflogo3h]http://tools.ietf.org/images/ietflogo3h.png[/img]
+[/html][img]ietflogo3h]http://www.endrollex.com/upload/img/icon/manual/ietflogo3h.png[/img]
 [html]<a class="m4_style" style="font-size: 12px;" target="_blank"
 href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[/html]The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog.

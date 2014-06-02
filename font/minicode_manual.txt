@@ -46,8 +46,8 @@ while (ivec.size() != ivec.capacity())
 <pre style="background-color: #D3D3D3;">[img]http://bits.wikimedia.org/images/wikimedia-button.png[/img]
 [img]twitter-bird]http://www.w3.org/2008/site/images/twitter-bird[/img]</pre>
 <!--m5b--># To insert an image:<br />
-<!--m3a--><img alt="wikimedia-button" class="m3" src="http://bits.wikimedia.org/images/wikimedia-button.png" /><!--m3--><br />
-<!--m3a--><img alt="" class="m3" src="http://www.w3.org/2008/site/images/twitter-bird" /><!--m3--><br />
+<!--m3a--><img alt="wikimedia-button" class="m3" src="http://www.endrollex.com/upload/img/icon/manual/wikimedia-button.png" /><!--m3--><br />
+<!--m3a--><img alt="twitter-bird" class="m3" src="http://www.endrollex.com/upload/img/icon/manual/twitter-bird.png" /><!--m3--><br />
 <br />
 # The first expression omited the parameter for alt attribute.<br />
 # It will be automatically converted to second expression with filename, or you can manually add.<br />
@@ -78,7 +78,7 @@ while (ivec.size() != ivec.capacity())
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2014-04-25 11:57:12</span><!--m9--><br />
+<span class="m9">Last modified: 2014-06-02 17:25:09</span><!--m9--><br />
 <br />
 # By the way: this page initially completed on 2013-09-02.<br />
 <br />
@@ -124,7 +124,7 @@ Just say hello.<!--mi7--><br />
 <!--m5b--># Image float left:<br />
 <!--m5-->
 <img style="float: left; margin-right: 10px; margin-bottom: 10px;"
-src="http://www.ietf.org/images/isoc_logo.gif" alt="" />
+src="http://www.endrollex.com/upload/img/icon/manual/isoc_logo.gif" alt="" />
 <!--m5b-->The quick brown fox jumps over the lazy dog.<br />
 The quick brown fox jumps over the lazy dog.<br />
 <br />
@@ -133,7 +133,7 @@ The quick brown fox jumps over the lazy dog.<br />
 <pre style="background-color: #D3D3D3;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;div style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m10--><span class="m10">[</span><!--m10b-->img]http://tools.ietf.org/images/ietflogo3h.png<!--m10--><span class="m10">[</span><!--m10b-->/img]<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;a class=&quot;m4_style&quot; style=&quot;font-size: 12px;&quot; target=&quot;_blank&quot;<!--m5--><br/><!--m5b-->href=&quot;http://tools.ietf.org/tools/rfcmarkup/&quot;&gt;Rfcmarkup Tool&lt;/a&gt;&lt;/div&gt;<!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->...</pre>
 <!--m5b--># Div float left with Link:<br />
 <!--m5--><div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-<!--m5b--><!--m3a--><img alt="ietflogo3h" class="m3" src="http://tools.ietf.org/images/ietflogo3h.png" /><!--m3--><br />
+<!--m5b--><!--m3a--><img alt="ietflogo3h" class="m3" src="http://www.endrollex.com/upload/img/icon/manual/ietflogo3h.png" /><!--m3--><br />
 <!--m5--><a class="m4_style" style="font-size: 12px;" target="_blank"
 href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div><!--m5b-->The quick brown fox jumps over the lazy dog.<br />
 The quick brown fox jumps over the lazy dog.<br />
