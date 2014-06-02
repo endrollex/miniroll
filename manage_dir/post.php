@@ -29,7 +29,6 @@ $postok = false;
 $writeok = 0;
 $isreload = false;
 $fp = false;
-$lable = array();
 //minicode ini, note: syntax can not nest
 $minicode = array('[code]', '[output]', '[img]', '[url]', '[html]', '[color]', '[b]', '[small]', '[last]', '[h]');
 $minicode_e = array('[/code]', '[/output]', '[/img]', '[/url]', '[/html]', '[/color]', '[/b]', '[/small]', '[/last]', '[/h]');
@@ -251,6 +250,7 @@ function disa2() {
 //hold input
 $t2_temp = '';
 $t1_temp = '';
+$t3_temp = array();
 if (isset($_POST['title'])) {
 	//stripslashes
 	if (get_magic_quotes_gpc()) $_POST['title'] = stripslashes($_POST['title']);
@@ -261,6 +261,7 @@ if (isset($_POST['content'])) {
 	if (get_magic_quotes_gpc()) $_POST['content'] = stripslashes($_POST['content']);
 	$t2_temp = $_POST['content'];
 }
+if (isset($_POST['lable'])) $t3_temp = $_POST['lable'];
 //edit
 $edit_t = '';
 $edit_c = '';
@@ -453,7 +454,9 @@ if ($isedit) echo '<input type = "hidden" name = "f_isedit" value = "'.$edit_t.'
 <?php
 //label
 for ($ix = 0; $ix != count($label_code); ++$ix) {
-	echo '<input type="checkbox" name="lable[]" value="'.$label_code[$ix].'"';
+	$checkbox_str = '<input type="checkbox" name="lable[]" value="';
+	if (in_array($label_code[$ix], $t3_temp)) echo $checkbox_str.$label_code[$ix].'" checked="checked"';
+	else echo $checkbox_str.$label_code[$ix].'"';
 	disa($isedit);
 	echo '/>'.$label_text[$ix];
 }
