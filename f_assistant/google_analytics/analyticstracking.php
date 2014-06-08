@@ -9,13 +9,17 @@
 //ATTENTION: delete "/*" and "*/" below after prepared this file.
 /*
 $renew_gojs = false;
+$renew_try = 0;
 $unix_time_file = 'f_assistant/google_analytics/unix_time.txt';
 $font_gajs_file = 'f_assistant/google_analytics/ga.js';
 $font_gajs_file_tmp = 'f_assistant/google_analytics/ga.js.tmp';
 if (file_exists($unix_time_file)) {
 	$last_unix_time = file_get_contents($unix_time_file);
 	if (time()-$last_unix_time > 82800) $renew_gojs = true;
-	if ($last_unix_time == 0) {
+	if (strlen($last_unix_time) == 1) {
+		//if renew_try > 10, stop renew, something wrong
+		++$last_unix_time;
+		$renew_try = $last_unix_time;
 		if (!file_exists($font_gajs_file_tmp)) $renew_gojs = true;
 		else {
 			if (file_exists($font_gajs_file_tmp)) 
@@ -34,7 +38,7 @@ else $renew_gojs = true;
 if ($renew_gojs) {
 	$read_gajs = file_get_contents('http://www.google-analytics.com/ga.js');
 	file_put_contents($font_gajs_file_tmp, $read_gajs);
-	file_put_contents($unix_time_file, '0');
+	file_put_contents($unix_time_file, $renew_try);
 }
 $run_gojs = false;
 if (file_exists($font_gajs_file) && isset($_SERVER['HTTP_HOST'])) {
