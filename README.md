@@ -70,7 +70,7 @@ Mechanism Brief:
 
 Known Issues:
 -------------
-* The login page uses HTTP, which is unsafe, but HTTPS needs a configurable server and a CA. I'm using cheap solution now.
+* The login page uses HTTP, which is unsafe, but HTTPS needs a configurable server and a CA. I'm using the cheap solution now.
 
 Copyright and License:
 ----------------------
