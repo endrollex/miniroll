@@ -454,6 +454,7 @@ a.user:active {color: #2E3092; font-weight: bold;}
 .album_image {
 	margin: 2px;
 	top: 0px;
+	border: 1px solid #898989;
 }
 a.album:link {color: #605CA8; text-decoration: none;}
 a.album:visited {color: #605CA8; text-decoration: none;}

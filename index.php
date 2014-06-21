@@ -124,6 +124,7 @@ if (isset($all_file[0])) $is_empty = false;
 </td><td class="td_cpp03b">
 <!--#..............................................................right area show detail-->
 <?php
+//float style let code show completed
 $hatt_div_c = ' class="div_cpp03b"';
 if (!isset($_GET['p'])) $hatt_div_c = '';
 //read, $a_link2 for all a_link* end tag
