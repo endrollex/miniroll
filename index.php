@@ -213,7 +213,7 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 	}
 	//O=('-'Q) echo
 	echo '</div>';///trace.hatt_cpp03_p
-	echo '<div'.$hatt_pdown_sty.'>'.$html_viewlink.'</div>';
+	echo '<div'.$hatt_pdown_sty.'> '.$html_viewlink.'</div>';
 }
 //page array
 $b_cate = '';
