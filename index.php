@@ -213,6 +213,7 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 	}
 	//O=('-'Q) echo
 	echo '</div>';///trace.hatt_cpp03_p
+	//note 1 space, IE11 not show empty element sometime
 	echo '<div'.$hatt_pdown_sty.'> '.$html_viewlink.'</div>';
 }
 //page array
