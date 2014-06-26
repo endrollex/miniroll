@@ -14,6 +14,11 @@ Introduction:
 * This project is for reference purpose.
   Generally, WordPress is a better choice, it has complete support and worldwide users.
 
+PHP Environment Require:
+------------------------
+* Require PHP verion: PHP5
+* Require library: GD library, for img_ident.php
+
 How to Run:
 -----------
 Put all files in a PHP server.
@@ -51,11 +56,6 @@ Folders Explanation:
 * manage_dir: Management's dir
 * upload: Upload's dir
 
-PHP Environment Require:
-------------------------
-* Require PHP verion: PHP5
-* Require library: GD library, for img_ident.php
-
 Mechanism Brief:
 ----------------
 1. miniroll is a simple blog, most functions are minimize.
@@ -67,10 +67,6 @@ Mechanism Brief:
 6. If you write a PHP file (mf_php/*.php) for the journal and specify its label,
    it will be loaded by PHP require() function.
    This feature lets the file run PHP code.
-
-Known Issues:
--------------
-* The login page uses HTTP, which is unsafe, but HTTPS needs a configurable server and a CA. I'm using the cheap solution now.
 
 Copyright and License:
 ----------------------
