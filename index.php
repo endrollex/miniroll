@@ -20,7 +20,7 @@
  *     f_assistant/jwplayer: JW Player, media player
  *     f_assistant/prettify: prettify, syntax highlighting
  *
- * This file has some CSS class or JS, please modify them for wanted style.
+ * This file have some CSS class or JS, please modify them for wanted style.
  *
  * Copyright 2013 Huang Yiting (http://endrollex.com)
  * miniroll is distributed under the terms of the GNU General Public License
@@ -28,6 +28,8 @@
 $show_top2 = false;
 require('global_var.php');
 require('index_func.php');
+$is_preload_number_to_cn = false;
+if (isset($show_top2)) {if ($show_top2) $is_preload_number_to_cn = false;}
 //meta elements
 $echo_title = 'Sample Blog';
 $meta_keywords = 'Blog';
@@ -62,11 +64,12 @@ else $_SESSION['l'] = 'nul';
 if (isset($_GET['l'])) $_SESSION['l'] = $_GET['l'];
 if (!isset($_SESSION['next_sav'])) $_SESSION['next_sav'] = 0;
 ?>
-<div class="div_cpp02"><!--trace.div_cpp02-->
+<div class="div_cpp02" id="dom_div_cpp02"><!--trace.div_cpp02-->
+<div class="div_cpp02_menu_mobile" id="dom_div_cpp02_menu_mo"></div>
 <!--#..............................................................table-->
-<table class="table_cpp02"><tr><td class="td_cpp03a">
+<table class="table_cpp02" id="dom_table_cpp02"><tr><td class="td_cpp03a" id="dom_td_cpp03a">
 <!--#..............................................................left area show menu-->
-<div class="div_cpp03a"><!--trace.div_cpp03a-->
+<div class="div_cpp03a" id="dom_div_cpp03a"><!--trace.div_cpp03a-->
 <br/>
 <?php
 //browse control back button
@@ -88,7 +91,7 @@ if ($show_left_menu === 0) {
 	$vpass_menu_link = '?l=all';
 	$vpass_menu_text = 'All';
 	$vpass_menu_light = ($_SESSION['l'] === 'all');
-	$vpass_menu_style = 2;
+	$vpass_menu_style = 1;
 	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style);
 	//hidden last label
 	for ($ix_index = 0; $ix_index !== count($label_text)-1; ++$ix_index) {
@@ -97,7 +100,7 @@ if ($show_left_menu === 0) {
 			$menu_light = true;
 		}
 		$vpass_menu_link = '?l='.$label_code[$ix_index];
-		$vpass_menu_style = 2;
+		$vpass_menu_style = 1;
 		menu_mark_show($vpass_menu_link, $label_text[$ix_index], $menu_light, $vpass_menu_style);
 	}
 }
@@ -115,18 +118,24 @@ if (isset($_GET['next'])) {
 }
 if (isset($_SESSION['next_sav'])) $_SESSION['next_sav'] = $now_page;
 if ($f_sum !== 0) $all_file = $all_file_o[$now_page];
-//ready for view
+//ready view
 $is_empty = true;
 if (isset($all_file[0])) $is_empty = false;
 ?>
 </div><!--/trace.div_cpp03a-->
 <!--#..............................................................table-->
-</td><td class="td_cpp03b">
+</td><td class="td_cpp03b" id="dom_td_cpp03b">
+<script type="text/javascript">
+scr_nor_width();
+scr_rig_width();
+scr_mobile_opti1();
+</script>
 <!--#..............................................................right area show detail-->
 <?php
 //float style let code show completed
 $hatt_div_c = ' class="div_cpp03b"';
 if (!isset($_GET['p'])) $hatt_div_c = '';
+$hatt_div_c .= ' id="dom_div_cpp03b"';
 //read, $a_link2 for all a_link* end tag
 $a_link1 = '';
 $a_link2 = '';
@@ -147,7 +156,7 @@ echo $html_data_err;
 if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index) {
 	$view_file = $all_file[$ix_index];
 	$view_file_c = substr($view_file, 0, 12);
-	//get post infomations
+	//get post infomation
 	post_info_get($view_file, $view_file_c, $dir_comment, $dir, $label_comb,
 		$is_preload_number_to_cn, $para_get_p, $echo_file_date, $html_view_tag, $echo_comm_size_a,
 		$echo_comm_size_cn, $echo_title, $a_link1, $a_link2, $a_link1v, $a_link1v_comm);
@@ -156,7 +165,7 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 	if ($show_viewlink) $hatt_cpp03b_p = ' class="div_cpp03b_p1"';
 	//full view, max-height
 	if (isset($_GET['p'])) $hatt_cpp03b_p = ' class="div_cpp03b_p"';
-	//O=('-'Q) echo	
+	//O=('-'Q) echo
 	echo '<div'.$hatt_cpp03b_p.'>';//trace.hatt_cpp03_p
 	echo '<div class="div_cpp03b_pd">';
 	echo $echo_file_date;
@@ -176,7 +185,7 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 	if (isset($_GET['p']) && $show_top2) $html_view_title = '<div class="div_cpp03b_pt">'.$echo_title.'<h1 class="h1_cpp03b_pt">'
 		.$echo_title.'</h1></div>';
 	else $html_view_title = '<div class="div_cpp03b_pt">'.$echo_title.'<span class="span_cpp03b_pt_shadow">'
-		.$a_link1.$echo_title.$a_link2.'</span></div>';	
+		.$a_link1.$echo_title.$a_link2.'</span></div>';
 	echo $html_view_title;
 	//content
 	if ($show_content) {
@@ -225,13 +234,17 @@ page_array($now_page, $pag_sum, $b_cate, $html_span_page1, $html_span_page2);
 //O=('-'Q) echo
 echo '<br/><div class="div_page">';
 echo $html_span_page1;
-echo ' |&nbsp;</div><div class="div_sipage">';
+echo ' |&nbsp;</div><div class="div_sipage" id="dom_div_sipage">';
 echo $html_span_page2;
 echo '</div>';
 echo '</div>';///trace.hatt_div_c
-//google analytics
-if (file_exists('f_assistant/google_analytics/analyticstracking.php')) include_once('f_assistant/google_analytics/analyticstracking.php');
+//google not work in my local
+//http://tongji.baidu.com/
+//scr_mobile_opti2()
 ?>
+<script type="text/javascript">
+scr_mobile_opti2();
+</script>
 <!--#..............................................................table-->
 </td></tr></table>
 <!--#..............................................................right area end-->

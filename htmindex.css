@@ -1,4 +1,8 @@
-﻿/*----------------------------------------------------------------index.php*/
+﻿/*
+outermost div width overview: |--80% or 96% of body(screen.availWidth)--|, min-width: 610px, max-width: 1200px
+maxWidth-leftWidth-rightWidth = 20
+*/
+/*----------------------------------------------------------------index.php*/
 html {
 	height: 100%;
 	/*overflow-y is CSS3*/
@@ -39,21 +43,20 @@ pre {
 	border-collapse: collapse;
 }
 .td_cpp03a {
-	width: 16%;
+	max-width: 160px;
+	width: 160px;
 	float: left;
 }
 .td_cpp03b {
 	float: left;
-	width: 84%;
+	width: 630px;
 }
 .div_no_class {}
 .div_home_set {
-	width: 90%;
+	width: 790px;
 	margin-right: auto;
 	margin-left: auto;
 	min-height: 100%;
-	max-width: 810px;
-	min-width: 750px;
 	/*
 	relative classes' float width are effected:
 	.td_cpp03b
@@ -63,26 +66,36 @@ pre {
 	*/
 }
 .div_cpp01 {
-	background-position: left;
-	height: 100px;
-	position: relative;
-	background-color: #336699;
-	background-image: url('images/sample_blog.gif');
+	background-image: url('images/sword.png');
 	background-repeat: no-repeat;
+	height: 100px;
+	background-position: 80% 0;
+	position: relative;
+}
+.div_cpp01_2 {
+	height: 30px;
+	position: relative;
 }
 .div_cpp01_home {
 	position: absolute;
 	bottom: 0px;
 	width: 100%;
 }
-.div_cpp02 {}
+.div_cpp02 {
+}
+.div_cpp02_menu_mobile {
+	font-size: 14px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 7px 0px 0px 0px;
+}
 .div_cpp03a {
 	overflow: hidden;
 }
 .div_cpp03a_c {
 	line-height: 25px;
 	height: 25px;
-	text-indent: 15px;
+	text-indent: 20px;
 	position: relative;
 	left: 10px;
 	white-space: nowrap;
@@ -155,7 +168,7 @@ pre {
 	margin-right: 20px;
 	height: 20px;
 	/*for div_cpp03b float*/;
-	max-width: 640px;
+	max-width: 1020px;
 }
 .div_cpp03b_pdown1 {
 	border-bottom-style: dashed;
@@ -170,12 +183,25 @@ pre {
 	text-align: center;
 	line-height: 80px;
 }
+.img_top01 {
+	border-width: 0px;
+	position: relative;
+	left: 100px;
+	top: 35px;
+}
 .ul_top01 {
 	overflow: hidden;
 	padding: 0px;
 	list-style-type: none;
 	margin-bottom: 5px;
 	margin-left: 120px;
+}
+.ul_top01b {
+	overflow: hidden;
+	padding: 0px;
+	list-style-type: none;
+	margin-bottom: 5px;
+	margin-left: 80px;
 }
 .li_top01 {
 	float: left;
@@ -227,10 +253,22 @@ a.tit:link {color: #003399; text-decoration: none;}
 a.tit:visited {color: #003399; text-decoration: none;}
 a.tit:hover {color: #777777;}
 a.tit:active {color: #777777; text-decoration: none;}
-a.lab:link {color: #99CCFF; text-decoration: none;}
-a.lab:visited {color: #99CCFF; text-decoration: none;}
+a.lab:link {color: #000000; text-decoration: none;}
+a.lab:visited {color: #000000; text-decoration: none;}
 a.lab:hover {color: #00AEEF; text-decoration: none;}
 a.lab:active {color: #00AEEF; text-decoration: none;}
+a.lab2:link {color: #FFFFFF; text-decoration: none;}
+a.lab2:visited {color: #FFFFFF; text-decoration: none;}
+a.lab2:hover {color: #99ccff; text-decoration: none;}
+a.lab2:active {color: #99ccff; text-decoration: none;}
+/*mobile style*/
+.li_top01_mo {
+	font-size: 16px;
+	text-indent: 15px;
+	float: left;
+	position: relative;
+	margin: 75px 0px 0px 0px;
+}
 /*----------------------------------------------------------------post.php*/
 .body_manage {
 	margin: 0px;
@@ -246,8 +284,8 @@ a.lab:active {color: #00AEEF; text-decoration: none;}
 	margin-right: auto;
 	margin-left: auto;
 	min-height: 100%;
-	max-width: 810px;
-	min-width: 750px;
+	max-width: 1200px;
+	min-width: 610px;
 }
 .post_input_text {
 	width: 95%;

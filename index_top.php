@@ -44,25 +44,26 @@ echo '<meta name="keywords" content="'.$hatt_meta_k.'" />';
 echo '<meta name="description" content="'.$hatt_meta_d.'" />';
 echo '<link rel="SHORTCUT ICON" href="images/icon_4.ico"/>';
 echo '<title>'.$echo_tit_top.'</title>';
-//
 ?>
 <link href="htmindex.css" rel="stylesheet" type="text/css" />
 <link href="f_assistant/prettify/prettify.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+scr_viewp();
+</script>
 <script type="text/javascript" src="f_assistant/prettify/prettify.js"></script>
 <script type="text/javascript" src="f_assistant/jwplayer/jwplayer.js"></script>
 </head>
-<body onload="prettyPrint();" class="body_index">
-<div class="div_home_set"><!--trace.div_home_set-->
-<div class="div_cpp01">
+<body onload="prettyPrint();" class="body_index" style="background-image: url('images/back_color.png');	background-repeat: repeat-x; background-position: top center;">
+<div class="div_home_set" id="dom_div_home_set"><!--trace.div_home_set-->
+<div class="div_cpp01" id="dom_div_cpp01">
 <div class="div_cpp01_home">
-<ul class="ul_top01">
-<li class="li_top01"><a class="lab" href="index.php">Home</a></li>
-<li class="li_top01"><a class="lab" href="index.php?p=000099999998_mf_">Search</a></li>
-<li class="li_top01"><a class="lab" href="index.php?p=000100000000_mf_sk_">Album</a></li>
-<li class="li_top01"><a class="lab" href="index.php?l=do">Download</a></li>
-<li class="li_top01"><a class="lab" href="index.php?p=000099999999_mi_">About</a></li>
-<li class="li_top01">
-</li>
+<ul class="ul_top01" id="dom_ul_top01">
+<li class="li_top01"><a class="lab2" href="index.php">Home</a></li>
+<li class="li_top01"><a class="lab2" href="index.php?p=000099999998_mf_">Search</a></li>
+<li class="li_top01"><a class="lab2" href="index.php?p=000100000000_mf_sk_">Album</a></li>
+<li class="li_top01"><a class="lab2" href="index.php?l=do">Download</a></li>
+<li class="li_top01"><a class="lab2" href="index.php?p=000099999999_mi_">About</a></li>
 </ul>
 </div>
+<a href="index.php"><img alt="blog_name" height="29" class="img_top01" src="images/blog_name.gif" width="186" /></a>
 </div>
