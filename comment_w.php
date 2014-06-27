@@ -37,7 +37,7 @@ if (isset($_SESSION['co_cont'])) echo $_SESSION['co_cont'];
 <?php
 if ($check_ident_fail) echo '<div class="div_com2">*Type the word: ';
 if ($check_ident_fail && isset($_SESSION['com_msg'])) echo $_SESSION['com_msg'][3];
-if ($check_ident_fail) echo '</div><input type="image" src="img_ident.php" class="img_com1" alt="" /><br/>';
+if ($force_determine || $check_ident_fail) echo '</div><input type="image" src="img_ident.php" class="img_com1" alt="" /><br/>';
 ?>
 <div class="div_com2"></div>
 <input type="<?php
@@ -45,7 +45,7 @@ if(!$check_ident_fail) echo 'hidden';
 else echo 'text';
 ?>" class="input_com1" id="input_com_iden" name="c_ident" value="<?php
 //assume the bots do not run JS dom event
-if (isset($_SESSION['keep_ident'])) {
+if (!$force_determine && isset($_SESSION['keep_ident'])) {
 	if ($_SESSION['keep_ident'][0] && isset($_SESSION['rand_img'][0])) {
 		echo $_SESSION['rand_img'][0];
 		$_SESSION['keep_ident'][1] += 1;

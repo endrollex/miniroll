@@ -20,6 +20,9 @@
 */
 //if direct visit, exit
 if (!isset($manage_php)) exit();
+//check https, $_SERVER['SERVER_PORT'] variable depending on your flavor of server
+$https_not_use = false;
+if ($enabled_https && isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] != '443') $https_not_use = true;
 //pass list
 $login_log = $dir_manage.'log/login_log.php';
 $login_log_err = $dir_manage.'log/login_log_err.php';
@@ -134,6 +137,8 @@ if (!$change_pass && $login_data && isset($_POST['user']) && isset($_POST['pass'
 	else $echo_lo_msg = 'Username or passwd too short.';
 	if ($kick_time > $kick_out) $echo_lo_msg = 'Login function is Blocked, please delete check_time file.';
 }
+//https check
+if ($https_not_use) $echo_lo_msg = 'If you are webmaster, please use HTTPS to visit this page.';
 //login or logout
 $echo_log_state = '#Welcome#';
 //########Authenticate################################################################
@@ -150,11 +155,17 @@ if (isset($_GET['l'])) {
 	}
 }
 //disabled function
-function disa() {
-	if (isset($_SESSION['v_user']) && !isset($_GET['l'])) echo ' disabled="disabled"';
+function disa(&$https_not_use) {
+	$is_disa = false;
+	if (isset($_SESSION['v_user']) && !isset($_GET['l'])) $is_disa = true;
+	if ($https_not_use) $is_disa = true;
+	if ($is_disa) echo ' disabled="disabled"';
 }
-function disa2(&$login_data) {
-	if (!isset($_SESSION['v_user']) || !$login_data || isset($_GET['l'])) echo ' disabled="disabled"';
+function disa2(&$login_data, &$https_not_use) {
+	$is_disa = false;
+	if (!isset($_SESSION['v_user']) || !$login_data || isset($_GET['l'])) $is_disa = true;
+	if ($https_not_use) $is_disa = true;
+	if ($is_disa) echo ' disabled="disabled"';
 }
 //O=('-'Q) echo
 echo $echo_log_state.'<br/><br/>';
@@ -165,20 +176,20 @@ echo $echo_lo_msg.'<br/><br/>';
 <!--#..............................................................user and passwd-->
 <form action="manage.php?m=3" method="post">
 Username:<br/>
-<input type="text" name="user"<?php disa(); ?>/><br/>
+<input type="text" name="user"<?php disa($https_not_use); ?>/><br/>
 Password:<br/>
-<input type="password" name="pass"<?php disa(); ?>/><br/>
-<input type="submit" value="<?php if ($login_data) echo 'Login'; else echo 'Create account'; ?>"<?php disa(); ?>/>
+<input type="password" name="pass"<?php disa($https_not_use); ?>/><br/>
+<input type="submit" value="<?php if ($login_data) echo 'Login'; else echo 'Create account'; ?>"<?php disa($https_not_use); ?>/>
 </form><br/>
 <div class="post_explain">
 <form action="manage.php?m=3" method="post">
 Change password for the login user, old password:<br/>
-<input type="password" name="x_pass_o"<?php disa2($login_data); ?>/><br/>
+<input type="password" name="x_pass_o"<?php disa2($login_data, $https_not_use); ?>/><br/>
 New password:<br/>
-<input type="password" name="x_pass"<?php disa2($login_data); ?>/><br/>
+<input type="password" name="x_pass"<?php disa2($login_data, $https_not_use); ?>/><br/>
 New password re-enter:<br/>
-<input type="password" name="x_pass2"<?php disa2($login_data); ?>/><br/>
-<input type="submit" value="Change"<?php disa2($login_data); ?>/>
+<input type="password" name="x_pass2"<?php disa2($login_data, $https_not_use); ?>/><br/>
+<input type="submit" value="Change"<?php disa2($login_data, $https_not_use); ?>/>
 </form>
 </div>
 <br/><br/></div><!--/trace.post_div-->

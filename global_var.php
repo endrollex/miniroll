@@ -31,5 +31,9 @@ $dir_manage = 'manage_dir/';
 date_default_timezone_set('Etc/GMT-8');
 //session
 session_start();
+//comment_w.php, determine whether or not the user is human
+$force_determine = false;
+//server features
+$enabled_https = false;
 //addition...
 ?>

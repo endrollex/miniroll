@@ -17,7 +17,8 @@ Introduction:
 PHP Environment Require:
 ------------------------
 * Require PHP verion: PHP5
-* Require library: GD library, for img_ident.php
+* Require library: GD library, only use in img_ident.php
+* Require library: FreeType library, only use in img_ident.php
 
 How to Run:
 -----------
