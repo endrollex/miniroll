@@ -198,7 +198,7 @@ for ($ix = 0; $ix != count($all_file); ++$ix) {
 <!--#..............................................................here read post-->
 <div class="div_no_class">
 <?php
-echo 'Current Title: <span class="span_blue">';
+echo 'Current title: <span class="span_blue">';
 if ($noempty) readfile($dir.$view_file);
 echo '</span><br/><br/>';
 ?>
