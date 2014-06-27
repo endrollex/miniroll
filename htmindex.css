@@ -1,6 +1,5 @@
 ﻿/*
 outermost div width overview: |--80% or 96% of body(screen.availWidth)--|, min-width: 610px, max-width: 1200px
-maxWidth-leftWidth-rightWidth = 20
 */
 /*----------------------------------------------------------------index.php*/
 html {

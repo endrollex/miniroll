@@ -1,4 +1,4 @@
-//for comment.php, comment_w.php
+//comment.php, comment_w.php
 //control comment form
 var i_disable_comm = 0;
 function form_disp(sel_action) {
@@ -21,7 +21,7 @@ function form_dis_comm() {
 function rep_err(doc_id) {
 	document.getElementById(doc_id).src = "/images/bad_gravatar.gif";
 }
-//i_dev_width: viewport
+//index_top.php, i_dev_width: viewport
 var i_dev_width = "device-width";
 var i_dev_height = "100%";
 if (screen.availWidth) {
@@ -37,7 +37,7 @@ if (navigator.userAgent) {
 //force_is_moible: 3 = auto, 4 = pc, 5 = mobile
 if (force_is_mobile == 5) i_is_mobile = true;
 if (force_is_mobile == 4) i_is_mobile = false;
-//post_top.php css function
+//post_top.php, css function
 function scr_post() {
 	if (i_is_mobile) document.getElementById("dom_index01").style.backgroundImage = "none";
 }
@@ -64,7 +64,7 @@ if (screen.availWidth) {
 	if (screen.availWidth < 760) i_normal_width = screen.availWidth*0.96;
 	if (screen.availWidth >= 760 && screen.availWidth < 1100) i_normal_width = screen.availWidth*0.9;
 	if (screen.availWidth >= 1100 && screen.availWidth < 1300) i_normal_width = screen.availWidth*0.8;
-	if (screen.availWidth > 1300) i_normal_width = screen.availWidth*0.9;
+	if (screen.availWidth > 1300) i_normal_width = screen.availWidth*0.8;
 	i_normal_width = parseInt(i_normal_width, 10);
 	if (i_normal_width < 610) i_normal_width = 610;
 	if (i_normal_width > 1200) i_normal_width = 1200;
@@ -72,16 +72,16 @@ if (screen.availWidth) {
 //i_right_width: td_cpp03b
 var i_right_width = 450;
 if (screen.availWidth) i_right_width = i_normal_width-160;
-//mobile's menu on top
+//mobile's menu on top, 20 is blank space
 if (i_is_mobile) {
 	i_normal_width = 360;
 	i_dev_width = 360;
 	if (screen.availWidth) i_right_width = i_normal_width-20;
 }
-//i_right_width_fix, real content width
+//i_right_width_fix, real content width, 20 is difference, no use now but hold this value
 var i_right_width_fix = i_right_width-20;
 //control screen functions
-//index_top.php or index_top2.php
+//index_top.php
 function scr_viewp() {
 	document.write('<meta name="viewport" content="width='+i_dev_width+', initial-scale=1" />');
 	if (i_is_mobile) {
@@ -100,10 +100,10 @@ function scr_viewp() {
 	}
 	
 }
+//index.php
 function scr_nor_width() {
 	document.getElementById("dom_div_home_set").style.width = i_normal_width+"px";
 }
-//index.php
 function scr_rig_width() {
 	document.getElementById("dom_td_cpp03b").style.width = i_right_width+"px";
 }
