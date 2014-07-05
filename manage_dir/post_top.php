@@ -31,6 +31,9 @@ else echo 'var force_is_mobile = 3;';
 ?>
 </script>
 <script type="text/javascript" src="htmindex.js"></script>
+<script type="text/javascript">
+scr_viewp_post();
+</script>
 <link rel="SHORTCUT ICON" href="images/icon_4.ico"/>
 <title>miniroll management system</title>
 <link href="htmindex.css" rel="stylesheet" type="text/css" />

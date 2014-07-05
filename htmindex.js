@@ -37,9 +37,21 @@ if (navigator.userAgent) {
 //force_is_moible: 3 = auto, 4 = pc, 5 = mobile
 if (force_is_mobile == 5) i_is_mobile = true;
 if (force_is_mobile == 4) i_is_mobile = false;
-//post_top.php, css function
+//post_top.php, css function, width is 360
+function scr_viewp_post() {
+	document.write('<meta name="viewport" content="width=360, initial-scale=1" />');
+}
 function scr_post() {
-	if (i_is_mobile) document.getElementById("dom_index01").style.backgroundImage = "none";
+	if (i_is_mobile) {
+		document.getElementById("dom_index01").style.backgroundImage = "none";
+		document.getElementById("dom_index01").style.width = "340px";
+		document.getElementById("dom_index01").style.minWidth = "340px";
+		str = '<span style="font-size: 16px;">';
+		str += '<br/>miniroll management system | <a href="index.php">INDEX</a><br/>';
+		str += '<br/>The management is disabled when a device is a mobile or a PC with low screen resolution (width < 760px).';
+		str += '</span>'
+		document.getElementById("dom_index01").innerHTML = str;
+	}
 }
 //     _____
 //    `.___,'
