@@ -160,7 +160,7 @@ function post_info_get(
 		$a_link2 = '</a>';
 		$a_link1 = '<a class="tit" href="?p='.$view_file.'">';
 		$a_link1v = '<a class="vlink" href="?p='.$view_file.'">';
-		$ex_link = '&amp;copost=1#commtop';
+		$ex_link = '&amp;co=1#ctop';
 		$a_link1v_comm = '<a class="vlink" href="?p='.$view_file.$ex_link.'">';
 	}
 	$echo_title = file_get_contents($dir.$view_file);

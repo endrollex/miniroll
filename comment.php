@@ -257,7 +257,7 @@ if ($go_write) {
 }
 //read comments
 //O=('-'Q) echo and readfile
-echo '<span class="span_l4b"><a id="commtop">Comments: </a>'.$comm_size.'</span><br/><br/>';
+echo '<span class="span_l4b"><a id="ctop">Comments: </a>'.$comm_size.'</span><br/><br/>';
 if ($comm_file !== '') {
 	//show file
 	$comm_readix = $second_new;
@@ -291,7 +291,7 @@ $_SESSION['rand_img'] = $rand_send;
 //href link
 $c_link = '#';
 if (isset($_GET['p'])) {
-	$c_link = 'index.php?p='.$_GET['p'].'&amp;copost=1#comm';
+	$c_link = 'index.php?p='.$_GET['p'].'&amp;co=1#comm';
 }
 ?>
 <div>
@@ -304,7 +304,7 @@ if (isset($_SESSION['rand_img'][0])) echo $_SESSION['rand_img'][0];
 <div class="div_com_top">
 <a id="comm" href="#comm" class="page" onclick="form_disp(1)">Add a comment</a>
 <span id="comm_span1"> | </span><a id="comment_form02" href="#comm" class="page"<?php 
-if (!isset($_GET['copost'])) echo ' style="display: none"';
+if (!isset($_GET['co'])) echo ' style="display: none"';
 ?> onclick="form_disp(2)">Collapse</a>
 <?php
 //O=('-'Q) echo

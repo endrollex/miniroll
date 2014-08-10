@@ -5,7 +5,7 @@
 */
 ?>
 <form id="comment_form01"<?php 
-if (!isset($_GET['copost'])) echo ' style="display: none"';
+if (!isset($_GET['co'])) echo ' style="display: none"';
 ?> action="<?php
 if (!isset($c_link)) $c_link = '#';
 echo $c_link;
