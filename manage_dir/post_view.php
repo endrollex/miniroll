@@ -199,7 +199,11 @@ for ($ix = 0; $ix != count($all_file); ++$ix) {
 <div class="div_no_class">
 <?php
 echo 'Current title: <span class="span_blue">';
-if ($noempty) readfile($dir.$view_file);
+if ($noempty) {
+	echo '<a target="_blank" href="../index.php?p='.$view_file.'">';
+	readfile($dir.$view_file);
+	echo '</a>';
+}
 echo '</span><br/><br/>';
 ?>
 </div>
