@@ -13,7 +13,9 @@ if (!isset($manage_php)) exit();
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <script type="text/javascript">
 <?php
+//here is the view control setting, the setting is both in index_top.php, post_top.php
 //$_SESSION['view']: save view option
+//$_GET['once_glance']: once open with glance view, value is arbitrary
 if (!isset($_SESSION['view'])) $_SESSION['view'] = 15;
 if (isset($_GET['view'])) {
 	if ($_GET['view'] == 'title') $_SESSION['view'] |= 1;

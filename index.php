@@ -142,11 +142,13 @@ $a_link2 = '';
 $a_link1v = '';
 $a_link1v_comm = '';
 //control read content or not
+//the view control setting please see index_top.php and post_top.php
 $show_content = false;
 if (isset($_GET['p']) || $_SESSION['l'] === 'nul') $show_content = true;
 $show_viewlink = false;
 if ($_SESSION['l'] === 'nul' && !isset($_GET['p'])) $show_viewlink = true;
 if (($_SESSION['view'] & 1) == 0 && !isset($_GET['p'])) {$show_content = true; $show_viewlink = true;}
+if (isset($_GET['once_glance']) && !isset($_GET['p'])) {$show_content = true; $show_viewlink = true;}
 //data
 $html_data_err = '';
 if ($is_empty) $html_data_err = '<div class="div_cpp03b_pt_content"><br/>File not found, maybe changed or not publish yet.<br/></div>';

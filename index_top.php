@@ -11,7 +11,9 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <script type="text/javascript">
 <?php
+//here is the view control setting, the setting is both in index_top.php, post_top.php
 //$_SESSION['view']: save view option
+//$_GET['once_glance']: once open with glance view, value is arbitrary
 if (!isset($_SESSION['view'])) $_SESSION['view'] = 15;
 if (isset($_GET['view'])) {
 	if ($_GET['view'] == 'title') $_SESSION['view'] |= 1;
@@ -60,7 +62,7 @@ scr_viewp();
 <ul class="ul_top01" id="dom_ul_top01">
 <li class="li_top01"><a class="lab2" href="index.php">Home</a></li>
 <li class="li_top01"><a class="lab2" href="index.php?p=000099999998_mf_">Search</a></li>
-<li class="li_top01"><a class="lab2" href="index.php?p=000100000000_mf_sk_">Album</a></li>
+<li class="li_top01"><a class="lab2" href="index.php?l=al&amp;once_glance=1">Album</a></li>
 <li class="li_top01"><a class="lab2" href="index.php?l=do">Download</a></li>
 <li class="li_top01"><a class="lab2" href="index.php?p=000099999999_mi_">About</a></li>
 </ul>

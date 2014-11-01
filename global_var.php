@@ -9,15 +9,16 @@
 */
 //Encoding Type: UTF-8(w/o BOM)
 //label ini
-$label_code = array('bo', 'mi', 'mf', 'do');
+$label_code = array('bo', 'mi', 'mf', 'al', 'do');
 $label_text = array(
-	'Book', 'Misc', 'Blog Func()', 'Download'
+	'Book', 'Misc', 'Blog Func()', 'Album', 'Download'
 );
 //which label load PHP script files
 $post_load_php = $label_code[2].'_';
 //for SEO
+//add ',' to every end of keyword,
 $label_keywords = array(
-	'Book,', 'Misc,', 'Blog Func(),', 'Download,'
+	'Book,', 'Misc,', 'Blog Func(),', 'Album,', 'Download,'
 );
 //top post
 $global_var_top_post = 'if_need_top_enter_filename';
