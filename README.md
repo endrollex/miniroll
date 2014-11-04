@@ -71,8 +71,8 @@ Mechanism Brief:
 
 Copyright and License:
 ----------------------
-miniroll - small blog Quick-and-dirty
-Copyright 2013 Huang Yiting (http://endrollex.com)
+miniroll - small blog Quick-and-dirty  
+Copyright 2013 Huang Yiting (http://endrollex.com)  
 This file is part of miniroll.
 
 miniroll is free software: you can redistribute it and/or modify
