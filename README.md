@@ -9,7 +9,7 @@ Introduction:
   just like a Blog Hello World.
 * It may be cumbersome to use. There is no template function here.
   Someone using this blog shall modify many codes to create own blog style manually.
-* This project is for reference purpose.
+* This project is for reference purpose (http://endrollex.com).
   Generally, WordPress is a better choice, it has complete support and worldwide users.
 
 PHP Environment Require:
@@ -67,24 +67,9 @@ Mechanism Brief:
    it will be loaded by PHP require() function.
    This feature lets the file run PHP code.
 
-Copyright and License:
+License:
 ----------------------
-miniroll - small blog Quick-and-dirty  
-Copyright 2013 Huang Yiting (http://endrollex.com)  
-This file is part of miniroll.
-
-miniroll is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-any later version.
-
-miniroll is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+GNU General Public License
 
 3rd Party Plugin Note:
 ----------------------
