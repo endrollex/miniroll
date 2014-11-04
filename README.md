@@ -46,16 +46,16 @@ You can see the detail in every file.
 
 Folders Explanation:
 --------------------
-* **az_comment**: Guest comment store
-* **az_comment/log**: The comment log dir
-* **font**: Font files and misc
-* **f_assistant**: This folder contain third party codes
-* **images**: The website default images
-* **journal**: Blog's all journals store
-* **journal/mf_php**: The journal with PHP function
-* **journal_menu**: Where left menu's protocol, or other link
-* **manage_dir**: Management's dir
-* **upload**: Upload's dir
+* **az_comment/**: Guest comment store
+* **az_comment/log/**: The comment log dir
+* **font/**: Font files and misc
+* **f_assistant/**: This folder contain third party codes
+* **images/**: The website default images
+* **journal/**: Blog's all journals store
+* **journal/mf_php/**: The journal with PHP function
+* **journal_menu/**: Where left menu's protocol, or other link
+* **manage_dir/**: Management's dir
+* **upload/**: Upload's dir
 
 Mechanism Brief:
 ----------------
@@ -93,9 +93,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 3rd Party Plugin Note:
 ----------------------
 miniroll is using JW Player for media player.
-The default CSS'.table_cpp02 {border-collapse: collapse;}' will cause JW Player UI incorrect.
+The default CSS '.table_cpp02 {border-collapse: collapse;}' will cause JW Player UI incorrect.
 To correct this issue, please use additional code:
 
 	<div style="border-collapse:separate;">
 	...Embedding Code...
-	<div/>
+	</div>
