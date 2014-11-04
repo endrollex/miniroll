@@ -73,7 +73,7 @@ GNU General Public License
 
 3rd Party Plugin Note:
 ----------------------
-miniroll is using JW Player for media player.
+miniroll is using JW Player as media player.
 The default CSS `.table_cpp02 {border-collapse: collapse;}` will cause JW Player UI incorrect.
 To correct this issue, please use additional code:
 
