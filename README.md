@@ -72,9 +72,7 @@ Mechanism Brief:
 Copyright and License:
 ----------------------
 miniroll - small blog Quick-and-dirty
-
 Copyright 2013 Huang Yiting (http://endrollex.com)
-
 This file is part of miniroll.
 
 miniroll is free software: you can redistribute it and/or modify
@@ -93,7 +91,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 3rd Party Plugin Note:
 ----------------------
 miniroll is using JW Player for media player.
-The default CSS '.table_cpp02 {border-collapse: collapse;}' will cause JW Player UI incorrect.
+The default CSS `.table_cpp02 {border-collapse: collapse;}` will cause JW Player UI incorrect.
 To correct this issue, please use additional code:
 
 	<div style="border-collapse:separate;">
