@@ -1,8 +1,7 @@
 miniroll
 ========
 
-PHP
-
+PHP  
 miniroll - small blog Quick-and-dirty
 
 Introduction:
