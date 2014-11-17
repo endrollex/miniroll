@@ -13,6 +13,14 @@
  */
 function get_gravatar($email, $s = 64, $d = '', $r = 'g')
 {
+	$url = 'http://www.endrollex.com/f_assistant/gravatar/g.php?';
+	$url .= "m=".md5(strtolower(trim($email)));
+	if ($d != 'identicon') $url .= "&amp;d=e";
+    return $url;
+}
+//
+function get_gravatar2($email, $s = 64, $d = '', $r = 'g')
+{
 	$url = 'http://www.gravatar.com/avatar/';
 	$url .= md5(strtolower(trim($email)));
 	$url .= "?s=$s&amp;d=$d&amp;r=$r";
