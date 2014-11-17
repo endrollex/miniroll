@@ -55,7 +55,7 @@ scr_viewp();
 <script type="text/javascript" src="f_assistant/prettify/prettify.js"></script>
 <script type="text/javascript" src="f_assistant/jwplayer/jwplayer.js"></script>
 </head>
-<body onload="prettyPrint();" class="body_index" style="background-image: url('images/back_color.png');	background-repeat: repeat-x; background-position: top center;">
+<body onload="prettyPrint();" class="body_index" style="background-image: url('images/back_color.gif');	background-repeat: repeat-x; background-position: top center;">
 <div class="div_home_set" id="dom_div_home_set"><!--trace.div_home_set-->
 <div class="div_cpp01" id="dom_div_cpp01">
 <div class="div_cpp01_home">
