@@ -240,9 +240,6 @@ echo ' |&nbsp;</div><div class="div_sipage" id="dom_div_sipage">';
 echo $html_span_page2;
 echo '</div>';
 echo '</div>';///trace.hatt_div_c
-//google not work in my local
-//http://tongji.baidu.com/
-//scr_mobile_opti2()
 ?>
 <script type="text/javascript">
 scr_mobile_opti2();
