@@ -59,7 +59,6 @@ scr_viewp();
 </script>
 <script type="text/javascript" src="f_assistant/prettify/prettify.js"></script>
 <script type="text/javascript" src="f_assistant/jwplayer/jwplayer.js"></script>
-<script>jwplayer.key="PKUFi8TSuWCndKmcSYGHaEAHYc+Hh9VgjhrkbQ==";</script>
 </head>
 <body onload="prettyPrint();" class="body_index" style="background-image: url('images/back_color.gif');	background-repeat: repeat-x; background-position: top center;">
 <div class="div_home_set" id="dom_div_home_set"><!--trace.div_home_set-->
@@ -73,7 +72,7 @@ scr_viewp();
 <li class="li_top01"><a class="lab2" href="index.php?p=000099999999_mi_">About</a></li>
 </ul>
 </div>
-<a href="index.php"><img alt="blog_name" height="31" class="img_top01" src="images/blog_name.gif" width="344" /></a>
+<a href="index.php"><img alt="blog_name" height="29" class="img_top01" src="images/blog_name.gif" width="186" /></a>
 </div>
 EOT;
 //
