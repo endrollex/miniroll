@@ -1,13 +1,11 @@
 <?php
 /**
- * index.php, main producer creates XHTML tags, default entrance.
- * Quick-and-dirty, Feel free to modify.
+ * index.php, main producer creates HTML tags, default entrance.
  *
  * Require files (Entire website front):
  *     htmindex.css: All in one CSS
  *     htmindex.js: Get browser's screen size
  *     index_top.php: Top part of index.php
- *     index_top2.php: Top part of index.php
  *     comment.php: Comment module
  *     comment_w.php: Echo guest comment form
  *     journal_menu/register_menu.php: Where left menu's protocol
@@ -16,18 +14,17 @@
  *     journal/mf_php: The dir which label load PHP files, see index.php and global_var.php
  *
  * Third party codes:
- *     font/analyticstracking.php: Google Analytics auto-flush, please modify the google track code and domain name
  *     f_assistant/jwplayer: JW Player, media player
- *     f_assistant/prettify: prettify, syntax highlighting
- *
- * This file have some CSS class or JS, please modify them for wanted style.
+ *     f_assistant/prettify: prettify, syntax highlighting 
  *
  * Copyright 2013 Huang Yiting (http://endrollex.com)
  * miniroll is distributed under the terms of the GNU General Public License
 */
+//show_top2 means index echo a signle journal with top2 style
 $show_top2 = false;
 require('global_var.php');
 require('index_func.php');
+//number to chinese
 $is_preload_number_to_cn = false;
 if (isset($show_top2)) {if ($show_top2) $is_preload_number_to_cn = false;}
 //meta elements
@@ -63,7 +60,8 @@ if (isset($_GET['p'])) {if(strstr($_GET['p'], $_SESSION['l']) === false) $_SESSI
 else $_SESSION['l'] = 'nul';
 if (isset($_GET['l'])) $_SESSION['l'] = $_GET['l'];
 if (!isset($_SESSION['next_sav'])) $_SESSION['next_sav'] = 0;
-?>
+//
+$http_str .= <<<EOT
 <div class="div_cpp02" id="dom_div_cpp02"><!--trace.div_cpp02-->
 <div class="div_cpp02_menu_mobile" id="dom_div_cpp02_menu_mo"></div>
 <!--#..............................................................table-->
@@ -71,7 +69,8 @@ if (!isset($_SESSION['next_sav'])) $_SESSION['next_sav'] = 0;
 <!--#..............................................................left area show menu-->
 <div class="div_cpp03a" id="dom_div_cpp03a"><!--trace.div_cpp03a-->
 <br/>
-<?php
+EOT;
+//
 //browse control back button
 if (isset($_SESSION['back_here'])) unset($_SESSION['back_here']);
 //label ini
@@ -86,13 +85,13 @@ if (isset($_GET['p']) || $show_left_menu === 1) {
 }
 //menu code, echo home menu
 if ($show_left_menu === 0) {
-	//O=('-'Q) echo
-	echo '<div class="div_cpp03a_ct"><img alt="categories" height="17" src="images/categ14px2.gif" width="108" /></div>';
+	//
+	$http_str .= '<div class="div_cpp03a_ct"><img alt="categories" height="17" src="images/categ14px2.gif" width="108" /></div>';
 	$vpass_menu_link = '?l=all';
 	$vpass_menu_text = 'All';
 	$vpass_menu_light = ($_SESSION['l'] === 'all');
 	$vpass_menu_style = 1;
-	menu_mark_show($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style);
+	menu_make($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style, $http_str);
 	//hidden last label
 	for ($ix_index = 0; $ix_index !== count($label_text)-1; ++$ix_index) {
 		$menu_light = false;
@@ -101,7 +100,7 @@ if ($show_left_menu === 0) {
 		}
 		$vpass_menu_link = '?l='.$label_code[$ix_index];
 		$vpass_menu_style = 1;
-		menu_mark_show($vpass_menu_link, $label_text[$ix_index], $menu_light, $vpass_menu_style);
+		menu_make($vpass_menu_link, $label_text[$ix_index], $menu_light, $vpass_menu_style, $http_str);
 	}
 }
 //structure dir
@@ -121,17 +120,19 @@ if ($f_sum !== 0) $all_file = $all_file_o[$now_page];
 //ready view
 $is_empty = true;
 if (isset($all_file[0])) $is_empty = false;
-?>
+//
+$http_str .= <<<EOT
 </div><!--/trace.div_cpp03a-->
-<!--#..............................................................table-->
+<!--|..............................................................table-->
 </td><td class="td_cpp03b" id="dom_td_cpp03b">
 <script type="text/javascript">
 scr_nor_width();
 scr_rig_width();
 scr_mobile_opti1();
 </script>
-<!--#..............................................................right area show detail-->
-<?php
+<!--|..............................................................right area show detail-->
+EOT;
+//
 //float style let code show completed
 $hatt_div_c = ' class="div_cpp03b"';
 if (!isset($_GET['p'])) $hatt_div_c = '';
@@ -151,10 +152,15 @@ if (($_SESSION['view'] & 1) == 0 && !isset($_GET['p'])) {$show_content = true; $
 if (isset($_GET['once_glance']) && !isset($_GET['p'])) {$show_content = true; $show_viewlink = true;}
 //data
 $html_data_err = '';
-if ($is_empty) $html_data_err = '<div class="div_cpp03b_pt_content"><br/>File not found, maybe changed or not publish yet.<br/></div>';
+if ($is_empty) {
+	header("HTTP/1.0 404 Not Found");
+	$html_data_err = '<div class="div_cpp03b_pt_content"><br/>404 (not found)<br/></div>';
+}
 //O=('-'Q) echo
-echo '<div'.$hatt_div_c.'>';//trace.hatt_div_c
-echo $html_data_err;
+$http_str .= '<div'.$hatt_div_c.'>';//trace.hatt_div_c
+$http_str .= $html_data_err;
+echo $http_str;
+//
 if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index) {
 	$view_file = $all_file[$ix_index];
 	$view_file_c = substr($view_file, 0, 12);

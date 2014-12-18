@@ -2,10 +2,9 @@
 /**
  * Service for index.php
  * Top part style 2 for index.php
- * This file has some CSS class or JS, please modify them for wanted style.
 */
-/*
 //back_here function is optional:
+/*
 $hatt_link_back = '#';
 if (isset($_SESSION['l'])) {
 	if ($_SESSION['l'] !== 'nul') {

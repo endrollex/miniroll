@@ -2,7 +2,6 @@
 /**
  * Service for index.php
  * Get post infromations for index.php
- * This file have some CSS class or JS, please modify them for wanted style.
  *
  * Copyright 2013 Huang Yiting (http://endrollex.com)
  * miniroll is distributed under the terms of the GNU General Public License
@@ -90,8 +89,8 @@ function structure_dir(
 	$all_file_o = array_chunk($all_file_o, $chunk_val);
 	$pag_sum = count($all_file_o);	
 }
-//echo menu HTML
-function menu_mark_show(&$menu_link, &$menu_text, &$menu_light, &$menu_style, &$menu_css = '') {
+//make menu HTML
+function menu_make(&$menu_link, &$menu_text, &$menu_light, &$menu_style, &$http_str, &$menu_css = '') {
 	//$menu_style, value: 2(custom color) other(default color)
 	$span_l1 = '';
 	$span_l2 = '';
@@ -104,11 +103,11 @@ function menu_mark_show(&$menu_link, &$menu_text, &$menu_light, &$menu_style, &$
 		$span_l1 = '<span class="span_l">';
 		$span_l2 = '</span>';
 	}
-	//O=('-'Q) echo
-	echo '<div class="div_cpp03a_c" '.$menu_css.
+	//
+	$http_str .= '<div class="div_cpp03a_c" '.$menu_css.
 		'><a class="lab" href="'.$menu_link.'">'.$span_l1.$menu_text.$span_l2.'</a></div>';
 }
-//flag for menu_mark_show(..., &$menu_light, ...), control menu style
+//flag for menu_make(..., &$menu_light, ...), control menu style
 function light_p($light_get_p) {
 	if (isset($_GET['p'])) if ($_GET['p'] == $light_get_p) return true;
 	if (isset($_GET['l'])) if ($_GET['l'] == $light_get_p) return true;
@@ -197,7 +196,6 @@ function page_array(
 //# This is not necessary.
 //################################
 $is_preload_number_to_cn = false;
-if (isset($show_top2)) {if ($show_top2) $is_preload_number_to_cn = false;}
 function number_to_cn(&$comm_size_index, &$comm_size_cn_num) {
 	//function change number to chinese
 	$comm_size_cn_num = '零';

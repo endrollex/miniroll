@@ -2,15 +2,18 @@
 /**
  * Service for index.php
  * Top part style 1 for index.php
- * This file has some CSS class or JS, please modify them for wanted style.
 */
 ?>
+<?php
+//
+$http_str = <<<EOT
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <script type="text/javascript">
-<?php
+EOT;
+//
 //here is the view control setting, the setting is both in index_top.php, post_top.php
 //$_SESSION['view']: save view option
 //$_GET['once_glance']: once open with glance view, value is arbitrary
@@ -24,14 +27,16 @@ if (isset($_GET['view'])) {
 }
 //force_is_mobile: 3 = auto, 4 = pc, 5 = mobile
 if (($_SESSION['view'] & 4) == 0) {
-	if (($_SESSION['view'] & 2) == 2) echo 'var force_is_mobile = 4;';
-	else echo 'var force_is_mobile = 5;';
+	if (($_SESSION['view'] & 2) == 2) $http_str .= 'var force_is_mobile = 4;';
+	else $http_str .= 'var force_is_mobile = 5;';
 }
-else echo 'var force_is_mobile = 3;';
-?>
+else $http_str .= 'var force_is_mobile = 3;';
+//
+$http_str .= <<<EOT
 </script>
 <script type="text/javascript" src="htmindex.js"></script>
-<?php
+EOT;
+//
 //meta and title
 $hatt_meta_k = 'need_index';
 if (isset($meta_keywords)) $hatt_meta_k = $meta_keywords;
@@ -41,12 +46,12 @@ if (isset($meta_description)) {
 }
 $echo_tit_top = 'index_top.php';
 if (isset($echo_title)) $echo_tit_top = $echo_title;
-//O=('-'Q) echo
-echo '<meta name="keywords" content="'.$hatt_meta_k.'" />';
-echo '<meta name="description" content="'.$hatt_meta_d.'" />';
-echo '<link rel="SHORTCUT ICON" href="images/icon_4.ico"/>';
-echo '<title>'.$echo_tit_top.'</title>';
-?>
+$http_str .= '<meta name="keywords" content="'.$hatt_meta_k.'" />';
+$http_str .= '<meta name="description" content="'.$hatt_meta_d.'" />';
+$http_str .= '<link rel="SHORTCUT ICON" href="images/icon_4.ico"/>';
+$http_str .= '<title>'.$echo_tit_top.'</title>';
+//
+$http_str .= <<<EOT
 <link href="htmindex.css" rel="stylesheet" type="text/css" />
 <link href="f_assistant/prettify/prettify.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
@@ -54,6 +59,7 @@ scr_viewp();
 </script>
 <script type="text/javascript" src="f_assistant/prettify/prettify.js"></script>
 <script type="text/javascript" src="f_assistant/jwplayer/jwplayer.js"></script>
+<script>jwplayer.key="PKUFi8TSuWCndKmcSYGHaEAHYc+Hh9VgjhrkbQ==";</script>
 </head>
 <body onload="prettyPrint();" class="body_index" style="background-image: url('images/back_color.gif');	background-repeat: repeat-x; background-position: top center;">
 <div class="div_home_set" id="dom_div_home_set"><!--trace.div_home_set-->
@@ -67,5 +73,8 @@ scr_viewp();
 <li class="li_top01"><a class="lab2" href="index.php?p=000099999999_mi_">About</a></li>
 </ul>
 </div>
-<a href="index.php"><img alt="blog_name" height="29" class="img_top01" src="images/blog_name.gif" width="186" /></a>
+<a href="index.php"><img alt="blog_name" height="31" class="img_top01" src="images/blog_name.gif" width="344" /></a>
 </div>
+EOT;
+//
+?>

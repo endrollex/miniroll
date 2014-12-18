@@ -36,5 +36,5 @@ session_start();
 $force_determine = false;
 //server features
 $enabled_https = false;
-//addition...
+//
 ?>
