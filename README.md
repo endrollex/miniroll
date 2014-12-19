@@ -69,8 +69,8 @@ Mechanism Brief:
 
 License:
 --------
-Copyright 2014 Huang Yiting (http://endrollex.com)
-miniroll is distributed under the terms of the GNU General Public License
+* Copyright 2014 Huang Yiting (http://endrollex.com)
+* miniroll is distributed under the terms of the GNU General Public License
 
 3rd Party Plugin Note:
 ----------------------
