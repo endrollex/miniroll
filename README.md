@@ -5,8 +5,8 @@ miniroll - small blog Quick-and-dirty
 
 Introduction:
 -------------
-* miniroll does not need a database, uses a simple framework with filesystem,
-  just like a Blog Hello World.
+* miniroll does not need a database, uses a casual framework with filesystem.
+* Dirty, mix HTML and PHP (its considered "bad practice"), function is no encapsulation.
 * It may be cumbersome to use. There is no template function here.
   Someone using this blog shall modify many codes to create own blog style manually.
 * This project is for reference purpose (http://endrollex.com).
