@@ -7,7 +7,7 @@ Introduction:
 -------------
 * miniroll does not need a database, uses a casual framework with filesystem.
 * Dirty, mix HTML and PHP (its considered "bad practice"), function is no encapsulation.
-* It may be cumbersome to use. There is no template function here.
+* It is cumbersome to use. No template function here.
   Someone using this blog shall modify many codes to create own blog style manually.
 * This project is for reference purpose (http://endrollex.com).
   Generally, WordPress is a better choice, it has complete support and worldwide users.
