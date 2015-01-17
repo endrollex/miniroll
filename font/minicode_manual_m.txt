@@ -26,7 +26,8 @@ In this situation, you can use HTML directly or use [lead_define].<br/><br/></li
 [color]#B22222]FireBrick[/color]
 </pre>Note the tag option is close to the [tag] with a sigle square bracket:<br/>
 [tag]option]...[/tag], or [tag]...[option[/tag]<br/>
-Position of tag option depends on the implemented HTML sentence.
+Position of tag option depends on the implemented HTML sentence.<br/>
+Do not add newline in the tag option of a minicode, it will be failed.
 </li></ol>[/html][h1]Keywords and Usage:[/h1]
 [html]<ol><li>
 <pre style="background-color: #D3D3D3;">[code]
@@ -106,8 +107,8 @@ C[h]sub]hex[/h], ...
 [html]</li><li>
 <pre style="background-color: #D3D3D3;">
 [lead_define]
-[title] @= &lt;span style="font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;"&gt;
-[/title] @= &lt;/span&gt;
+[title] @= <span style="font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;">
+[/title] @= </span>
 [hello][/hello] @= Just say hello.
 [/lead_define][title]My Title[/title]
 [hello][/hello]
