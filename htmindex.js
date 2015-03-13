@@ -110,7 +110,6 @@ function scr_viewp() {
 		str_css += '</style>';
 		document.write(str_css);
 	}
-	
 }
 //index.php
 function scr_nor_width() {
