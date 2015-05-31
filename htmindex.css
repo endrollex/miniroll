@@ -457,10 +457,10 @@ a.m4b:active {color: #00AEEF;}
 	font-weight: bold;
 	color: #352E2C;
 }
-a.user:link {color: #000000;}
-a.user:visited {color: #000000;}
-a.user:hover {color: #000000;}
-a.user:active {color: #000000;}
+a.user:link {color: #352E2C;}
+a.user:visited {color: #352E2C;}
+a.user:hover {color: #352E2C;}
+a.user:active {color: #352E2C;}
 /*----------------------------------------------------------------end of index.php*/
 /*
                     ,'|/\
