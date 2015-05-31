@@ -185,8 +185,8 @@ if ($check_ident && $check_tit && $check_link && $check_cont && $check_email) {
 	}
 	//
 	if ($show_flink) {
-		$comm_data .= '<a id="'.$comm_id.'" class="user" href="'.$_POST['co_link'].'" target="_blank">'."\r\n";
-		$comm_data .= $_POST['co_tit'].': </a>'."\r\n";
+		$comm_data .= '<span id="'.$comm_id.'" class="span_com_tit"><a class="user" href="'.$_POST['co_link'].'" target="_blank">'."\r\n";
+		$comm_data .= $_POST['co_tit'].': </a></span>'."\r\n";
 	}
 	else {
 		$comm_data .= '<span id="'.$comm_id.'" class="span_com_tit">'.$_POST['co_tit'].': </span>'."\r\n";

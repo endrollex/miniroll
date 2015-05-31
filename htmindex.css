@@ -242,15 +242,15 @@ pre {
 }
 a.vlink:link {color: #790000; text-decoration: none;}
 a.vlink:visited {color: #790000; text-decoration: none;}
-a.vlink:hover {color: #790000;}
-a.vlink:active {color: #790000;}
+a.vlink:hover {color: #790000; text-decoration: none;}
+a.vlink:active {color: #790000; text-decoration: none;}
 a.page:link {color: #605CA8;}
 a.page:visited {color: #605CA8;}
 a.page:hover {color: #00AEEF;}
 a.page:active {color: #00AEEF;}
 a.tit:link {color: #003399; text-decoration: none;}
 a.tit:visited {color: #003399; text-decoration: none;}
-a.tit:hover {color: #777777;}
+a.tit:hover {color: #777777; text-decoration: none;}
 a.tit:active {color: #777777; text-decoration: none;}
 a.lab:link {color: #000000; text-decoration: none;}
 a.lab:visited {color: #000000; text-decoration: none;}
@@ -457,10 +457,10 @@ a.m4b:active {color: #00AEEF;}
 	font-weight: bold;
 	color: #352E2C;
 }
-a.user:link {color: #2E3092; text-decoration: none; font-weight: bold;}
-a.user:visited {color: #2E3092; text-decoration: none; font-weight: bold;}
-a.user:hover {color: #2E3092; font-weight: bold;}
-a.user:active {color: #2E3092; font-weight: bold;}
+a.user:link {color: #000000;}
+a.user:visited {color: #000000;}
+a.user:hover {color: #000000;}
+a.user:active {color: #000000;}
 /*----------------------------------------------------------------end of index.php*/
 /*
                     ,'|/\
@@ -495,6 +495,6 @@ a.user:active {color: #2E3092; font-weight: bold;}
 }
 a.album:link {color: #605CA8; text-decoration: none;}
 a.album:visited {color: #605CA8; text-decoration: none;}
-a.album:hover {color: #605CA8;}
-a.album:active {color: #605CA8;}
+a.album:hover {color: #605CA8; text-decoration: none;}
+a.album:active {color: #605CA8; text-decoration: none;}
 /*----------------------------------------------------------------end of Album*/
