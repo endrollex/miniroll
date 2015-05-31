@@ -241,7 +241,7 @@ pre {
 	color: #545454;
 }
 a.vlink:link {color: #790000; text-decoration: none;}
-a.vlink:visited {color: #790000; text-decoration: none;}
+a.vlink:visited {color: #790000;}
 a.vlink:hover {color: #790000; text-decoration: none;}
 a.vlink:active {color: #790000; text-decoration: none;}
 a.page:link {color: #605CA8;}
@@ -249,15 +249,15 @@ a.page:visited {color: #605CA8;}
 a.page:hover {color: #00AEEF;}
 a.page:active {color: #00AEEF;}
 a.tit:link {color: #003399; text-decoration: none;}
-a.tit:visited {color: #003399; text-decoration: none;}
+a.tit:visited {color: #003399;}
 a.tit:hover {color: #777777; text-decoration: none;}
 a.tit:active {color: #777777; text-decoration: none;}
 a.lab:link {color: #000000; text-decoration: none;}
-a.lab:visited {color: #000000; text-decoration: none;}
+a.lab:visited {color: #000000;}
 a.lab:hover {color: #00AEEF; text-decoration: none;}
 a.lab:active {color: #00AEEF; text-decoration: none;}
 a.lab2:link {color: #FFFFFF; text-decoration: none;}
-a.lab2:visited {color: #FFFFFF; text-decoration: none;}
+a.lab2:visited {color: #FFFFFF;}
 a.lab2:hover {color: #99ccff; text-decoration: none;}
 a.lab2:active {color: #99ccff; text-decoration: none;}
 /*mobile style*/
@@ -494,7 +494,7 @@ a.user:active {color: #000000;}
 	border: 1px solid #898989;
 }
 a.album:link {color: #605CA8; text-decoration: none;}
-a.album:visited {color: #605CA8; text-decoration: none;}
+a.album:visited {color: #605CA8;}
 a.album:hover {color: #605CA8; text-decoration: none;}
 a.album:active {color: #605CA8; text-decoration: none;}
 /*----------------------------------------------------------------end of Album*/
