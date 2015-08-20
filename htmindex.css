@@ -24,7 +24,11 @@ td {
 	vertical-align: top;
 	padding: 0px;
 }
+code {
+	font-family: Consolas, Liberation Mono, Menlo, Courier, monospace;
+}
 pre {
+	font-family: Consolas, Liberation Mono, Menlo, Courier, monospace;
 	font-size: 14px;
 	clear: both;
 	padding: 5px;
