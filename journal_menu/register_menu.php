@@ -23,9 +23,9 @@ if (isset($_GET['p'])) {
 			$menu_what_else = array();
 			$menu_what_else = explode(',', $menu_file_list[$ix_menu]);
 			for ($ix2_menu = 0; $ix2_menu != count($menu_what_else); ++$ix2_menu) {
-				if (file_exists($dir.$menu_what_else[$ix2_menu])) {
+				if (file_exists($dir_journal.$menu_what_else[$ix2_menu])) {
 					$vpass_menu_link = '?p='.$menu_what_else[$ix2_menu];
-					$vpass_menu_text = str_replace("\xEF\xBB\xBF", '', file_get_contents($dir.$menu_what_else[$ix2_menu]) );
+					$vpass_menu_text = str_replace("\xEF\xBB\xBF", '', file_get_contents($dir_journal.$menu_what_else[$ix2_menu]) );
 					$vpass_menu_light = ($menu_what_else[$ix2_menu] === $_GET['p']);
 					$vpass_menu_style = 2;
 					menu_make($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style, $http_str);

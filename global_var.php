@@ -23,7 +23,8 @@ $label_keywords = array(
 //top post
 $global_var_top_post = 'if_need_top_enter_filename';
 //journal dir
-$dir = 'journal/';
+$dir_journal = 'journal/';
+$dir_abstract = 'journal/abstract/';
 $dir_mf = 'journal/mf_php/';
 $dir_comment = 'az_comment/';
 $dir_leftmenu = 'journal_menu/';

@@ -9,7 +9,7 @@
 //get meta elements
 function meta_seo_get(
 	&$para_get_p,
-	&$dir,
+	&$dir_journal,
 	&$label_code,
 	&$label_keywords,
 	//assign variable
@@ -17,8 +17,8 @@ function meta_seo_get(
 	&$meta_keywords,
 	&$meta_description
 	) {
-	if (file_exists($dir.$para_get_p)) {
-		$echo_title = file_get_contents($dir.$para_get_p);
+	if (file_exists($dir_journal.$para_get_p)) {
+		$echo_title = file_get_contents($dir_journal.$para_get_p);
 		if (substr($echo_title, 0, 3) == "\xEF\xBB\xBF") $echo_title = substr($echo_title, 3);
 		//keywords
 		$label_comb = array_combine($label_code, $label_keywords);
@@ -37,7 +37,7 @@ function meta_seo_get(
 }
 //structure dir, ready for reading post data
 function structure_dir(
-	&$dir,
+	&$dir_journal,
 	&$para_get_p,
 	&$global_var_top_post,
 	//assign variable
@@ -49,7 +49,7 @@ function structure_dir(
 	) {
 	if (!isset($_SESSION['l'])) $_SESSION['l'] = 'nul';
 	//isget_l
-	if ($dh = opendir($dir)) {
+	if ($dh = opendir($dir_journal)) {
 		while(($file_name = readdir($dh)) !== false) {
 			//view label file
 			$isget_l = false;
@@ -118,9 +118,8 @@ function post_info_get(
 	&$view_file,
 	&$view_file_c,
 	&$dir_comment,
-	&$dir,
+	&$dir_journal,
 	&$label_comb,
-	&$is_preload_number_to_cn,
 	&$para_get_p,
 	//assign variable
 	&$echo_file_date,
@@ -153,7 +152,6 @@ function post_info_get(
 	if (strlen($echo_comm_size_a) > 10) $echo_comm_size_a = 0;
 	//call function change number to chinese
 	$echo_comm_size_cn = $echo_comm_size_a;
-	if (isset($is_preload_number_to_cn)) if ($is_preload_number_to_cn) number_to_cn($echo_comm_size_a, $echo_comm_size_cn);	
 	//link
 	if ($para_get_p == '') {
 		$a_link2 = '</a>';
@@ -162,7 +160,7 @@ function post_info_get(
 		$ex_link = '&amp;co=1#ctop';
 		$a_link1v_comm = '<a class="vlink" href="?p='.$view_file.$ex_link.'">';
 	}
-	$echo_title = file_get_contents($dir.$view_file);
+	$echo_title = file_get_contents($dir_journal.$view_file);
 	if (substr($echo_title, 0, 3) == "\xEF\xBB\xBF") $echo_title = substr($echo_title, 3);
 }
 //page array
@@ -191,51 +189,5 @@ function page_array(
 				$html_span_page2 .= '<a class="page" href="?next='.$ix.$b_cate.'">'.$ix.'</a> ';
 		}
 	}
-}
-//######## Preload function: change number to chinese
-//# This is not necessary.
-//################################
-$is_preload_number_to_cn = false;
-function number_to_cn(&$comm_size_index, &$comm_size_cn_num) {
-	//function change number to chinese
-	$comm_size_cn_num = '零';
-	$num_ar = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
-	$num_cn_ar = array('零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖');
-	$num_cn_dig = array('拾', '佰', '仟');
-	//use "Zhong Shu" system
-	$num_abc = array('aa', 'bb', 'cc', 'dd', 'ee', 'ff', 'gg', 'hh');
-	$num_shangshu = array('万', '亿', '兆', '京', '垓', '秭', '穰', '溝');
-	for ($ix_num_t1 = 0; $ix_num_t1 != count($num_abc); ++$ix_num_t1) {
-		for ($ix_num_t2 = 0; $ix_num_t2 != 4; ++$ix_num_t2) {
-			$num_temp = $ix_num_t2.$num_abc[$ix_num_t1];
-			array_push($num_cn_dig, $num_temp);
-		}
-	}
-	$num_count = strlen($comm_size_index)-1;
-	//limit
-	if ($num_count > count($num_cn_dig)) {$num_count = 0; $comm_size_cn_num = '超过壹涧';}
-	else $comm_size_cn_num = str_replace($num_ar, $num_cn_ar, $comm_size_index);
-	if ($comm_size_index == 2) $comm_size_cn_num = '两';
-	for ($ix_num = 0; $ix_num != $num_count; ++$ix_num) {
-		if ($num_count > $ix_num) {
-			$cn_str = $num_cn_dig[$ix_num];
-			//when number > 999
-			if ($ix_num > 2) {
-				$cn_check = substr($cn_str, 1, 2);
-				if (strpos($comm_size_cn_num, $cn_check) !== false) $cn_str = substr($cn_str, 0, 1).'00';
-			}
-			if (substr($comm_size_cn_num, ($ix_num+1)*(-6), 3) === '零') $cn_str = '000';
-			$comm_size_cn_num = substr_replace($comm_size_cn_num, $cn_str, $ix_num*(-6)+(-3), 0);
-		}
-	}
-	$comm_size_cn_num = str_replace($num_abc, $num_shangshu, $comm_size_cn_num);
-	for ($ix_num = 1; $ix_num != 4; ++$ix_num) 
-		$comm_size_cn_num = str_replace($ix_num, $num_cn_dig[$ix_num-1], $comm_size_cn_num);
-	$comm_size_cn_num = str_replace('0', '', $comm_size_cn_num);
-	$comm_size_cn_num = str_replace('壹拾', '拾', $comm_size_cn_num);
-	while (strpos($comm_size_cn_num, '零零') !== false)
-		$comm_size_cn_num = str_replace('零零', '零', $comm_size_cn_num);
-	if ($comm_size_index != 0 && substr($comm_size_cn_num, -3, 3) === '零')
-		$comm_size_cn_num = substr_replace($comm_size_cn_num, '', -3, 3);
 }
 ?>

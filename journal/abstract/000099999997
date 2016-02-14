@@ -1,0 +1,11 @@
+Title search by keyword: <span class="m6" style="color: #FFFFFF"><!--m6a-->Test version</span><!--m6--><br />
+<br />
+<!--m5-->
+<form action="index.php?p=000099999997_mf_" method="post">
+<input type="text" class="input_com1" style="width: 300px;" name="search_tit" />
+<input type="hidden" name="search_type" value="tit" />
+<input type="submit" class="input_com1" value="Search" />
+</form>
+<script type="text/javascript">
+var i_disable_comm=1;
+</script><br/><!--m5b-->

@@ -13,7 +13,7 @@ if (!function_exists('album_sel_ix')) {
 	}
 }
 //album
-$album_post = $dir.$view_file_c;
+$album_post = $dir_journal.$view_file_c;
 $album_page = 'index.php?p='.$view_file.'&amp;albp=';
 $chunk_size = 20;
 //
@@ -27,6 +27,9 @@ if (isset($albumi) && isset($albums) && isset($album_path)) {
 	if (isset($_GET['albp'])) if (isset($albumi_c[$_GET['albp']])) $ix_chunk = $_GET['albp'];
 	for ($ix_alb = 0; $ix_alb != count($albumi_c[$ix_chunk]); ++$ix_alb) {
 		if (!isset($albumi_c[$ix_chunk][$ix_alb]) || !isset($albums_c[$ix_chunk][$ix_alb])) continue;
+		if (isset($show_viewlink)) {
+			if ($show_viewlink && $ix_alb > 2) break;
+		}
 		$album_imgurl = 's_'.$albumi_c[$ix_chunk][$ix_alb];
 		echo '<div class="album_div1">';
 		echo '<a target="_blank" href="'.$album_path.$albumi_c[$ix_chunk][$ix_alb].'">';

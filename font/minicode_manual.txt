@@ -3,7 +3,7 @@
 [/tit] @= &lt;/span&gt;<br />
 [h1] @= &lt;span style=&quot;font-size: 16pt; color: green;&quot;&gt;<br />
 [/h1] @= &lt;/span&gt;<br />
-[title1] @= &lt;span style=&quot;font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;&quot;&gt;<br />
+[title1] @= &lt;span style=&quot;font-size: 20pt; text-shadow: 0px 0px 3px #FF0000;&quot;&gt;<br />
 [/title1] @= &lt;/span&gt;<br />
 [hello1][/hello1] @= Just say hello.<br />
 [span_fake1] @= lt;span<br />
@@ -15,7 +15,7 @@
 minicode is a lightweight markup language for <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll"><!--m4a-->miniroll</a><!--m4--> easy editing, learn from <a class="m4b" target="_blank" href="https://www.phpbb.com/community/faq.php?mode=bbcode"><!--m4a-->BBCode</a><!--m4-->.<br />
 The tags are indicated by square brackets [ ] surrounding a keyword.<br />
 It is designed for Blog, thus let through unsafe HTML like &lt;script&gt;.<br />
-minicode allow user to write HTML freely and unlimitedly.<br />
+minicode allow user to write HTML freely and unlimitedly.<!--m11--><!--m11b--><br />
 <br />
 <span style="font-size: 16pt; color: green;"><!--mi3-->Syntax:</span><!--mi4--><br />
 <!--m5--><ol><li>The minicode cannot nest:
@@ -81,7 +81,7 @@ while (ivec.size() != ivec.capacity())
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2015-01-17 13:56:38</span><!--m9--><br />
+<span class="m9">Last modified: 2016-02-14 17:27:17</span><!--m9--><br />
 <br />
 # By the way: this page initially completed on 2013-09-02.<br />
 <br />
@@ -109,7 +109,7 @@ C<!--m10--><sub class="m10">hex</sub><!--m10b-->, ...<br />
 <!--m5--></li><li>
 <pre style="background-color: #D3D3D3;">
 [lead_define]
-[title] @= &lt;span style="font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;"&gt;
+[title] @= &lt;span style="font-size: 20pt; text-shadow: 0px 0px 3px #FF0000;"&gt;
 [/title] @= &lt;/span&gt;
 [hello][/hello] @= Just say hello.
 [/lead_define][title]My Title[/title]
@@ -118,8 +118,15 @@ C<!--m10--><sub class="m10">hex</sub><!--m10b-->, ...<br />
 <!--m5b--># Define hot minicode in a post.<br />
 # You can define several minicode, but all need to be in one [lead_define].<br />
 <br />
-<span style="font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;"><!--mi5-->My Title</span><!--mi6--><br />
+<span style="font-size: 20pt; text-shadow: 0px 0px 3px #FF0000;"><!--mi5-->My Title</span><!--mi6--><br />
 Just say hello.<!--mi7--><br />
+<br />
+<!--m5--></li><li>
+<pre style="background-color: #D3D3D3;">
+[abst][/abst]</pre>
+<!--m5b--># Indicate the end of abstract:<br />
+# miniroll can not generate an abstract automatically.<br />
+# You need use this tag that make a front part of a journal become an abstract.<br />
 <!--m5--></li></ol><!--m5b--><span style="font-size: 16pt; color: green;"><!--mi3-->Typesetting Guild:</span><!--mi4--><br />
 <!--m5--><ol><li>
 <pre style="background-color: #D3D3D3;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;img style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;<!--m5--><br/><!--m5b-->src=&quot;http://www.ietf.org/images/isoc_logo.gif&quot; alt=&quot;&quot; /&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->The quick brown fox jumps over the lazy dog.
@@ -130,7 +137,6 @@ Just say hello.<!--mi7--><br />
 src="http://www.endrollex.com/upload/img/icon/manual/isoc_logo.gif" alt="" />
 <!--m5b-->The quick brown fox jumps over the lazy dog.<br />
 The quick brown fox jumps over the lazy dog.<br />
-<br />
 <br />
 <!--m5--></li><li>
 <pre style="background-color: #D3D3D3;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;div style=&quot;float: left; margin-right: 10px; margin-bottom: 10px;&quot;&gt;<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m10--><span class="m10">[</span><!--m10b-->img]http://tools.ietf.org/images/ietflogo3h.png<!--m10--><span class="m10">[</span><!--m10b-->/img]<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]&lt;a class=&quot;m4_style&quot; style=&quot;font-size: 12px;&quot; target=&quot;_blank&quot;<!--m5--><br/><!--m5b-->href=&quot;http://tools.ietf.org/tools/rfcmarkup/&quot;&gt;Rfcmarkup Tool&lt;/a&gt;&lt;/div&gt;<!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5-->...</pre>
@@ -156,5 +162,4 @@ For this page process: <a class="m4b" target="_blank" href="http://endrollex.com
 <span style="font-size: 16pt; color: green;"><!--mi3-->Construct:</span><!--mi4--><br />
 <br />
 minicode of miniroll is writed by PHP, HTML version is HTML5.<br />
-You can modify all rules from <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php"><!--m4a-->post.php</a><!--m4-->.<br />
-minicode function is not independent from miniroll yet, but I think isolating the function code is easy.
+You can view the source code from <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php"><!--m4a-->post.php</a><!--m4-->.<br />

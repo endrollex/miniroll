@@ -15,7 +15,7 @@
  *
  * Third party codes:
  *     f_assistant/jwplayer: JW Player, media player
- *     f_assistant/prettify: prettify, syntax highlighting 
+ *     f_assistant/prettify: prettify, syntax highlighting
  *
  * Copyright 2013 Huang Yiting (http://endrollex.com)
  * miniroll is distributed under the terms of the GNU General Public License
@@ -24,9 +24,6 @@
 $show_top2 = false;
 require('global_var.php');
 require('index_func.php');
-//number to chinese
-$is_preload_number_to_cn = false;
-if (isset($show_top2)) {if ($show_top2) $is_preload_number_to_cn = false;}
 //meta elements
 $echo_title = 'Sample Blog';
 $meta_keywords = 'Blog';
@@ -35,7 +32,14 @@ $para_get_p = '';
 if (isset($_GET['p'])) {
 	if (strlen($_GET['p']) < 10) $_GET['p'] = 'bad_value';
 	$para_get_p = $_GET['p'];
-	meta_seo_get($para_get_p, $dir, $label_code, $label_keywords, $echo_title, $meta_keywords, $meta_description);
+	meta_seo_get(
+		$para_get_p,
+		$dir_journal,
+		$label_code,
+		$label_keywords,
+		$echo_title,
+		$meta_keywords,
+		$meta_description);
 }
 if (isset($_GET['l']) || isset($_GET['next'])) {
 	if (isset($_GET['l'])) if (strlen($_GET['l']) < 1) $_GET['l'] = 'bad_value';
@@ -109,8 +113,15 @@ $all_file_o = array();
 $now_page = 0;
 $pag_sum = 0;
 $f_sum = 0;
-structure_dir($dir, $para_get_p, $global_var_top_post, $all_file, $all_file_o,
-	$now_page, $pag_sum, $f_sum);
+structure_dir(
+	$dir_journal,
+	$para_get_p,
+	$global_var_top_post,
+	$all_file,
+	$all_file_o,
+	$now_page,
+	$pag_sum,
+	$f_sum);
 //page get
 if (isset($_GET['next'])) {
 	if ($_GET['next'] >= 0 && $_GET['next'] <= $pag_sum-1) $now_page = $_GET['next'];
@@ -148,8 +159,6 @@ $show_content = false;
 if (isset($_GET['p']) || $_SESSION['l'] === 'nul') $show_content = true;
 $show_viewlink = false;
 if ($_SESSION['l'] === 'nul' && !isset($_GET['p'])) $show_viewlink = true;
-if (($_SESSION['view'] & 1) == 0 && !isset($_GET['p'])) {$show_content = true; $show_viewlink = true;}
-if (isset($_GET['once_glance']) && !isset($_GET['p'])) {$show_content = true; $show_viewlink = true;}
 //data
 $html_data_err = '';
 if ($is_empty) {
@@ -165,9 +174,22 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 	$view_file = $all_file[$ix_index];
 	$view_file_c = substr($view_file, 0, 12);
 	//get post infomation
-	post_info_get($view_file, $view_file_c, $dir_comment, $dir, $label_comb,
-		$is_preload_number_to_cn, $para_get_p, $echo_file_date, $html_view_tag, $echo_comm_size_a,
-		$echo_comm_size_cn, $echo_title, $a_link1, $a_link2, $a_link1v, $a_link1v_comm);
+	post_info_get(
+		$view_file,
+		$view_file_c,
+		$dir_comment,
+		$dir_journal,
+		$label_comb,
+		$para_get_p,
+		$echo_file_date,
+		$html_view_tag,
+		$echo_comm_size_a,
+		$echo_comm_size_cn,
+		$echo_title,
+		$a_link1,
+		$a_link2,
+		$a_link1v,
+		$a_link1v_comm);
 	//brief view
 	$hatt_cpp03b_p = ' class="div_cpp03b_p"';
 	if ($show_viewlink) $hatt_cpp03b_p = ' class="div_cpp03b_p1"';
@@ -201,8 +223,14 @@ if (!$is_empty) for ($ix_index = 0; $ix_index !== count($all_file); ++$ix_index)
 		$_SESSION['view_file_c'] = $view_file_c;
 		//O=('-'Q) echo and readfile
 		echo '<br/><div class="div_cpp03b_pt_content">';
-		if (file_exists($dir.$view_file_c)) readfile($dir.$view_file_c);
-		else echo $view_file_c.'Journal file lost.';
+		if (!$show_viewlink) {
+			if (file_exists($dir_journal.$view_file_c)) readfile($dir_journal.$view_file_c);
+			else echo $view_file_c.'Journal file lost.';
+		}
+		else {
+			if (file_exists($dir_abstract.$view_file_c)) readfile($dir_abstract.$view_file_c);
+			else echo $view_file_c.'Abstract file lost.';
+		}
 		//which label load PHP files
 		if (strstr($view_file, $post_load_php) !== false) {
 			if (file_exists($dir_mf.$view_file_c.'.php')) require($dir_mf.$view_file_c.'.php');

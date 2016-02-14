@@ -5,9 +5,6 @@
 */
 //filename: f_assistant/google_analytics/analyticstracking.php
 //google analytics
-//
-//ATTENTION: delete "/*" and "*/" below after prepared this file.
-/*
 $renew_gojs = false;
 $renew_try = 0;
 $unix_time_file = 'f_assistant/google_analytics/unix_time.txt';
@@ -59,5 +56,4 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </script>
 <?php
 if (!$run_gojs) echo '-->';
-*/
 ?>

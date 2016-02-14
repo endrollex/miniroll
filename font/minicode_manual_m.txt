@@ -3,7 +3,7 @@
 [/tit] @= </span>
 [h1] @= <span style="font-size: 16pt; color: green;">
 [/h1] @= </span>
-[title1] @= <span style="font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;">
+[title1] @= <span style="font-size: 20pt; text-shadow: 0px 0px 3px #FF0000;">
 [/title1] @= </span>
 [hello1][/hello1] @= Just say hello.
 [span_fake1] @= lt;span
@@ -15,7 +15,7 @@
 minicode is a lightweight markup language for [url]https://github.com/endrollex/miniroll[miniroll[/url] easy editing, learn from [url]https://www.phpbb.com/community/faq.php?mode=bbcode[BBCode[/url].
 The tags are indicated by square brackets [ ] surrounding a keyword.
 It is designed for Blog, thus let through unsafe HTML like <script>.
-minicode allow user to write HTML freely and unlimitedly.
+minicode allow user to write HTML freely and unlimitedly.[abst][/abst]
 
 [h1]Syntax:[/h1]
 [html]<ol><li>The minicode cannot nest:
@@ -109,7 +109,7 @@ C[h]sub]hex[/h], ...
 [html]</li><li>
 <pre style="background-color: #D3D3D3;">
 [lead_define]
-[title] @= &lt;span style="font-size: 20pt; font-weight: bold; text-shadow: 0px 0px 3px #FF0000;"&gt;
+[title] @= &lt;span style="font-size: 20pt; text-shadow: 0px 0px 3px #FF0000;"&gt;
 [/title] @= &lt;/span&gt;
 [hello][/hello] @= Just say hello.
 [/lead_define][title]My Title[/title]
@@ -120,6 +120,13 @@ C[h]sub]hex[/h], ...
 
 [title1]My Title[/title1]
 [hello1][/hello1]
+
+[html]</li><li>
+<pre style="background-color: #D3D3D3;">
+[abst][/abst]</pre>
+[/html]# Indicate the end of abstract:
+# miniroll can not generate an abstract automatically.
+# You need use this tag that make a front part of a journal become an abstract.
 [html]</li></ol>[/html][h1]Typesetting Guild:[/h1]
 [html]<ol><li>
 <pre style="background-color: #D3D3D3;">[/html][h]span][[/h]html][html]<br/>[/html]<img style="float: left; margin-right: 10px; margin-bottom: 10px;"[html]<br/>[/html]src="http://www.ietf.org/images/isoc_logo.gif" alt="" />[html]<br/>[/html][h]span][[/h]/html][html]The quick brown fox jumps over the lazy dog.
@@ -130,7 +137,6 @@ C[h]sub]hex[/h], ...
 src="http://www.endrollex.com/upload/img/icon/manual/isoc_logo.gif" alt="" />
 [/html]The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog.
-
 
 [html]</li><li>
 <pre style="background-color: #D3D3D3;">[/html][h]span][[/h]html]<div style="float: left; margin-right: 10px; margin-bottom: 10px;">[html]<br/>[/html][h]span][[/h]/html][h]span][[/h]img]http://tools.ietf.org/images/ietflogo3h.png[h]span][[/h]/img][html]<br/>[/html][h]span][[/h]html]<a class="m4_style" style="font-size: 12px;" target="_blank"[html]<br/>[/html]href="http://tools.ietf.org/tools/rfcmarkup/">Rfcmarkup Tool</a></div>[h]span][[/h]/html][html]...</pre>
@@ -156,5 +162,4 @@ For this page process: [url]http://endrollex.com/font/minicode_manual_m.txt[mini
 [h1]Construct:[/h1]
 
 minicode of miniroll is writed by PHP, HTML version is HTML5.
-You can modify all rules from [url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url].
-minicode function is not independent from miniroll yet, but I think isolating the function code is easy.
+You can view the source code from [url]https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php[post.php[/url].

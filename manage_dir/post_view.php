@@ -44,8 +44,8 @@ if (isset($_POST['noreload']) && isset($_SESSION['v_user'])) {
 if (!$isreload && isset($_POST['delete_one']) && isset($_POST['confirm_del']) && isset($_SESSION['v_user'])) {
 	if ($_POST['confirm_del'] === 'DELETE') {
 	$del_content = substr($_POST['delete_one'], 0, 12);
-	if (file_exists($dir.$_POST['delete_one']) && file_exists($dir.$del_content)) {
-		if (unlink($dir.$_POST['delete_one']) && unlink($dir.$del_content))
+	if (file_exists($dir_journal.$_POST['delete_one']) && file_exists($dir_journal.$del_content)) {
+		if (unlink($dir_journal.$_POST['delete_one']) && unlink($dir_journal.$del_content))
 			$html_po_v_msg = 
 				'<span class=span_red>The file '.$_POST['delete_one'].' has been deleted.</span>';
 	}
@@ -76,23 +76,23 @@ $target_error = false;
 if ($istime) {
 	$f_rename_c = substr($_POST['f_rename'], 0, 12);
 	if ($f_rename_c === substr($_POST['hi_view_file'], 0, 12)) $samefile = true;
-	if (file_exists($dir.$_POST['f_rename'])) {
+	if (file_exists($dir_journal.$_POST['f_rename'])) {
 		$istime = false;
 		$target_error = true;
 	}
-	if ($istime && !$samefile && file_exists($dir.$f_rename_c)) {
+	if ($istime && !$samefile && file_exists($dir_journal.$f_rename_c)) {
 		$istime = false;
 		$target_error = true;
 	}
 }
 if ($istime && !$samefile) {
 	if (preg_match("#^_([a-z][a-z]_){0,50}$#", substr($_POST['f_rename'], 12)))
-		$rename_ok = (rename($dir.$_POST['hi_view_file'], $dir.$_POST['f_rename']) &&
-			rename($dir.substr($_POST['hi_view_file'], 0, 12), $dir.$f_rename_c));
+		$rename_ok = (rename($dir_journal.$_POST['hi_view_file'], $dir_journal.$_POST['f_rename']) &&
+			rename($dir_journal.substr($_POST['hi_view_file'], 0, 12), $dir_journal.$f_rename_c));
 }
 if ($istime && $samefile) {
 	if (preg_match("#^_([a-z][a-z]_){0,50}$#", substr($_POST['f_rename'], 12)))
-		$rename_ok = (rename($dir.$_POST['hi_view_file'], $dir.$_POST['f_rename']));
+		$rename_ok = (rename($dir_journal.$_POST['hi_view_file'], $dir_journal.$_POST['f_rename']));
 }
 if ($rename_ok) $html_po_v_msg =
 	'<span class=span_red>Rename OK, old name: '.$_POST['hi_view_file'].', new: '.$_POST['f_rename'].'</span>';
@@ -103,7 +103,7 @@ if ($target_error) $html_po_v_msg = '<span class=span_blue>The filename has exis
 $all_file = array();
 $all_file_o = array();
 $now_page = 0;
-if ($dh = opendir($dir)) {
+if ($dh = opendir($dir_journal)) {
 	while(($file_name = readdir($dh)) !== false) {
 		if (strlen($file_name) > 12) array_push($all_file_o, $file_name);
 	}
@@ -201,7 +201,7 @@ for ($ix = 0; $ix != count($all_file); ++$ix) {
 echo 'Current title: <span class="span_blue">';
 if ($noempty) {
 	echo '<a target="_blank" href="../index.php?p='.$view_file.'">';
-	readfile($dir.$view_file);
+	readfile($dir_journal.$view_file);
 	echo '</a>';
 }
 echo '</span><br/><br/>';

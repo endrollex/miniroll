@@ -1,0 +1,11 @@
+<!--m5-->
+<!--
+<?php
+$album_path = 'upload/album/sample/';
+$albumi[0] = 'Compact_audio_cassette_2.jpg';
+$albums[0] = 'Compact Cassette';
+$albumi[1] = '800px-CDV2.jpg';
+$albums[1] = 'Compact Disc';
+?>
+-->
+<!--m5b-->

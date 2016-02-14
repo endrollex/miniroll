@@ -34,7 +34,7 @@ echo $search_msg;
 if ($search_go) {
 $search_index_o = array();
 $count_search_index_o = 0;
-if ($dh = opendir($dir)) {
+if ($dh = opendir($dir_journal)) {
 	while(($file_name = readdir($dh)) !== false) {
 		if (strlen($file_name) > 12) array_push($search_index_o, $file_name);
 	}
@@ -69,7 +69,7 @@ if ($need_rebuild) {
 	$search_index_txt = array();
 	//title+file_name
 	for ($ix98 = 0; $ix98 !== $count_search_index_o; ++$ix98)
-		array_push($search_index_txt, file_get_contents($dir.$search_index_o[$ix98]).'<!--'.$search_index_o[$ix98].'-->');
+		array_push($search_index_txt, file_get_contents($dir_journal.$search_index_o[$ix98]).'<!--'.$search_index_o[$ix98].'-->');
 	//delete and rebuild
 	$fp = false;
 	if (file_exists($flush_file2)) file_put_contents($flush_file2, '');
@@ -136,7 +136,7 @@ function search_proc(
 	}
 }
 search_proc($search_res_temp, $search_res_ix98, $search_tit_keyword_a, $search_method_elim, $eliminate_list,
-	$search_index_get, $eliminate_line, true, $search_index_o, $dir);
+	$search_index_get, $eliminate_line, true, $search_index_o, $dir_journal);
 //ready show result
 $count_search_res_ix98 = count($search_res_ix98);
 //search all text
@@ -156,7 +156,7 @@ if ($search_all) {
 	$search_res_temp = $search_res_ix98_all;
 	$is_tit = false;
 	search_proc($search_res_temp, $search_res_ix98_all, $search_tit_keyword_a, $search_method_elim,
-		$eliminate_list, $search_index_get, $eliminate_line, false, $search_index_o, $dir);
+		$eliminate_list, $search_index_get, $eliminate_line, false, $search_index_o, $dir_journal);
 	//merge result
 	if ($search_method_elim) {
 		$search_res_temp = $search_res_ix98;

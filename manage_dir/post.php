@@ -30,8 +30,8 @@ $writeok = 0;
 $isreload = false;
 $fp = false;
 //minicode ini, note: syntax can not nest
-$minicode = array('[code]', '[output]', '[img]', '[url]', '[html]', '[color]', '[b]', '[small]', '[last]', '[h]');
-$minicode_e = array('[/code]', '[/output]', '[/img]', '[/url]', '[/html]', '[/color]', '[/b]', '[/small]', '[/last]', '[/h]');
+$minicode = array('[code]', '[output]', '[img]', '[url]', '[html]', '[color]', '[b]', '[small]', '[last]', '[h]', '[abst]');
+$minicode_e = array('[/code]', '[/output]', '[/img]', '[/url]', '[/html]', '[/color]', '[/b]', '[/small]', '[/last]', '[/h]', '[/abst]');
 //minicode assign
 function minicode(&$need_eidt, &$which_ix) {
 	$delete_char = '#[<>\'"]#';
@@ -127,6 +127,10 @@ function minicode(&$need_eidt, &$which_ix) {
 			}
 			$need_eidt = '<!--m10--><'.$edit_img_alt.' class="m10">'.$need_eidt.'</'.$edit_img_alt.'><!--m10b-->';
 			break;
+		case 10; //abst
+			$need_eidt = '<!--m11--><!--m11b-->';
+			break;
+		//
 	}
 }
 //minicode find
@@ -188,10 +192,23 @@ function minicode_decode(&$decode_s) {
 		'</span><!--m8-->',
 		//h
 		'<!--m10--><',
-		' class="m10">'
+		' class="m10">',
+		//abst
+		'<!--m11-->',
+		'<!--m11b-->'
 	);
-	$mini_s = array('[code]', '[/code]', '[output]', '[/output]', '[img]', ']', '[/img]', '[/url]', '[', '[html]',
-		'[/html]', '[color]', ']', '[/color]', '[b]', '[/b]', '[small]', '[/small]', '[h]', ']');
+	$mini_s = array(
+		'[code]', '[/code]',
+		'[output]', '[/output]',
+		'[img]', ']', '[/img]',
+		'[/url]', '[',
+		'[html]', '[/html]',
+		'[color]', ']', '[/color]',
+		'[b]', '[/b]',
+		'[small]', '[/small]',
+		'[h]', ']',
+		'[abst]', '[/abst]'
+	);
 	//preg_replace
 	$styl_p = array(
 		'#<a class="m4".+?href=".+?">#',
@@ -276,13 +293,13 @@ if ($isedit) {
 	$edit_t = $_POST['edit_d1'];
 	$edit_c = substr($edit_t, 0, 12);
 	$t1_temp = '';
-	if (file_exists($dir.$edit_t)) $t1_temp = html_entity_decode(file_get_contents($dir.$edit_t), ENT_QUOTES, 'UTF-8');
+	if (file_exists($dir_journal.$edit_t)) $t1_temp = html_entity_decode(file_get_contents($dir_journal.$edit_t), ENT_QUOTES, 'UTF-8');
 	//remove enter
 	$ent_s = array("<br />\r\n", "<br />\r", "<br />\n");
 	$rem_s = array("\r\n", "\r", "\n");
 	$t2_temp = '';
-	if (file_exists($dir.$edit_t)) {
-		$t2_temp = html_entity_decode(str_replace($ent_s, $rem_s, file_get_contents($dir.$edit_c)), ENT_QUOTES, 'UTF-8');
+	if (file_exists($dir_journal.$edit_t)) {
+		$t2_temp = html_entity_decode(str_replace($ent_s, $rem_s, file_get_contents($dir_journal.$edit_c)), ENT_QUOTES, 'UTF-8');
 		//minicode [lead_define]
 		$t2_temp = minicode_lead_define_decode($t2_temp);
 		$lead_find_ok = minicode_lead_define($t2_temp, $lead_arr_1, $lead_arr_2, $lead_str);
@@ -318,14 +335,14 @@ if (!$postok) {
 }
 else {
 	$ftime = date('YmdHi', time());
-	$filename = $dir.$ftime;
+	$filename = $dir_journal.$ftime;
 	$tit_name = $filename.'_';
 	if (isset($_POST['lable']))
 		for ($ix = 0; $ix !== count($_POST['lable']); ++$ix) $tit_name = $tit_name.$_POST['lable'][$ix].'_';
 	//edit
 	if ($isedit) {
-		$tit_name = $dir.$edit_t;
-		$filename = $dir.$edit_c;
+		$tit_name = $dir_journal.$edit_t;
+		$filename = $dir_journal.$edit_c;
 	}
 	$needwait = 0;
 	if (file_exists($filename) || file_exists($tit_name)) $needwait = 1;
@@ -389,8 +406,22 @@ if ($writeok === 1) {
 	if ($fp) {
 		//write
 		for ($ix = 0; $ix !== count($co_arr); ++$ix) fwrite($fp, $co_arr[$ix]);
-		if ($isedit) $html_post_msg = '<span class="span_red">'.$filename.' edit OK!...</span>';
-		else $html_post_msg = '<span class="span_red">'.$filename.' upload OK!...</span>';
+		if ($isedit) $html_post_msg = '<span class="span_red">'.'Text edit OK!...</span><br/>';
+		else $html_post_msg = '<span class="span_red">'.'Text upload OK!...</span><br/>';
+	}
+	else $writeok = 2;
+	fclose($fp);
+	//abstract
+	$file_abst = str_replace($dir_journal, $dir_abstract, $filename);
+	$fp = fopen($file_abst, 'wb');
+	if ($fp) {
+		//write
+		for ($ix = 0; $ix !== count($co_arr); ++$ix) {
+			fwrite($fp, $co_arr[$ix]);
+			if (strpos($co_arr[$ix], '<!--m11--><!--m11b-->') !== false) break;
+		}
+		if ($isedit) $html_post_msg .= '<span class="span_red">'.'Abstract edit OK!...</span><br/>';
+		else $html_post_msg .= '<span class="span_red">'.'Abstract upload OK!...</span><br/>';
 	}
 	else $writeok = 2;
 	fclose($fp);
