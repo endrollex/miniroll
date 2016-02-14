@@ -45,9 +45,14 @@ if (!$isreload && isset($_POST['delete_one']) && isset($_POST['confirm_del']) &&
 	if ($_POST['confirm_del'] === 'DELETE') {
 	$del_content = substr($_POST['delete_one'], 0, 12);
 	if (file_exists($dir_journal.$_POST['delete_one']) && file_exists($dir_journal.$del_content)) {
-		if (unlink($dir_journal.$_POST['delete_one']) && unlink($dir_journal.$del_content))
+		if (unlink($dir_journal.$_POST['delete_one']) && unlink($dir_journal.$del_content)) {
 			$html_po_v_msg = 
 				'<span class=span_red>The file '.$_POST['delete_one'].' has been deleted.</span>';
+		}
+		if (file_exists($dir_abstract.$del_content)) {
+			if (unlink($dir_abstract.$del_content)) $html_po_v_msg 
+				.= '<br/><span class=span_red>Abstract has been deleted.</span>';
+		}
 	}
 	else $html_po_v_msg = '<span class=span_blue>No such file or content file is not exists.</span>';
 	}
