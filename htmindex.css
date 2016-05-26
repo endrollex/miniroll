@@ -25,10 +25,10 @@ td {
 	padding: 0px;
 }
 code {
-	font-family: Consolas, Liberation Mono, Menlo, Courier, monospace;
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 pre {
-	font-family: Consolas, Liberation Mono, Menlo, Courier, monospace;
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 	font-size: 14px;
 	clear: both;
 	padding: 5px;
@@ -448,11 +448,7 @@ a.m4b:active {color: #00AEEF;}
 	font-weight: bold;
 }
 .span_comm_blank {
-	display: inline-block;
 	width: 100px;
-	/* IE11 hack fix inline-block problem */
-	*display: inline;
-	zoom: 1;	
 }
 .span_comsize {
 	position: absolute;
@@ -488,11 +484,11 @@ a.user:active {color: #352E2C;}
 /*----------------------------------------------------------------Album*/
 .album_div1 {
 	margin: 20px 20px 20px 20px;
-	display: inline-block;
 	vertical-align: top;
+	display: inline-block;
 	/* IE11 hack fix inline-block problem */
 	*display: inline;
-	zoom: 1;
+	*zoom: 1;
 }
 .album_div2 {
 	text-align: center;
