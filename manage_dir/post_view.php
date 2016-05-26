@@ -205,7 +205,7 @@ for ($ix = 0; $ix != count($all_file); ++$ix) {
 <?php
 echo 'Current title: <span class="span_blue">';
 if ($noempty) {
-	echo '<a target="_blank" href="../index.php?p='.$view_file.'">';
+	echo '<a target="_blank" href="index.php?p='.$view_file.'">';
 	readfile($dir_journal.$view_file);
 	echo '</a>';
 }

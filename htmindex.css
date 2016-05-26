@@ -450,6 +450,9 @@ a.m4b:active {color: #00AEEF;}
 .span_comm_blank {
 	display: inline-block;
 	width: 100px;
+	/* IE11 hack fix inline-block problem */
+	*display: inline;
+	zoom: 1;	
 }
 .span_comsize {
 	position: absolute;
@@ -487,6 +490,9 @@ a.user:active {color: #352E2C;}
 	margin: 20px 20px 20px 20px;
 	display: inline-block;
 	vertical-align: top;
+	/* IE11 hack fix inline-block problem */
+	*display: inline;
+	zoom: 1;
 }
 .album_div2 {
 	text-align: center;

@@ -316,7 +316,7 @@ if (isset($_POST['f_isedit'])) {
 }
 //begin post
 $html_post_msg = 'minicode (variant of BBCode) - easy editing HTML';
-if ($isedit) $html_post_msg = '<span class="span_blue">Post editing: <a href="../index.php?p='.$edit_t.'">'.$edit_t.'</a></span>';
+if ($isedit) $html_post_msg = '<span class="span_blue">Post editing: <a href="index.php?p='.$edit_t.'">'.$edit_t.'</a></span>';
 //########Authenticate################################################################
 if(isset($_POST['title']) && isset($_POST['content']) && isset($_SESSION['v_user']))
 {
@@ -436,7 +436,7 @@ if ($writeok === 1) {
 		if (get_magic_quotes_gpc()) $_POST['title'] = stripslashes($_POST['title']);
 		fwrite($fp, $_POST['title']);
 		if ($isedit) {
-			$html_post_msg .= '<span class="span_red"><a href="../index.php?p='.$edit_t.'">'.$tit_name.'</a> edit OK!</span>';
+			$html_post_msg .= '<span class="span_red"><a href="index.php?p='.$edit_t.'">'.$tit_name.'</a> edit OK!</span>';
 			$isedit = false;
 		}
 		else $html_post_msg .= '<span class="span_red">'.$tit_name.' upload OK!</span>';
