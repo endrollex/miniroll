@@ -486,9 +486,6 @@ a.user:active {color: #352E2C;}
 	margin: 20px 20px 20px 20px;
 	vertical-align: top;
 	display: inline-block;
-	/* IE11 hack fix inline-block problem */
-	*display: inline;
-	*zoom: 1;
 }
 .album_div2 {
 	text-align: center;

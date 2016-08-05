@@ -11,6 +11,7 @@ $http_str = <<<EOT
 <html lang="zh-cn">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <script type="text/javascript">
 EOT;
 //
