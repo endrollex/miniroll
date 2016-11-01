@@ -124,6 +124,8 @@ function scr_mobile_opti1() {
 		document.getElementById("dom_div_cpp02_menu_mo").style.width = (i_right_width-10)+"px";
 		document.getElementById("dom_td_cpp03a").style.width = "10px";
 		//categories
+		//show categories or hide
+		/*
 		var i_menu_str = document.getElementById("dom_div_cpp03a").innerHTML;
 		document.getElementById("dom_td_cpp03a").innerHTML = "<span style=\"color: white;\">.</span>";
 		i_menu_str = i_menu_str.replace(/<div(.+?)>/ig, "");
@@ -132,6 +134,8 @@ function scr_mobile_opti1() {
 		i_menu_str = i_menu_str.replace(" | ", "<span style=\"color: #FF9C00;\">CATEGORIES: </span>");
 		i_menu_str = i_menu_str.replace(/<img(.+?)>/ig, "");
 		document.getElementById("dom_div_cpp02_menu_mo").innerHTML = i_menu_str;
+		*/
+		document.getElementById("dom_div_cpp02_menu_mo").innerHTML = "";
 		//div_cpp01
 		document.getElementById("dom_div_cpp01").style.backgroundImage = "url('images/sword.png')";
 		document.getElementById("dom_div_cpp01").style.backgroundPosition = "top center";
