@@ -11,14 +11,15 @@
  * @return String containing either just a URL or a complete image tag
  * @source http://gravatar.com/site/implement/images/php/
  */
+// g.php generate avatar
 function get_gravatar($email, $s = 64, $d = '', $r = 'g')
 {
-	$url = 'http://www.endrollex.com/f_assistant/gravatar/g.php?';
+	$url = 'f_assistant/gravatar/g.php?';
 	$url .= "m=".md5(strtolower(trim($email)));
-	if ($d != 'identicon') $url .= "&amp;d=e";
     return $url;
 }
-//
+// not use
+/*
 function get_gravatar2($email, $s = 64, $d = '', $r = 'g')
 {
 	$url = 'http://www.gravatar.com/avatar/';
@@ -26,4 +27,5 @@ function get_gravatar2($email, $s = 64, $d = '', $r = 'g')
 	$url .= "?s=$s&amp;d=$d&amp;r=$r";
     return $url;
 }
+*/
 ?>
