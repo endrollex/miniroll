@@ -272,9 +272,12 @@ if ($comm_file !== '') {
 	echo '<div class="div_com_page">';
 	$ix_comm = $second_new;
 	if ($ix_comm === 0) echo '.';
-	for ($ix_comm = $second_new; $ix_comm != 0; --$ix_comm) {
-		if ($comm_readix == $ix_comm) echo ' '.$ix_comm;
-		else echo ' <a class="user" href="'.$comm_page.$ix_comm.'#comm">'.$ix_comm.'</a>';
+	else {
+		for ($ix_comm = $second_new; $ix_comm != 0; --$ix_comm) {
+			if ($comm_readix == $ix_comm) echo ' '.$ix_comm;
+			else echo ' <a class="user" href="'.$comm_page.$ix_comm.'#comm">'.$ix_comm.'</a>';
+		}
+		echo '<br/><br/>';
 	}
 	echo '</div>';
 }
