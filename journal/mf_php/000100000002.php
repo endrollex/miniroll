@@ -14,13 +14,17 @@ if (!$view_stop) {
 	echo '<br/><br/>';
 }
 echo '<div>';
+$cnt = 0;
+$cnt_max = 50;
 while (!$view_stop) {
 	$temp_arr = current($cc_trace);
 	reset($temp_arr);
 	$url_index_p = $url_index.$temp_arr[1].'#'.$temp_arr[2];
 	echo '<a class ="m4" href="'.$url_index_p.'">'.$temp_arr[0].', '.$temp_arr[3].'</a>';
+	$cnt += 1;
+	if ($cnt > $cnt_max) $view_stop = true;
 	if (prev($cc_trace) === false) $view_stop = true;
-	else echo '<br/><br/>';
+	if (!$view_stop) echo '<br/><br/>';
 }
 echo '</div>';
 //
