@@ -16,6 +16,7 @@ if (!$view_stop) {
 echo '<div>';
 $cnt = 0;
 $cnt_max = 50;
+if (!isset($_GET['p'])) $cnt_max = 5;
 while (!$view_stop) {
 	$temp_arr = current($cc_trace);
 	reset($temp_arr);
