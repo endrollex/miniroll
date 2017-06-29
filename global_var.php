@@ -10,16 +10,14 @@
 //Encoding Type: UTF-8(w/o BOM)
 //label ini
 $label_code = array('bo', 'mi', 'mf', 'al', 'do');
-$label_text = array(
-	'Book', 'Misc', 'Blog Func()', 'Album', 'Download'
-);
+$label_text = array('Book', 'Misc', 'Blog Func()', 'Album', 'Download');
+$label_hidden = array('do');
+$suffix_not_show_in_all = array('mf_');
 //which label load PHP script files
 $post_load_php = $label_code[2].'_';
 //for SEO
 //add ',' to every end of keyword,
-$label_keywords = array(
-	'Book,', 'Misc,', 'Blog Func(),', 'Album,', 'Download,'
-);
+$label_keywords = array('Book,', 'Misc,', 'Blog Func(),', 'Album,', 'Download,');
 //top post
 $global_var_top_post = 'if_need_top_enter_filename';
 //journal dir

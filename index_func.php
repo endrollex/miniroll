@@ -40,6 +40,7 @@ function structure_dir(
 	&$dir_journal,
 	&$para_get_p,
 	&$global_var_top_post,
+	&$suffix_not_show_in_all,
 	//assign variable
 	&$all_file,
 	&$all_file_o,
@@ -50,15 +51,36 @@ function structure_dir(
 	if (!isset($_SESSION['l'])) $_SESSION['l'] = 'nul';
 	//isget_l
 	if ($dh = opendir($dir_journal)) {
+		//view label file
+		$isget_l = false;
+		$isget_p = false;
+		if ($_SESSION['l'] !== 'nul') $isget_l = true;
+		if (isset($_GET['p'])) $isget_p = true;
+		//
 		while(($file_name = readdir($dh)) !== false) {
-			//view label file
-			$isget_l = false;
-			if ($_SESSION['l'] !== 'nul') {if ($_SESSION['l'] !== 'all') $isget_l = true;}
-			if ($isget_l) {
+			//
+			if ($isget_l && ($_SESSION['l'] !== 'all')) {
 				if(strstr($file_name, $_SESSION['l']) !== false)
 					if (strlen($file_name) > 12) array_push($all_file_o, $file_name);
 			}
-			else if (strlen($file_name) > 12) array_push($all_file_o, $file_name);
+			//
+			if (($isget_l && ($_SESSION['l'] === 'all')) ||
+				(!$isget_l && !$isget_p)) {
+				$is_suffix_show = true;
+				for ($ix_suf = 0; $ix_suf !== count($suffix_not_show_in_all); ++$ix_suf) {
+					if (strstr($file_name, $suffix_not_show_in_all[$ix_suf]) !== false) {
+						$is_suffix_show = false;
+						break;
+					}
+				}
+				if ($is_suffix_show) {
+					if (strlen($file_name) > 12) array_push($all_file_o, $file_name);
+				}
+			}
+			//
+			if (!$isget_l && $isget_p) {
+				if (strlen($file_name) > 12) array_push($all_file_o, $file_name);
+			}
 		}
 		closedir($dh);
 		sort($all_file_o);

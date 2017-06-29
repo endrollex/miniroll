@@ -97,7 +97,8 @@ if ($show_left_menu === 0) {
 	$vpass_menu_style = 1;
 	menu_make($vpass_menu_link, $vpass_menu_text, $vpass_menu_light, $vpass_menu_style, $http_str);
 	//hidden last label
-	for ($ix_index = 0; $ix_index !== count($label_text)-1; ++$ix_index) {
+	for ($ix_index = 0; $ix_index !== count($label_text); ++$ix_index) {
+		if (in_array($label_code[$ix_index], $label_hidden)) continue;
 		$menu_light = false;
 		if ($_SESSION['l'] !== 'nul' && $_SESSION['l'] !== 'all') if ($_SESSION['l'] === $label_code[$ix_index]) {
 			$menu_light = true;
@@ -117,6 +118,7 @@ structure_dir(
 	$dir_journal,
 	$para_get_p,
 	$global_var_top_post,
+	$suffix_not_show_in_all,
 	$all_file,
 	$all_file_o,
 	$now_page,
