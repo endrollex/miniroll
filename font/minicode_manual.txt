@@ -6,16 +6,16 @@
 [title1] @= &lt;span style=&quot;font-size: 20pt; text-shadow: 0px 0px 3px #FF0000;&quot;&gt;<br />
 [/title1] @= &lt;/span&gt;<br />
 [hello1][/hello1] @= Just say hello.<br />
+[bracket1][/bracket1] @= &lt;<br />
 [span_fake1] @= lt;span<br />
 [span_fake2] @= lt;/span&amp;<br />
-</span><!--mi_lead--><span style="font-size: 20pt; font-weight: bold;"><!--mi1-->minicode (variant of BBCode) - easy editing HTML</span><!--mi2--><br />
+</span><!--mi_lead--><span style="font-size: 20pt; font-weight: bold;"><!--mi1-->minicode</span><!--mi2--><br />
 <br />
 <span style="font-size: 16pt; color: green;"><!--mi3-->Introduction:</span><!--mi4--><br />
 <br />
-minicode is a lightweight markup language for <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll"><!--m4a-->miniroll</a><!--m4--> easy editing, learn from <a class="m4b" target="_blank" href="https://www.phpbb.com/community/faq.php?mode=bbcode"><!--m4a-->BBCode</a><!--m4-->.<br />
+Similar to <a class="m4b" target="_blank" href="https://www.phpbb.com/community/faq.php?mode=bbcode"><!--m4a-->BBCode</a><!--m4-->.<br />
 The tags are indicated by square brackets [ ] surrounding a keyword.<br />
-It is designed for Blog, thus let through unsafe HTML like &lt;script&gt;.<br />
-minicode allow user to write HTML freely and unlimitedly.<!--m11--><!--m11b--><br />
+It is designed for Blog, thus let through unsafe HTML like &lt;script&gt;.<!--m11--><!--m11b--><br />
 <br />
 <span style="font-size: 16pt; color: green;"><!--mi3-->Syntax:</span><!--mi4--><br />
 <!--m5--><ol><li>The minicode cannot nest:
@@ -81,9 +81,9 @@ while (ivec.size() != ivec.capacity())
 <pre style="background-color: #D3D3D3;">
 [last][/last]</pre>
 <!--m5b--># Last modified date:<br />
-<span class="m9">Last modified: 2016-02-14 17:27:17</span><!--m9--><br />
+<span class="m9">Last modified: 2020-06-09 12:21:32</span><!--m9--><br />
 <br />
-# By the way: this page initially completed on 2013-09-02.<br />
+# This page initially completed on 2013-09-02.<br />
 <br />
 <!--m5--></li><li>
 <pre style="background-color: #D3D3D3;"><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->html]<!--m5--><br/><!--m5b-->&lt;script type=&quot;text/javascript&quot;&gt;<!--m5--><br/><!--m5b-->document.write(&quot;Test!&quot;);<!--m5--><br/><!--m5b-->&lt;/script&gt;&lt;br/&gt;Newline here!<!--m5--><br/><!--m5b--><!--m10--><span class="m10">[</span><!--m10b-->/html]<!--m5--></pre>
@@ -109,8 +109,8 @@ C<!--m10--><sub class="m10">hex</sub><!--m10b-->, ...<br />
 <!--m5--></li><li>
 <pre style="background-color: #D3D3D3;">
 [lead_define]
-[title] @= &lt;span style="font-size: 20pt; text-shadow: 0px 0px 3px #FF0000;"&gt;
-[/title] @= &lt;/span&gt;
+[title] @= <<!--mi8-->span style="font-size: 20pt; text-shadow: 0px 0px 3px #FF0000;">
+[/title] @= <<!--mi8-->/span>
 [hello][/hello] @= Just say hello.
 [/lead_define][title]My Title[/title]
 [hello][/hello]
@@ -149,17 +149,5 @@ The quick brown fox jumps over the lazy dog.<br />
 The quick brown fox jumps over the lazy dog.<br />
 <br />
 <!--m5--></li></ol><div></div><!--m5b--><span style="font-size: 16pt; color: green;"><!--mi3-->Note:</span><!--mi4--><br />
-<!--m5--><ol><li><!--m5b-->If the sentences are too complex, check them by <a class="m4b" target="_blank" href="http://validator.w3.org/"><!--m4a-->W3C Markup Validator</a><!--m4--> is a good idea.<br />
+<!--m5--><ol><li><!--m5b-->If the sentences are too complex, check them by <a class="m4b" target="_blank" href="http://validator.w3.org/"><!--m4a-->W3C Markup Validator</a><!--m4-->.<br />
 <!--m5--></li><li><!--m5b-->Block elements or margin may cause line spacing too large, delete a newline according to the situation.<br />
-<!--m5--></li></ol><!--m5b--><span style="font-size: 16pt; color: green;"><!--mi3-->Mechanism:</span><!--mi4--><br />
-<br />
-Mechanism of minicode is base on &quot;Search and Replace&quot;, the process is reversible and very simply.<br />
-It abbreviated commonly-used HTML tags to short keywords, the article can mix HTML.<br />
-The implemented HTML may contain a little comment markup &lt;!-- --&gt;, intend for reversion.<br />
-Some keywords of minicode depends CSS, the <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/htmindex.css"><!--m4a-->default CSS</a><!--m4--> provided to show the predefined style.<br />
-For this page process: <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual_m.txt"><!--m4a-->minicode</a><!--m4--> -&gt; <a class="m4b" target="_blank" href="http://endrollex.com/font/minicode_manual.txt"><!--m4a-->HTML article</a><!--m4--> -&gt; this page (Encapsulated)<br />
-<br />
-<span style="font-size: 16pt; color: green;"><!--mi3-->Construct:</span><!--mi4--><br />
-<br />
-minicode of miniroll is writed by PHP, HTML version is HTML5.<br />
-You can view the source code from <a class="m4b" target="_blank" href="https://github.com/endrollex/miniroll/blob/master/manage_dir/post.php"><!--m4a-->post.php</a><!--m4-->.<br />
