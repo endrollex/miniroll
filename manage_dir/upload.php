@@ -20,6 +20,7 @@ if (isset($_SESSION['v_user'])) $echo_log_state = '<a href="manage.php?m=3&amp;l
 //O=('-'Q) echo
 echo $echo_log_state.'<br/><br/>';
 echo 'Choose a file or a directory to browse:<br/>--------<br/><br/>';
+echo "\r\n";
 //var
 $upload_dir = 'upload/';
 $upload_sub_dir = '';
@@ -83,6 +84,7 @@ if ($check_upload) {
 	$fp = fopen($upload_curr_dir.$_FILES['file']['name'], 'wb');
 	fwrite($fp, file_get_contents($_FILES['file']['tmp_name']));
 	if (fclose($fp)) $html_upload_msg = '<span class=span_red>Upload OK, stored in: '.$upload_curr_dir.$_FILES['file']['name'].'</span>';
+	else $html_upload_msg = 'Upload error';
 }
 else $html_upload_msg = '<span class=span_blue>'.$html_upload_msg.'</span>';
 }
@@ -114,6 +116,7 @@ if (isset($_POST['delete_one']) && isset($_POST['confirm_del']) && isset($_SESSI
 			if (unlink($upload_curr_dir.$_POST['delete_one']) )
 				$html_upload_msg = 
 					'<span class=span_red>The attachment '.$_POST['delete_one'].' has been deleted.</span>';
+			else $html_upload_msg = 'Delete error';
 		}
 		//directory
 		if (is_dir($upload_curr_dir.$_POST['delete_one']) && $_POST['delete_one'] != '') {
@@ -127,6 +130,7 @@ if (isset($_POST['delete_one']) && isset($_POST['confirm_del']) && isset($_SESSI
 				if (rmdir($upload_curr_dir.$_POST['delete_one']))
 					$html_upload_msg = 
 						'<span class=span_red>The directory '.$_POST['delete_one'].' has been deleted.</span>';
+				else $html_upload_msg = 'Delete error';
 			}
 			else $html_upload_msg = '<span class=span_blue>The directory '.$_POST['delete_one'].' must be empty first.</span>';
 		}
@@ -138,20 +142,24 @@ echo 'root/<a class="tit" href="manage.php?m=2&amp;dir_ix=-1">upload/</a>';
 for ($ix = 0; $ix != count($upload_sub_dir_array)-1; ++$ix)
 	echo '<a class="tit" href="manage.php?m=2&amp;dir_ix='.$ix.'">'.$upload_sub_dir_array[$ix].'/</a>';
 echo '<br/>';
+echo "\r\n";
 //show attachment
 $get_scandir = scandir($upload_curr_dir);
-for ($ix = 0; $ix !== count($get_scandir); ++$ix) {
+for ($ix = 0; $ix < count($get_scandir); ++$ix) {
 	$is_file = false;
 	$is_file = !is_dir($upload_curr_dir.$get_scandir[$ix]);
 	//uploaded files
-	if ($ix === 0) echo '[<a class="m4" href="manage.php?m=2&amp;dir_ix='.(count($upload_sub_dir_array)-2).
-		'">'.$get_scandir[$ix].'</a>]<br/>';
-	if ($get_scandir[$ix] === '..') echo '[<a class="m4" href="manage.php?m=2&amp;dir_up=1">'.$get_scandir[$ix].'</a>]<br/>';
+	//if ($ix === 0) echo '[<a class="m4" href="manage.php?m=2&amp;dir_ix='.(count($upload_sub_dir_array)-2).
+	//	'">'.$get_scandir[$ix].'</a>]<br/>';
+	if ($get_scandir[$ix] === '..' || count($get_scandir) < 2) {
+		echo '<a class="m4" href="manage.php?m=2&amp;dir_up=1">&lt;-Parent Directory</a><br/>';
+	}
 	if ($ix > 1) {
 		if (!$is_file) echo '[<a class="page" href="manage.php?m=2&amp;dir='.$get_scandir[$ix].'">'.$get_scandir[$ix].'</a>]<br/>';
 		else echo '<a class="m4" href="'.$upload_curr_dir.$get_scandir[$ix].
 			'" target="_blank">'.$get_scandir[$ix].'</a><br/>';
 	}
+	echo "\r\n";
 }
 echo '<br/>';
 //O=('-'Q) echo msg
